@@ -133,6 +133,8 @@
     /* ============================================================
        TYPOGRAPHY
        ============================================================ */
+    /* Prevent horizontal overflow on narrow screens */
+    .display-xl, .display-lg, .display-md, .hero-title { word-break: break-word; }
     .display-xl {
       font-family: var(--font-display);
       font-size: clamp(2.8rem, 7vw, 5.5rem);
@@ -410,6 +412,8 @@
       z-index: 999;
       transform: translateY(-110%);
       transition: transform var(--transition-base);
+      max-height: calc(100vh - 70px);
+      overflow-y: auto;
     }
     .mobile-menu.open { transform: translateY(0); }
     .mobile-menu a {
@@ -426,7 +430,8 @@
       text-align: center;
       margin-top: var(--space-md);
       width: 100%;
-      color: #fff !important; /* Fix 1: force white text on gradient button */
+      color: #fff !important;
+      border-bottom: none;
     }
 
     /* ============================================================
@@ -435,6 +440,7 @@
     #hero {
       position: relative;
       min-height: 100vh;
+      min-height: 100svh;
       display: flex;
       align-items: center;
       overflow: hidden;
@@ -476,8 +482,7 @@
       z-index: 2;
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 var(--space-lg);
-      padding-top: 100px;
+      padding: 100px var(--space-lg) var(--space-xl);
     }
     .hero-badge {
       display: inline-flex;
@@ -652,6 +657,40 @@
       color: var(--text-secondary);
       margin-bottom: var(--space-md);
       font-size: 0.975rem;
+    }
+    .experience-stats-container {
+      display: flex;
+      gap: 0;
+      margin: var(--space-md) 0;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+    .experience-stat {
+      flex: 1;
+      padding: 16px 20px;
+      text-align: center;
+      border-right: 1px solid var(--border-subtle);
+    }
+    .experience-stat:last-child { border-right: none; }
+    .experience-stat-value {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+    }
+    .experience-stat-label {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      margin-top: 4px;
+      text-transform: uppercase;
     }
     .about-values {
       display: grid;
@@ -1044,11 +1083,8 @@
     }
 
     /* ============================================================
-       PORTFOLIO / GALLERY (legacy lightbox kept for compat)
+       PORTFOLIO / GALLERY (legacy lightbox styles kept for compat)
        ============================================================ */
-    #portfolio {
-      background: var(--bg-surface);
-    }
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -1710,7 +1746,7 @@
       .pricing-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
       .stats-grid { grid-template-columns: repeat(2, 1fr); }
       .about-grid { grid-template-columns: 1fr; }
-      .about-image-wrap { display: none; } /* simplify on tablet */
+      .about-image-wrap { display: none; }
       .contact-grid { grid-template-columns: 1fr; }
     }
 
@@ -1718,12 +1754,19 @@
       :root {
         --space-xxl: 4rem;
         --space-xl: 2.5rem;
+        --space-lg: 2rem;
       }
       .container { padding: 0 var(--space-md); }
-      .nav-inner { padding: 0 var(--space-md); }
+      .nav-inner { padding: 0 var(--space-md); gap: var(--space-sm); }
       .grid-2 { grid-template-columns: 1fr; }
       .grid-3 { grid-template-columns: 1fr; }
       .grid-4 { grid-template-columns: 1fr 1fr; }
+
+      .hero-content { padding: 100px var(--space-md) var(--space-xl); }
+      .hero-badge { max-width: 100%; flex-wrap: wrap; }
+      .mobile-menu { padding: var(--space-md); }
+      .service-card { padding: var(--space-md); }
+
       .hero-stats { gap: var(--space-lg); }
       .hero-stat-value { font-size: 1.8rem; }
       .timeline { padding: 0 var(--space-sm); }
@@ -1742,7 +1785,7 @@
       }
       .timeline-item:nth-child(odd) .timeline-empty,
       .timeline-item:nth-child(even) .timeline-empty { display: none; }
-      .timeline-node { grid-column: 1; }
+      .timeline-node { grid-column: 1; grid-row: 1; }
       .gallery-grid { grid-template-columns: 1fr 1fr; }
       .gallery-item:nth-child(1) { grid-column: span 2; }
       .form-row { grid-template-columns: 1fr; }
@@ -1751,16 +1794,38 @@
       .about-values { grid-template-columns: 1fr; }
       .stats-grid { grid-template-columns: repeat(2, 1fr); }
       .trust-logos { gap: var(--space-md); }
+
+      /* Convert horizontal slide animations to vertical to prevent scrollbar flash */
+      .fade-in-left { transform: translateY(32px); }
+      .fade-in-right { transform: translateY(32px); }
+      .fade-in-left.visible { transform: translateY(0); }
+      .fade-in-right.visible { transform: translateY(0); }
     }
 
     @media (max-width: 480px) {
+      .logo-image { height: 32px; max-width: 130px; }
       .grid-4 { grid-template-columns: 1fr; }
+      .hero-title { font-size: clamp(2.4rem, 9vw, 3rem); letter-spacing: -0.02em; }
       .gallery-grid { grid-template-columns: 1fr; }
       .gallery-item:nth-child(1) { grid-column: span 1; }
       .hero-actions { flex-direction: column; }
       .hero-actions .btn-primary,
       .hero-actions .btn-secondary { width: 100%; text-align: center; }
       .cta-btns { flex-direction: column; align-items: center; }
+
+      /* Stack stats vertically so text doesn't overflow on narrow screens */
+      .experience-stats-container { flex-direction: column; }
+      .experience-stat { border-right: none; border-bottom: 1px solid var(--border-subtle); }
+      .experience-stat:last-child { border-bottom: none; }
+    }
+
+    /* ============================================================
+       ACCESSIBILITY — Reduced Motion
+       ============================================================ */
+    @media (prefers-reduced-motion: reduce) {
+      .fade-in, .fade-in-left, .fade-in-right {
+        opacity: 1; transform: none; transition: none;
+      }
     }
 
     /* ============================================================
@@ -1881,7 +1946,6 @@
           <a href="#services" class="btn-secondary btn-lg">Explore Services</a>
         </div>
 
-        </div>
       </div>
 
       <!-- Scroll indicator removed per design update -->
@@ -2154,22 +2218,19 @@
 
             <p>Based in Connecticut and operating entirely within U.S. borders, we take data sovereignty seriously. Every server, every support ticket, and every line of code stays onshore. Our team's deep WordPress expertise, combined with genuine mastery of federal accessibility standards and security frameworks, means you get a partner — not just a vendor.</p>
 
-            <!-- Experience milestones — replaces the removed badge -->
-            <div style="
-              display:flex; gap:0; margin:var(--space-md) 0;
-              background:var(--bg-elevated); border:1px solid var(--border-subtle);
-              border-radius:var(--radius-md); overflow:hidden;">
-              <div style="flex:1; padding:16px 20px; border-right:1px solid var(--border-subtle); text-align:center;">
-                <div style="font-family:var(--font-display);font-size:1.75rem;font-weight:800;background:linear-gradient(135deg,var(--brand-primary),var(--brand-secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;">12+</div>
-                <div style="font-size:0.72rem;color:var(--text-muted);font-weight:600;letter-spacing:0.06em;margin-top:4px;">Yrs Experience</div>
+            <!-- Experience milestones -->
+            <div class="experience-stats-container">
+              <div class="experience-stat">
+                <div class="experience-stat-value">12+</div>
+                <div class="experience-stat-label">Yrs Experience</div>
               </div>
-              <div style="flex:1; padding:16px 20px; border-right:1px solid var(--border-subtle); text-align:center;">
-                <div style="font-family:var(--font-display);font-size:1.75rem;font-weight:800;background:linear-gradient(135deg,var(--brand-primary),var(--brand-secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;">50+</div>
-                <div style="font-size:0.72rem;color:var(--text-muted);font-weight:600;letter-spacing:0.06em;margin-top:4px;">Projects Delivered</div>
+              <div class="experience-stat">
+                <div class="experience-stat-value">50+</div>
+                <div class="experience-stat-label">Projects Delivered</div>
               </div>
-              <div style="flex:1; padding:16px 20px; text-align:center;">
-                <div style="font-family:var(--font-display);font-size:1.75rem;font-weight:800;background:linear-gradient(135deg,var(--brand-primary),var(--brand-secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;">99.9%</div>
-                <div style="font-size:0.72rem;color:var(--text-muted);font-weight:600;letter-spacing:0.06em;margin-top:4px;">Uptime SLA</div>
+              <div class="experience-stat">
+                <div class="experience-stat-value">99.9%</div>
+                <div class="experience-stat-label">Uptime SLA</div>
               </div>
             </div>
 
@@ -2312,7 +2373,7 @@
 
         <div class="industry-grid">
           <!-- Small Businesses — wide featured -->
-          <div class="industry-card wide fade-in" tabindex="0" aria-label="Small Businesses">
+          <div class="industry-card wide fade-in" aria-label="Small Businesses">
             <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=900&h=500&fit=crop&crop=center&auto=format" alt="Small business owner at a modern retail storefront" loading="lazy" />
             <div class="industry-overlay">
               <div class="industry-icon-wrap" aria-hidden="true"><i data-lucide="store" width="18" height="18"></i></div>
@@ -2322,7 +2383,7 @@
           </div>
 
           <!-- Healthcare -->
-          <div class="industry-card fade-in stagger-1" tabindex="0" aria-label="Healthcare">
+          <div class="industry-card fade-in stagger-1" aria-label="Healthcare">
             <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&h=800&fit=crop&crop=faces,top&auto=format" alt="Professional female doctor in white coat smiling confidently" loading="lazy" />
             <div class="industry-overlay">
               <div class="industry-icon-wrap" aria-hidden="true"><i data-lucide="heart-pulse" width="18" height="18"></i></div>
@@ -2332,7 +2393,7 @@
           </div>
 
           <!-- Corporate -->
-          <div class="industry-card fade-in stagger-2" tabindex="0" aria-label="Corporate">
+          <div class="industry-card fade-in stagger-2" aria-label="Corporate">
             <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=800&fit=crop&crop=center&auto=format" alt="Modern corporate office interior with professionals at work" loading="lazy" />
             <div class="industry-overlay">
               <div class="industry-icon-wrap" aria-hidden="true"><i data-lucide="building-2" width="18" height="18"></i></div>
@@ -2342,7 +2403,7 @@
           </div>
 
           <!-- IT -->
-          <div class="industry-card fade-in stagger-3" tabindex="0" aria-label="Information Technology">
+          <div class="industry-card fade-in stagger-3" aria-label="Information Technology">
             <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=800&fit=crop&crop=center&auto=format" alt="Server racks and IT infrastructure in a data center" loading="lazy" />
             <div class="industry-overlay">
               <div class="industry-icon-wrap" aria-hidden="true"><i data-lucide="cpu" width="18" height="18"></i></div>
@@ -2352,7 +2413,7 @@
           </div>
 
           <!-- Administrative -->
-          <div class="industry-card fade-in stagger-1" tabindex="0" aria-label="Administrative">
+          <div class="industry-card fade-in stagger-1" aria-label="Administrative">
             <img src="https://images.unsplash.com/photo-1575505586569-646b2ca898fc?w=600&h=800&fit=crop&crop=center&auto=format" alt="Government administrative building exterior" loading="lazy" />
             <div class="industry-overlay">
               <div class="industry-icon-wrap" aria-hidden="true"><i data-lucide="landmark" width="18" height="18"></i></div>
@@ -2362,7 +2423,7 @@
           </div>
 
           <!-- Bakeries -->
-          <div class="industry-card fade-in stagger-2" tabindex="0" aria-label="Bakeries and Food Businesses">
+          <div class="industry-card fade-in stagger-2" aria-label="Bakeries and Food Businesses">
             <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&h=800&fit=crop&crop=center&auto=format" alt="Artisan bakery display with fresh breads and pastries" loading="lazy" />
             <div class="industry-overlay">
               <div class="industry-icon-wrap" aria-hidden="true"><i data-lucide="cake" width="18" height="18"></i></div>
@@ -2372,7 +2433,7 @@
           </div>
 
           <!-- Local Businesses — wide featured -->
-          <div class="industry-card wide fade-in stagger-3" tabindex="0" aria-label="Local Businesses">
+          <div class="industry-card wide fade-in stagger-3" aria-label="Local Businesses">
             <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=900&h=500&fit=crop&crop=center&auto=format" alt="Vibrant local Main Street with small business storefronts" loading="lazy" />
             <div class="industry-overlay">
               <div class="industry-icon-wrap" aria-hidden="true"><i data-lucide="map-pin" width="18" height="18"></i></div>
@@ -3248,6 +3309,18 @@
           hamburger.classList.remove('open');
           mobileMenu.classList.remove('open');
           hamburger.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        }
+      });
+
+      // Close on Escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+          hamburger.classList.remove('open');
+          mobileMenu.classList.remove('open');
+          hamburger.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+          hamburger.focus();
         }
       });
     })();
@@ -3300,6 +3373,11 @@
        SCROLL ANIMATIONS — Intersection Observer
        ============================================================ */
     (function() {
+      var animEls = document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right');
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        animEls.forEach(function(el) { el.classList.add('visible'); });
+        return;
+      }
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
@@ -3308,7 +3386,7 @@
         });
       }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
 
-      document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right').forEach(el => {
+      animEls.forEach(el => {
         observer.observe(el);
       });
     })();
@@ -3394,6 +3472,7 @@
        ============================================================ */
     (function() {
       const lightbox = document.getElementById('lightbox');
+      if (!lightbox) return; // Gallery not present on this page
       const lightboxImg = document.getElementById('lightbox-img');
       const lightboxCaption = document.getElementById('lightbox-caption');
       const lightboxClose = document.getElementById('lightbox-close');
@@ -3768,7 +3847,7 @@
           if (!isOpen) {
             item.classList.add('faq-open');
             btn.setAttribute('aria-expanded', 'true');
-            panel.style.maxHeight = '600px';
+            panel.style.maxHeight = panel.scrollHeight + 'px';
           }
         });
       });
