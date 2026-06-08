@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ViroBuilder — An AI Page Designer for WordPress | Viro Digital</title>
+<meta name="description" content="ViroBuilder is a WordPress plugin by Viro Digital that designs a complete landing page from a short description — layout, copy, real photos, and SEO — then lets you refine it by chat and click.">
+<meta name="author" content="Viro Digital LLC">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://virodigital.net/virobuilder/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ViroBuilder — An AI Page Designer for WordPress">
+<meta property="og:description" content="Describe your business. ViroBuilder designs a complete WordPress landing page — layout, copy, real photos, and SEO — then you refine it by chat and click.">
+<meta property="og:url" content="https://virodigital.net/virobuilder/">
+<meta property="og:image" content="https://virodigital.net/virobuilder/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ViroBuilder — An AI Page Designer for WordPress">
+<meta name="twitter:description" content="Describe your business. ViroBuilder designs a complete WordPress landing page — then you refine it by chat and click.">
+<meta name="twitter:image" content="https://virodigital.net/virobuilder/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"ViroBuilder","applicationCategory":"BusinessApplication","operatingSystem":"WordPress 6.2+","description":"A WordPress plugin by Viro Digital that designs a complete landing page from a short description — layout, copy, real photos, and SEO — then lets you refine it by chat and click.","url":"https://virodigital.net/virobuilder/","author":{"@type":"Organization","name":"Viro Digital LLC","url":"https://virodigital.net"},"offers":{"@type":"Offer","name":"Free (bring your own API keys)","price":"0","priceCurrency":"USD"}}
+</script>
+<style>
+  :root{
+    --bg:#0b1020; --bg-2:#0e1426; --panel:#121a30; --panel-2:#0f1626;
+    --line:rgba(148,163,200,.14); --line-2:rgba(148,163,200,.22);
+    --ink:#eef2fb; --ink-soft:#aeb6cc; --ink-faint:#7a839c;
+    --indigo:#818cf8; --indigo-deep:#6366f1; --cyan:#22d3ee; --green:#34d399;
+    --sans:'IBM Plex Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    --display:'Sora',var(--sans);
+    --radius:14px; --maxw:1180px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body::before{content:"";position:fixed;inset:0;z-index:-2;
+    background:radial-gradient(1100px 600px at 78% -5%,rgba(99,102,241,.20),transparent 60%),radial-gradient(900px 500px at 5% 12%,rgba(34,211,238,.10),transparent 55%),var(--bg)}
+  body::after{content:"";position:fixed;inset:0;z-index:-1;opacity:.4;pointer-events:none;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;
+    -webkit-mask-image:radial-gradient(circle at 50% 18%,#000,transparent 78%);mask-image:radial-gradient(circle at 50% 18%,#000,transparent 78%)}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  .skip{position:absolute;left:-999px;top:8px;background:var(--indigo);color:#0b1020;padding:10px 16px;border-radius:8px;font-weight:600;z-index:200}
+  .skip:focus{left:8px}
+  :focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:4px}
+  h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.08;letter-spacing:-.02em}
+  .eyebrow{font-family:var(--sans);font-size:12.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan)}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--sans);font-weight:600;font-size:15px;padding:13px 22px;border-radius:10px;border:1.5px solid transparent;cursor:pointer;transition:transform .18s,background .18s,border-color .18s;white-space:nowrap}
+  .btn-fill{background:var(--indigo-deep);color:#fff}
+  .btn-fill:hover{background:var(--indigo);transform:translateY(-2px)}
+  .btn-out{background:transparent;color:var(--ink);border-color:var(--line-2)}
+  .btn-out:hover{border-color:var(--indigo);transform:translateY(-2px)}
+  .btn[disabled]{opacity:.5;cursor:not-allowed}
+  .btn[disabled]:hover{transform:none}
+  header.nav{position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);background:rgba(11,16,32,.72);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .brand{display:flex;align-items:center;gap:11px;font-family:var(--display);font-weight:700;font-size:19px}
+  .brand svg{width:26px;height:29px;flex:none}
+  .brand .by{font-family:var(--sans);font-size:11px;font-weight:500;color:var(--ink-faint);letter-spacing:.04em}
+  .nav-links{display:flex;align-items:center;gap:30px}
+  .nav-links a{font-size:14.5px;color:var(--ink-soft);transition:color .15s}
+  .nav-links a:hover{color:var(--ink)}
+  .nav-cta{display:flex;align-items:center;gap:14px}
+  @media(max-width:860px){.nav-links{display:none}}
+  .hero{padding:88px 0 64px;text-align:center}
+  .hero .badge{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line-2);border-radius:999px;padding:7px 15px;font-size:13px;color:var(--ink-soft);margin-bottom:26px;background:rgba(255,255,255,.02)}
+  .hero .badge b{color:var(--cyan);font-weight:600}
+  .hero h1{font-size:clamp(38px,6vw,68px);font-weight:800;max-width:16ch;margin:0 auto 22px}
+  .hero h1 .grad{background:linear-gradient(100deg,var(--indigo),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p.lead{font-size:clamp(17px,2vw,20px);color:var(--ink-soft);max-width:62ch;margin:0 auto 34px}
+  .hero .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .tagline{font-family:var(--display);font-weight:600;color:var(--ink)}
+  .shot{max-width:1000px;margin:60px auto 0;border:1px solid var(--line-2);border-radius:16px;overflow:hidden;background:var(--panel);box-shadow:0 40px 90px -40px rgba(0,0,0,.8);position:relative}
+  .shot-bar{display:flex;align-items:center;gap:7px;padding:12px 16px;border-bottom:1px solid var(--line);background:var(--panel-2)}
+  .shot-bar i{width:11px;height:11px;border-radius:50%;background:#2a3450;display:block}
+  .shot-bar span{margin-left:12px;font-size:12.5px;color:var(--ink-faint);font-family:var(--sans)}
+  .shot-body{display:grid;grid-template-columns:1.6fr 1fr;min-height:340px}
+  .shot-preview{padding:34px;background:linear-gradient(160deg,#0c1322,#0a0f1c);position:relative;overflow:hidden}
+  .shot-preview .ph-eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--cyan);margin-bottom:14px}
+  .shot-preview .ph-h{font-family:var(--display);font-weight:800;font-size:30px;line-height:1.1;margin-bottom:14px;max-width:13ch}
+  .shot-preview .ph-h em{font-style:normal;color:var(--indigo)}
+  .shot-preview .ph-p{color:var(--ink-soft);font-size:14px;max-width:32ch;margin-bottom:20px}
+  .shot-preview .ph-btn{display:inline-block;background:var(--indigo-deep);color:#fff;font-size:13px;font-weight:600;padding:10px 18px;border-radius:8px}
+  .shot-preview .ph-img{position:absolute;right:-30px;bottom:-30px;width:44%;height:60%;border-radius:14px;background:linear-gradient(135deg,#1b2540,#101728);border:1px solid var(--line);opacity:.85}
+  .shot-chat{border-left:1px solid var(--line);padding:22px 20px;background:var(--panel-2);display:flex;flex-direction:column;gap:12px}
+  .shot-chat .ct{font-family:var(--display);font-weight:600;font-size:14px;display:flex;align-items:center;gap:8px}
+  .bubble{font-size:13px;padding:10px 13px;border-radius:10px;max-width:92%}
+  .bubble.me{align-self:flex-end;background:var(--indigo-deep);color:#fff}
+  .bubble.sys{align-self:flex-start;background:rgba(255,255,255,.05);color:var(--ink-soft);border:1px solid var(--line)}
+  .bubble.ok{align-self:flex-start;color:var(--green);font-size:12.5px}
+  @media(max-width:760px){.shot-body{grid-template-columns:1fr}.shot-chat{border-left:none;border-top:1px solid var(--line)}.shot-preview .ph-img{display:none}}
+  .trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:70px;background:rgba(255,255,255,.015)}
+  .trust-in{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 38px;padding:20px 0;font-size:13.5px;color:var(--ink-faint)}
+  .trust-in b{color:var(--ink-soft);font-weight:600}
+  .trust-in span{display:inline-flex;align-items:center;gap:8px}
+  .dotc{width:6px;height:6px;border-radius:50%;background:var(--cyan)}
+  /* video */
+  .video-wrap{max-width:920px;margin:0 auto;border:1px solid var(--line-2);border-radius:16px;overflow:hidden;
+    background:#000;box-shadow:0 40px 90px -45px rgba(0,0,0,.8);position:relative;aspect-ratio:16/9}
+  .video-wrap video{width:100%;height:100%;display:block;object-fit:cover}
+  .video-cap{text-align:center;color:var(--ink-faint);font-size:13px;margin-top:14px}
+  section.blk{padding:84px 0}
+  .sec-head{max-width:60ch;margin-bottom:46px}
+  .sec-head h2{font-size:clamp(28px,4vw,42px);margin:14px 0 14px}
+  .sec-head p{color:var(--ink-soft);font-size:17px}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media(max-width:900px){.grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:600px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px;transition:transform .2s,border-color .2s}
+  .card:hover{transform:translateY(-4px);border-color:var(--line-2)}
+  .card .ic{width:42px;height:42px;border-radius:11px;display:grid;place-items:center;margin-bottom:16px;font-size:20px;background:rgba(129,140,248,.13);border:1px solid rgba(129,140,248,.25)}
+  .card h3{font-size:18px;font-weight:600;margin-bottom:8px}
+  .card p{font-size:14.5px;color:var(--ink-soft)}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  @media(max-width:880px){.steps{grid-template-columns:1fr 1fr}}
+  @media(max-width:520px){.steps{grid-template-columns:1fr}}
+  .step{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:26px 22px;position:relative}
+  .step .n{font-family:var(--display);font-weight:800;font-size:15px;color:var(--cyan);border:1px solid rgba(34,211,238,.3);width:34px;height:34px;border-radius:9px;display:grid;place-items:center;margin-bottom:16px}
+  .step h3{font-size:16.5px;font-weight:600;margin-bottom:7px}
+  .step p{font-size:14px;color:var(--ink-soft)}
+  .cmp{width:100%;border-collapse:collapse;font-size:14.5px;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+  .cmp th,.cmp td{padding:15px 18px;text-align:left;border-bottom:1px solid var(--line)}
+  .cmp thead th{font-family:var(--display);font-weight:600;background:var(--panel-2);color:var(--ink)}
+  .cmp tbody th{font-weight:500;color:var(--ink-soft)}
+  .cmp td{color:var(--ink-faint)}
+  .cmp .vb{color:var(--ink);font-weight:600;background:rgba(99,102,241,.07)}
+  .cmp thead .vb{color:var(--indigo)}
+  .cmp tr:last-child th,.cmp tr:last-child td{border-bottom:none}
+  .cmp-note{font-size:12.5px;color:var(--ink-faint);margin-top:12px}
+  .cmp-scroll{overflow-x:auto}
+  .prices{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;align-items:stretch;max-width:740px;margin:0 auto}
+  @media(max-width:860px){.prices{grid-template-columns:1fr}}
+  .pcard{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:30px 26px;position:relative;display:flex;flex-direction:column}
+  .pcard.hot{border-color:rgba(129,140,248,.5);box-shadow:0 0 0 1px rgba(129,140,248,.2),0 30px 70px -40px rgba(99,102,241,.6)}
+  .pcard .pname{font-family:var(--display);font-weight:600;font-size:15px;color:var(--cyan);letter-spacing:.04em}
+  .pcard .price{font-family:var(--display);font-weight:800;font-size:40px;margin:12px 0 4px}
+  .pcard .pdesc{font-size:14px;color:var(--ink-soft);margin-bottom:18px;min-height:42px}
+  .pcard ul{list-style:none;margin:0 0 22px;display:flex;flex-direction:column;gap:10px;flex:1}
+  .pcard li{font-size:14px;color:var(--ink-soft);display:flex;gap:10px;align-items:flex-start}
+  .pcard li::before{content:"";flex:none;width:16px;height:16px;margin-top:3px;border-radius:50%;background:rgba(52,211,153,.15);border:1px solid rgba(52,211,153,.4);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.5l2.5 2.5L12 5.5' stroke='%2334d399' stroke-width='1.8' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center}
+  .pcard .soon{position:absolute;top:22px;right:22px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan)}
+  .planned-note{text-align:center;color:var(--ink-faint);font-size:13px;margin-top:18px}
+  .faq-item{border-bottom:1px solid var(--line)}
+  .faq-item summary{cursor:pointer;list-style:none;padding:20px 0;display:flex;justify-content:space-between;align-items:center;gap:20px;font-family:var(--display);font-weight:600;font-size:17px}
+  .faq-item summary::-webkit-details-marker{display:none}
+  .faq-item .pm{flex:none;font-size:24px;font-weight:300;color:var(--indigo);transition:transform .25s}
+  .faq-item[open] .pm{transform:rotate(45deg)}
+  .faq-item .ans{padding:0 0 22px;color:var(--ink-soft);font-size:15px;max-width:74ch}
+  .capture{text-align:center;background:linear-gradient(160deg,var(--panel),var(--panel-2));border:1px solid var(--line);border-radius:20px;padding:56px 28px}
+  .capture h2{font-size:clamp(26px,4vw,38px);margin-bottom:14px}
+  .capture p{color:var(--ink-soft);max-width:52ch;margin:0 auto 26px}
+  .cform{display:flex;gap:10px;max-width:480px;margin:0 auto 12px}
+  .cform input{flex:1;background:var(--bg-2);border:1.5px solid var(--line-2);border-radius:10px;padding:14px 16px;font-size:15px;font-family:var(--sans);color:var(--ink);outline:none}
+  .cform input:focus{border-color:var(--indigo)}
+  .micro{font-size:13px;color:var(--ink-faint)}
+  .capture .ok{display:none;color:var(--green);font-weight:600;font-size:18px}
+  .capture.done .cform,.capture.done .micro{display:none}
+  .capture.done .ok{display:block}
+  @media(max-width:520px){.cform{flex-direction:column}}
+  footer{border-top:1px solid var(--line);padding:56px 0 34px;margin-top:84px;background:var(--bg-2)}
+  .foot-top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:34px;padding-bottom:34px;border-bottom:1px solid var(--line)}
+  @media(max-width:760px){.foot-top{grid-template-columns:1fr}}
+  .foot-brand .brand{margin-bottom:14px}
+  .foot-brand p{font-size:14px;color:var(--ink-faint);max-width:42ch}
+  .foot-col h4{font-family:var(--display);font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--ink);margin-bottom:14px}
+  .foot-col a{display:block;font-size:14px;color:var(--ink-soft);margin-bottom:9px;transition:color .15s}
+  .foot-col a:hover{color:var(--indigo)}
+  .foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:26px;font-size:13px;color:var(--ink-faint)}
+  [data-r]{opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1)}
+  [data-r].in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){[data-r]{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#" aria-label="ViroBuilder home">
+      <svg viewBox="0 0 40 44" fill="none" aria-hidden="true"><path d="M6 40L20 6L34 40" stroke="#818cf8" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="20" cy="5" r="3.6" fill="#22d3ee"/></svg>
+      <span>ViroBuilder <span class="by">by Viro Digital</span></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#features">Features</a>
+      <a href="#how">How it works</a>
+      <a href="#compare">Compare</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-cta"><a class="btn btn-fill" href="#get">Get the plugin</a></div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero wrap">
+    <span class="badge" data-r><span class="dotc" aria-hidden="true"></span> WordPress plugin · <b>By Viro Digital</b></span>
+    <h1 data-r>Describe your business.<br>Get a <span class="grad">designed</span> WordPress page.</h1>
+    <p class="lead" data-r><span class="tagline">Not a page builder — a page designer.</span> ViroBuilder writes the copy, designs the layout, adds real stock photos and SEO, then lets you refine every detail by chat and click.</p>
+    <div class="cta-row" data-r>
+      <a class="btn btn-fill" href="#get">Get the plugin →</a>
+      <a class="btn btn-out" href="#how">See how it works</a>
+    </div>
+    <div class="shot" data-r aria-label="Illustration of the ViroBuilder editor">
+      <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i><span>ViroBuilder — editor</span></div>
+      <div class="shot-body" aria-hidden="true">
+        <div class="shot-preview">
+          <div class="ph-eyebrow">Cold-pressed daily</div>
+          <div class="ph-h">The juice that <em>actually</em> tastes like fruit</div>
+          <div class="ph-p">No powders. No concentrates. Pressed fresh from whole fruit and vegetables.</div>
+          <span class="ph-btn">Explore the menu →</span>
+          <div class="ph-img"></div>
+        </div>
+        <div class="shot-chat">
+          <div class="ct"><svg width="16" height="18" viewBox="0 0 40 44" fill="none"><path d="M6 40L20 6L34 40" stroke="#818cf8" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="20" cy="5" r="3.6" fill="#22d3ee"/></svg> Design editor</div>
+          <div class="bubble sys">Tip: click any element to edit it, or describe a change.</div>
+          <div class="bubble me">make the headline bolder and swap the hero photo</div>
+          <div class="bubble ok">✓ Updated</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="trust">
+    <div class="wrap trust-in" data-r>
+      <span><span class="dotc" aria-hidden="true"></span> By <b>Viro Digital LLC</b>, Connecticut</span>
+      <span><span class="dotc" aria-hidden="true"></span> <b>U.S.-based</b> developer</span>
+      <span><span class="dotc" aria-hidden="true"></span> <b>GPLv2</b> — you own the code</span>
+      <span><span class="dotc" aria-hidden="true"></span> Your API keys stay in <b>your database</b></span>
+    </div>
+  </div>
+
+  <section class="blk wrap" id="features">
+    <div class="sec-head" data-r>
+      <span class="eyebrow">What it does</span>
+      <h2>Everything to ship a landing page, in one plugin.</h2>
+      <p>Each capability below is included in the free version. ViroBuilder uses your own Anthropic and Pexels API keys, stored only in your WordPress database.</p>
+    </div>
+    <div class="grid">
+      <div class="card" data-r><div class="ic" aria-hidden="true">✦</div><h3>AI-designed pages</h3><p>Describe your business in a sentence and ViroBuilder designs a complete page — layout, sections, and copy written for your offering. Different businesses get different layouts.</p></div>
+      <div class="card" data-r><div class="ic" aria-hidden="true">🖼</div><h3>Real photos, auto-placed</h3><p>Pexels integration finds and places relevant stock photography in the page. Click any image in the editor to swap it for another.</p></div>
+      <div class="card" data-r><div class="ic" aria-hidden="true">💬</div><h3>Chat &amp; click editor</h3><p>Refine the page in a visual editor: click any element to change its text, image, or link, or describe a larger change in plain language.</p></div>
+      <div class="card" data-r><div class="ic" aria-hidden="true">🔍</div><h3>SEO on every page</h3><p>Generated pages include meta tags, Open Graph and Twitter cards, and JSON-LD structured data, plus semantic headings.</p></div>
+      <div class="card" data-r><div class="ic" aria-hidden="true">📱</div><h3>Responsive output</h3><p>Pages are built with responsive layouts across desktop, tablet, and phone breakpoints, which you can preview in the editor.</p></div>
+      <div class="card" data-r><div class="ic" aria-hidden="true">📥</div><h3>Lead-capture forms</h3><p>Forms on your generated pages save submissions to your dashboard, so enquiries are collected in one place.</p></div>
+    </div>
+  </section>
+
+  <section class="blk wrap" id="how">
+    <div class="sec-head" data-r>
+      <span class="eyebrow">The method</span>
+      <h2>From a sentence to a page, in four steps.</h2>
+      <p>Generation typically takes a couple of minutes — the AI is designing the page from scratch, not assembling a template.</p>
+    </div>
+    <div class="steps">
+      <div class="step" data-r><div class="n">1</div><h3>Describe</h3><p>Enter your business name, what you offer, and an optional industry, audience, location, and brand color.</p></div>
+      <div class="step" data-r><div class="n">2</div><h3>Design</h3><p>ViroBuilder calls the Anthropic API to write the copy and design the layout, then places real photos from Pexels.</p></div>
+      <div class="step" data-r><div class="n">3</div><h3>Refine</h3><p>Open the visual editor. Click to edit text, images, and links, or chat to make broader changes.</p></div>
+      <div class="step" data-r><div class="n">4</div><h3>Publish</h3><p>Publish to your site. Pages are saved as standard WordPress content — clean, portable HTML you own.</p></div>
+    </div>
+  </section>
+
+  <section class="blk wrap" id="compare">
+    <div class="sec-head" data-r>
+      <span class="eyebrow">How it compares</span>
+      <h2>A designer, not a template kit.</h2>
+      <p>A general comparison of approaches. Your results depend on your inputs and the AI's output.</p>
+    </div>
+    <div class="cmp-scroll" data-r>
+      <table class="cmp">
+        <thead><tr><th scope="col">&nbsp;</th><th scope="col">Template builders</th><th scope="col">AI site builders</th><th scope="col" class="vb">ViroBuilder</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Approach</th><td>Pre-made templates</td><td>Template-based</td><td class="vb">Designed per business</td></tr>
+          <tr><th scope="row">First draft</th><td>You build it</td><td>Minutes</td><td class="vb">In minutes</td></tr>
+          <tr><th scope="row">Editing</th><td>Drag panels</td><td>Limited</td><td class="vb">Chat + click</td></tr>
+          <tr><th scope="row">Photos</th><td>You source</td><td>Stock library</td><td class="vb">Auto-placed (Pexels)</td></tr>
+          <tr><th scope="row">SEO</th><td>Add-on</td><td>Varies</td><td class="vb">Meta + schema included</td></tr>
+          <tr><th scope="row">The code</th><td>Plugin-bound</td><td>Hosted platform</td><td class="vb">Clean HTML, GPL</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="cmp-note">Categories are generalizations for orientation, not claims about any specific product.</p>
+  </section>
+
+  <section class="blk wrap" id="pricing">
+    <div class="sec-head" data-r>
+      <span class="eyebrow">Pricing</span>
+      <h2>Start free. Bring your own keys.</h2>
+      <p>The free version is the full product. Paid plans are planned to remove the API-key setup and add convenience features — details may change before launch.</p>
+    </div>
+    <div class="prices">
+      <div class="pcard hot" data-r>
+        <div class="pname">Free</div>
+        <div class="price">$0</div>
+        <div class="pdesc">The complete plugin, using your own Anthropic and Pexels API keys.</div>
+        <ul>
+          <li>AI-designed landing pages</li>
+          <li>Chat &amp; click visual editor</li>
+          <li>Real Pexels photos</li>
+          <li>SEO meta &amp; structured data</li>
+          <li>Lead-capture forms</li>
+          <li>Clean, GPL-licensed output</li>
+        </ul>
+        <a class="btn btn-fill" href="#get">Get the plugin</a>
+      </div>
+      <div class="pcard" data-r>
+        <span class="soon">Coming soon</span>
+        <div class="pname">Pro</div>
+        <div class="price">—</div>
+        <div class="pdesc">A simpler way to use ViroBuilder — no API keys to manage, plus more features. Pricing to be announced.</div>
+        <ul><li>Everything in Free</li><li>More features coming soon</li></ul>
+        <button class="btn btn-out" disabled>Coming soon</button>
+      </div>
+    </div>
+    <p class="planned-note">Pro is in development and not yet available for purchase. Join the list below and we'll let you know when it opens.</p>
+  </section>
+
+  <section class="blk wrap" id="faq">
+    <div class="sec-head" data-r><span class="eyebrow">Good to know</span><h2>Frequently asked questions.</h2></div>
+    <div data-r>
+      <details class="faq-item"><summary>Do I need to know how to code? <span class="pm" aria-hidden="true">+</span></summary><div class="ans">No. You describe your business in plain language and edit the result by clicking elements or chatting. The output is standard HTML if you ever want to work with it directly.</div></details>
+      <details class="faq-item"><summary>What do I need to run it? <span class="pm" aria-hidden="true">+</span></summary><div class="ans">WordPress 6.2 or newer, and your own API keys: an Anthropic (Claude) key for generation and a Pexels key for photos. You enter them in the plugin's settings, and they are stored only in your own WordPress database.</div></details>
+      <details class="faq-item"><summary>How long does a page take to generate? <span class="pm" aria-hidden="true">+</span></summary><div class="ans">Usually a couple of minutes. The AI designs the page from scratch — writing copy and building the layout — rather than loading a fixed template, so it takes a little longer than picking a theme.</div></details>
+      <details class="faq-item"><summary>What happens if I deactivate the plugin? <span class="pm" aria-hidden="true">+</span></summary><div class="ans">Your pages remain — they are saved as standard WordPress content. You would lose the AI chat editor for further automated edits, but the published pages stay on your site.</div></details>
+      <details class="faq-item"><summary>Who makes ViroBuilder? <span class="pm" aria-hidden="true">+</span></summary><div class="ans">ViroBuilder is built by <a href="https://virodigital.net" style="color:var(--indigo)">Viro Digital LLC</a>, a U.S.-based IT and WordPress development company in Connecticut, specializing in WordPress, accessibility, and secure hosting.</div></details>
+    </div>
+  </section>
+
+  <section class="blk wrap" id="get">
+    <div class="capture" data-r>
+      <span class="eyebrow">Get ViroBuilder</span>
+      <h2 style="margin-top:14px">Download ViroBuilder — free.</h2>
+      <p>Enter your email and we'll show your download link right away. You'll also be first to hear when it lands in the WordPress directory and when Pro opens.</p>
+      <form class="cform" id="cform" action="#" method="post" novalidate>
+        <label for="email" class="skip">Email address</label>
+        <input id="email" type="email" name="email" placeholder="you@business.com" required aria-label="Email address">
+        <button type="submit" class="btn btn-fill">Email me the download →</button>
+        <input type="hidden" name="_subject" value="New ViroBuilder waitlist signup">
+        <input type="hidden" name="source" value="virobuilder-landing">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+      </form>
+      <p class="micro">No spam. Unsubscribe anytime. Requires your own Anthropic &amp; Pexels API keys.</p>
+      <div class="ok" role="status">
+        <p style="margin-bottom:18px">✓ Thanks! Your download is ready.</p>
+        <a class="btn btn-fill" id="dl-btn" href="#" download>↓ Download ViroBuilder (.zip)</a>
+        <p class="micro" style="margin-top:14px">Install via <b>Plugins → Add New → Upload Plugin</b> in your WordPress admin.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a class="brand" href="#" aria-label="ViroBuilder home">
+          <svg viewBox="0 0 40 44" fill="none" aria-hidden="true"><path d="M6 40L20 6L34 40" stroke="#818cf8" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="20" cy="5" r="3.6" fill="#22d3ee"/></svg>
+          <span>ViroBuilder</span>
+        </a>
+        <p>An AI page designer for WordPress. A product of Viro Digital LLC — secure, U.S.-based WordPress development, accessibility, and managed hosting, based in Connecticut.</p>
+      </div>
+      <div class="foot-col">
+        <h4>ViroBuilder</h4>
+        <a href="#features">Features</a><a href="#how">How it works</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a>
+      </div>
+      <div class="foot-col">
+        <h4>Viro Digital</h4>
+        <a href="https://virodigital.net">virodigital.net</a>
+        <a href="https://www.linkedin.com/company/virodigitalct/">LinkedIn</a>
+        <a href="https://x.com/virodigitalct">X / Twitter</a>
+        <a href="mailto:support@virodigital.net">support@virodigital.net</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Viro Digital LLC. All rights reserved. Based in Connecticut, USA.</span>
+      <span>GPLv2 or later · WordPress is a trademark of the WordPress Foundation.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var els=document.querySelectorAll('[data-r]');
+    if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+    var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+    els.forEach(function(e){io.observe(e)});
+  })();
+
+  /* ============================================================
+     EMAIL → DOWNLOAD (Formspree).
+
+     1) DOWNLOAD_URL — your plugin zip in this same folder.
+     2) SIGNUP_ENDPOINT — your Formspree form URL:
+          https://formspree.io/f/XXXXXXXX
+        (Create a form at formspree.io, or reuse your existing
+         form ID. The page already sends Accept: application/json,
+         so Formspree returns JSON instead of redirecting.)
+
+     Leave SIGNUP_ENDPOINT empty for demo mode (reveals the
+     download but does NOT store the email).
+     ============================================================ */
+  var DOWNLOAD_URL    = 'virobuilder.zip';                    // <-- your plugin zip (same folder)
+  var SIGNUP_ENDPOINT = 'https://formspree.io/f/XXXXXXXX';    // <-- replace XXXXXXXX with your Formspree form ID
+
+  document.getElementById('cform').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var form  = e.currentTarget;
+    var email = form.querySelector('input[type="email"]').value.trim();
+    if (!email) return;
+    var btn  = form.querySelector('button');
+    var done = function(){
+      var dl = document.getElementById('dl-btn');
+      if (dl && DOWNLOAD_URL) dl.setAttribute('href', DOWNLOAD_URL);
+      document.querySelector('.capture').classList.add('done');
+    };
+    // Demo mode: endpoint not configured yet
+    if (!SIGNUP_ENDPOINT || SIGNUP_ENDPOINT.indexOf('XXXXXXXX') !== -1){
+      console.warn('[ViroBuilder] Set SIGNUP_ENDPOINT to your Formspree form URL to capture emails.');
+      done(); return;
+    }
+    btn.disabled = true; btn.textContent = 'Sending…';
+    fetch(SIGNUP_ENDPOINT, { method:'POST', body:new FormData(form), headers:{'Accept':'application/json'} })
+      .then(function(r){ if(!r.ok) throw new Error('failed'); return r; })
+      .then(done)
+      .catch(function(){ btn.disabled=false; btn.textContent='Try again →'; alert('Something went wrong — please try again.'); });
+  });
+</script>
+</body>
+</html>
