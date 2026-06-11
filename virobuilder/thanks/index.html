@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thanks for downloading ViroBuilder — by Viro Digital</title>
+  <meta name="description" content="Thank you for downloading ViroBuilder. Built by Viro Digital LLC — a U.S.-based IT and WordPress studio. Follow along as we build." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://virodigital.net/virobuilder/thanks/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Thanks for downloading ViroBuilder" />
+  <meta property="og:description" content="Built by Viro Digital LLC. Get set up in a few steps and follow along as we build." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://virodigital.net/virobuilder/thanks/" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --bg:#0b1020; --bg-2:#0e1428; --card:#111a31; --card-2:#16203b;
+      --line:rgba(255,255,255,0.08); --line-2:rgba(255,255,255,0.14);
+      --txt:#eaf0ff; --txt-2:#9fb0d4; --txt-3:#6b7da6;
+      --indigo:#818cf8; --indigo-2:#6366f1; --cyan:#22d3ee;
+      --display:'Sora',sans-serif; --body:'IBM Plex Sans',sans-serif;
+      --r:14px; --r-lg:22px;
+    }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--body);background:var(--bg);color:var(--txt);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+    .wrap{max-width:780px;margin:0 auto;padding:0 24px}
+
+    /* skip link */
+    .skip{position:absolute;left:-999px;top:0;background:var(--indigo-2);color:#fff;padding:10px 16px;border-radius:8px;z-index:100}
+    .skip:focus{left:16px;top:16px}
+
+    /* top bar */
+    .top{position:sticky;top:0;z-index:50;background:rgba(11,16,32,.82);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+    .top-inner{max-width:780px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:700;font-size:1.02rem;letter-spacing:-.01em}
+    .brand-mark{width:30px;height:30px;border-radius:8px;background:linear-gradient(135deg,var(--indigo-2),var(--cyan));display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:800;color:#fff;font-size:.9rem}
+    .top a.back{font-size:.86rem;color:var(--txt-2);transition:color .15s}
+    .top a.back:hover{color:var(--indigo)}
+
+    /* hero */
+    .hero{padding:72px 0 36px;text-align:center;position:relative}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(620px 320px at 50% -10%,rgba(99,102,241,.20),transparent 70%);pointer-events:none}
+    .badge{position:relative;display:inline-flex;align-items:center;gap:8px;padding:7px 15px;background:rgba(34,211,238,.08);border:1px solid rgba(34,211,238,.25);border-radius:100px;font-size:.78rem;font-weight:600;color:var(--cyan);letter-spacing:.04em;margin-bottom:22px}
+    .badge .dot{width:7px;height:7px;border-radius:50%;background:var(--cyan)}
+    .check{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--indigo-2),var(--cyan));display:flex;align-items:center;justify-content:center;margin:0 auto 22px;box-shadow:0 12px 40px rgba(99,102,241,.35)}
+    h1{font-family:var(--display);font-weight:800;font-size:clamp(2rem,5.4vw,3rem);line-height:1.08;letter-spacing:-.03em;margin-bottom:14px}
+    .hero p{color:var(--txt-2);font-size:1.06rem;max-width:520px;margin:0 auto}
+
+    /* next-steps */
+    section{padding:34px 0}
+    .h2{font-family:var(--display);font-weight:700;font-size:1.35rem;letter-spacing:-.02em;margin-bottom:6px}
+    .sub{color:var(--txt-2);font-size:.95rem;margin-bottom:22px}
+    .steps{display:grid;gap:12px}
+    .step{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px 20px}
+    .step-n{flex-shrink:0;width:30px;height:30px;border-radius:8px;background:rgba(129,140,248,.14);border:1px solid rgba(129,140,248,.28);color:var(--indigo);font-family:var(--display);font-weight:700;font-size:.9rem;display:flex;align-items:center;justify-content:center}
+    .step h3{font-family:var(--display);font-size:1rem;font-weight:600;margin-bottom:3px}
+    .step p{color:var(--txt-2);font-size:.9rem;line-height:1.55}
+    .step a{color:var(--indigo);border-bottom:1px solid rgba(129,140,248,.4)}
+    .step code{background:rgba(255,255,255,.06);border:1px solid var(--line);padding:1px 7px;border-radius:6px;font-size:.84em;color:var(--cyan)}
+
+    .redl{margin-top:18px;font-size:.86rem;color:var(--txt-3);text-align:center}
+    .redl a{color:var(--indigo)}
+
+    /* who made it */
+    .maker{background:linear-gradient(160deg,var(--card-2),var(--card));border:1px solid var(--line);border-radius:var(--r-lg);padding:30px}
+    .maker-top{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+    .maker-logo{width:46px;height:46px;border-radius:11px;background:linear-gradient(135deg,#0066FF,#00C2FF);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:800;color:#fff;font-size:1.15rem;flex-shrink:0}
+    .maker-top h3{font-family:var(--display);font-weight:700;font-size:1.18rem;letter-spacing:-.01em}
+    .maker-top .where{color:var(--txt-3);font-size:.84rem;margin-top:2px}
+    .maker p{color:var(--txt-2);font-size:.95rem;line-height:1.7;margin-bottom:12px}
+    .maker .visit{display:inline-block;margin-top:6px;font-size:.9rem;color:var(--indigo);border-bottom:1px solid rgba(129,140,248,.4)}
+
+    /* follow */
+    .follow{text-align:center}
+    .follow .note{color:var(--txt-3);font-size:.82rem;margin-top:14px}
+    .socials{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:6px}
+    .social{display:inline-flex;align-items:center;gap:9px;padding:11px 18px;background:var(--card);border:1px solid var(--line);border-radius:11px;font-size:.9rem;font-weight:500;color:var(--txt);transition:all .16s}
+    .social:hover{border-color:var(--indigo);color:var(--indigo);transform:translateY(-2px)}
+    .social svg{width:17px;height:17px}
+
+    /* footer */
+    footer{border-top:1px solid var(--line);margin-top:30px;padding:30px 0 50px;text-align:center}
+    footer p{color:var(--txt-3);font-size:.82rem;line-height:1.7}
+    footer a{color:var(--txt-2)}
+    footer a:hover{color:var(--indigo)}
+
+    :focus-visible{outline:2px solid var(--indigo);outline-offset:3px;border-radius:4px}
+    @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip">Skip to content</a>
+
+  <div class="top">
+    <div class="top-inner">
+      <a href="/virobuilder/" class="brand" aria-label="ViroBuilder home">
+        <span class="brand-mark">V</span> ViroBuilder
+      </a>
+      <a href="/virobuilder/" class="back">← Back to ViroBuilder</a>
+    </div>
+  </div>
+
+  <main id="main">
+    <!-- HERO -->
+    <header class="hero">
+      <div class="wrap">
+        <div class="check" aria-hidden="true">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </div>
+        <div class="badge"><span class="dot" aria-hidden="true"></span> Download started</div>
+        <h1>Thanks for downloading ViroBuilder</h1>
+        <p>Your download should begin automatically. If it didn't, <a href="/virobuilder/virobuilder.zip" style="color:var(--indigo);border-bottom:1px solid rgba(129,140,248,.4)">click here to download it</a>.</p>
+      </div>
+    </header>
+
+    <!-- NEXT STEPS -->
+    <section aria-labelledby="setup-h">
+      <div class="wrap">
+        <h2 class="h2" id="setup-h">Get set up in a few steps</h2>
+        <p class="sub">ViroBuilder is a WordPress plugin. Here's how to install and start designing.</p>
+        <div class="steps">
+          <div class="step">
+            <div class="step-n">1</div>
+            <div><h3>Install the plugin</h3><p>In WordPress, go to <strong>Plugins → Add New → Upload Plugin</strong>, choose the <code>virobuilder.zip</code> you just downloaded, then activate it.</p></div>
+          </div>
+          <div class="step">
+            <div class="step-n">2</div>
+            <div><h3>Add your API keys</h3><p>Open <strong>ViroBuilder → AI Settings</strong> and add your Anthropic key (for generation) and Pexels key (for photos). Both have free tiers — get them at <a href="https://console.anthropic.com/settings/keys" target="_blank" rel="noopener noreferrer">console.anthropic.com</a> and <a href="https://www.pexels.com/api/" target="_blank" rel="noopener noreferrer">pexels.com/api</a>.</p></div>
+          </div>
+          <div class="step">
+            <div class="step-n">3</div>
+            <div><h3>Describe your business</h3><p>Go to <strong>ViroBuilder → Create New Page</strong>, describe your business in a sentence or two, and let the AI design your page.</p></div>
+          </div>
+          <div class="step">
+            <div class="step-n">4</div>
+            <div><h3>Refine by chat &amp; click</h3><p>Open the editor to click any element and edit it, or describe changes in plain language. Publish when you're happy.</p></div>
+          </div>
+        </div>
+        <p class="redl">Run into trouble? Email <a href="mailto:support@virodigital.net">support@virodigital.net</a>.</p>
+      </div>
+    </section>
+
+    <!-- WHO MADE IT -->
+    <section aria-labelledby="maker-h">
+      <div class="wrap">
+        <div class="maker">
+          <div class="maker-top">
+            <div class="maker-logo" aria-hidden="true">V</div>
+            <div>
+              <h3 id="maker-h">Built by Viro Digital LLC</h3>
+              <div class="where">Connecticut, USA · U.S.-based</div>
+            </div>
+          </div>
+          <p>ViroBuilder is made by Viro Digital, a U.S.-based studio working in WordPress development, Section 508 accessibility, and managed hosting. We built ViroBuilder because designing a landing page from scratch is slow, and template builders make everything look the same — so we taught an AI to design the page instead of assembling one.</p>
+          <p>It's an independent product we maintain and keep improving. Your feedback genuinely shapes where it goes next.</p>
+          <a class="visit" href="https://virodigital.net" target="_blank" rel="noopener noreferrer">Visit virodigital.net →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOLLOW -->
+    <section class="follow" aria-labelledby="follow-h">
+      <div class="wrap">
+        <h2 class="h2" id="follow-h">Follow along as we build</h2>
+        <p class="sub">ViroBuilder is early and moving fast. Follow Viro Digital for updates, new features, and what's next.</p>
+        <div class="socials">
+          <a class="social" href="https://www.linkedin.com/company/virodigitalct/" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+          <a class="social" href="https://x.com/virodigitalct" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            X (Twitter)
+          </a>
+          <a class="social" href="https://linktr.ee/virodigital" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.953 15.066c-.08.163-.08.324-.08.486 0 1.296 1.054 2.35 2.35 2.35s2.35-1.054 2.35-2.35v-3.893l3.39 1.948c.405.243.891.243 1.296 0 .405-.243.648-.648.648-1.134s-.243-.891-.648-1.134l-3.39-1.948 3.39-1.948c.405-.243.648-.648.648-1.134s-.243-.891-.648-1.134a1.296 1.296 0 0 0-1.296 0l-3.39 1.948V3.231C12.573 1.935 11.519.881 10.223.881S7.873 1.935 7.873 3.231v3.893L4.483 5.176a1.296 1.296 0 0 0-1.296 0c-.405.243-.648.648-.648 1.134s.243.891.648 1.134l3.39 1.948-3.39 1.948c-.405.243-.648.648-.648 1.134s.243.891.648 1.134c.405.243.891.243 1.296 0l3.39-1.948.08 3.406z"/></svg>
+            Linktree
+          </a>
+        </div>
+        <p class="note">These link to Viro Digital, the studio behind ViroBuilder.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>© <span id="yr">2026</span> Viro Digital LLC · Connecticut, USA<br>
+      <a href="/virobuilder/">ViroBuilder</a> · <a href="https://virodigital.net" target="_blank" rel="noopener noreferrer">virodigital.net</a> · <a href="mailto:support@virodigital.net">support@virodigital.net</a></p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+    // Auto-start the download once on arrival (the page is the destination after the button click).
+    (function(){
+      try{
+        var params = new URLSearchParams(window.location.search);
+        if (params.get('dl') === '1') {
+          var a = document.createElement('a');
+          a.href = '/virobuilder/virobuilder.zip';
+          a.download = '';
+          document.body.appendChild(a);
+          a.click();
+          a.remove();
+        }
+      }catch(e){}
+    })();
+  </script>
+</body>
+</html>
