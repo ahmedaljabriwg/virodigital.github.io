@@ -346,7 +346,7 @@
       <p class="micro">No spam. Unsubscribe anytime. Requires your own Anthropic &amp; Pexels API keys.</p>
       <div class="ok" role="status">
         <p style="margin-bottom:18px">✓ Thanks! Your download is ready.</p>
-        <a class="btn btn-fill" id="dl-btn" href="#" download>↓ Download ViroBuilder (.zip)</a>
+        <a class="btn btn-fill" id="dl-btn" href="thanks/?dl=1">↓ Get ViroBuilder (.zip)</a>
         <p class="micro" style="margin-top:14px">Install via <b>Plugins → Add New → Upload Plugin</b> in your WordPress admin.</p>
       </div>
     </div>
@@ -404,29 +404,25 @@
      download but does NOT store the email).
      ============================================================ */
   var DOWNLOAD_URL    = 'virobuilder.zip';                    // <-- your plugin zip (same folder)
+  var THANKS_URL      = 'thanks/?dl=1';                       // post-download page (auto-starts the download)
   var SIGNUP_ENDPOINT = 'https://formspree.io/f/mbdeywak';    // ViroBuilder Waitlist form
 
   document.getElementById('cform').addEventListener('submit', function (e) {
     e.preventDefault();
     var form  = e.currentTarget;
     var email = form.querySelector('input[type="email"]').value.trim();
-    if (!email) return;
-    var btn  = form.querySelector('button');
-    var done = function(){
-      var dl = document.getElementById('dl-btn');
-      if (dl && DOWNLOAD_URL) dl.setAttribute('href', DOWNLOAD_URL);
-      document.querySelector('.capture').classList.add('done');
-    };
-    // Demo mode: endpoint not configured yet
-    if (!SIGNUP_ENDPOINT || SIGNUP_ENDPOINT.indexOf('XXXXXXXX') !== -1){
-      console.warn('[ViroBuilder] Set SIGNUP_ENDPOINT to your Formspree form URL to capture emails.');
-      done(); return;
+    if (!email || email.indexOf('@') === -1) return;
+
+    // Reveal the download right away — never block it on the network call
+    var dl = document.getElementById('dl-btn');
+    if (dl) dl.setAttribute('href', THANKS_URL);
+    document.querySelector('.capture').classList.add('done');
+
+    // Capture the email in the background (best-effort; won't affect the download)
+    if (SIGNUP_ENDPOINT && SIGNUP_ENDPOINT.indexOf('XXXXXXXX') === -1) {
+      fetch(SIGNUP_ENDPOINT, { method:'POST', body:new FormData(form), headers:{'Accept':'application/json'} })
+        .catch(function(){ /* ignore — user already has the download */ });
     }
-    btn.disabled = true; btn.textContent = 'Sending…';
-    fetch(SIGNUP_ENDPOINT, { method:'POST', body:new FormData(form), headers:{'Accept':'application/json'} })
-      .then(function(r){ if(!r.ok) throw new Error('failed'); return r; })
-      .then(done)
-      .catch(function(){ btn.disabled=false; btn.textContent='Try again →'; alert('Something went wrong — please try again.'); });
   });
 </script>
 </body>
