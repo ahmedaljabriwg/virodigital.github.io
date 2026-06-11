@@ -1,29 +1,28 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
-<head>
+<html lang="en" data-theme="dark"><head>
   <!-- ============================================================
        VIRO DIGITAL LLC — Corporate Website
        IT Solutions, WordPress Development & Secure Hosting
        Connecticut-Based | Serving Clients Nationwide
        ============================================================ -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Viro Digital LLC provides secure, U.S.-based IT solutions specializing in WordPress development, Section 508 compliance, and managed hosting for small businesses, corporations, and civil government agencies." />
-  <meta name="keywords" content="IT solutions, WordPress development, Section 508 compliance, managed hosting, Connecticut, secure hosting, web development, government IT" />
-  <meta name="author" content="Viro Digital LLC" />
-  <meta property="og:title" content="Viro Digital — IT Solutions, WordPress Development & Secure Hosting" />
-  <meta property="og:description" content="Secure, U.S.-based IT solutions for businesses and government agencies. Connecticut-based, serving clients nationwide." />
-  <meta property="og:type" content="website" />
-  <meta name="robots" content="index, follow" />
-  <title>Viro Digital — IT Solutions,  & Secure Hosting</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Viro Digital LLC provides secure, U.S.-based IT solutions specializing in WordPress development, Section 508 compliance, and managed hosting for small businesses, corporations, and civil government agencies.">
+  <meta name="keywords" content="IT solutions, WordPress development, Section 508 compliance, managed hosting, Connecticut, secure hosting, web development, government IT">
+  <meta name="author" content="Viro Digital LLC">
+  <meta property="og:title" content="Viro Digital — IT Solutions, WordPress Development &amp; Secure Hosting">
+  <meta property="og:description" content="Secure, U.S.-based IT solutions for businesses and government agencies. Connecticut-based, serving clients nationwide.">
+  <meta property="og:type" content="website">
+  <meta name="robots" content="index, follow">
+  <title>Viro Digital — IT Solutions,  &amp; Secure Hosting</title>
 
   <!-- REQ 1: Favicon -->
-  <link rel="icon" type="image/png" href="media/viro-favicon.png" />
+  <link rel="icon" type="image/png" href="media/viro-favicon.png">
 
   <!-- Google Fonts: Syne (display) + DM Sans (body) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&amp;family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&amp;display=swap" rel="stylesheet">
 
   <!-- Lucide Icons via CDN -->
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
@@ -1854,43 +1853,37 @@
        NAVIGATION
        ============================================================ -->
   <header role="banner">
-    <nav id="navbar" aria-label="Main navigation">
+    <nav id="navbar" aria-label="Main navigation" class="scrolled">
       <div class="nav-inner">
         <!-- REQ 2: Responsive logo image (white for dark theme, blue for light) -->
         <a href="#hero" class="nav-logo" aria-label="Viro Digital — Home">
-          <img
-            src="media/viro-logo-white.png"
-            alt="Viro Digital"
-            class="logo-image"
-            id="nav-logo-img"
-            width="160"
-            height="40"
-          />
+          <img src="media/viro-logo-white.png" alt="Viro Digital" class="logo-image" id="nav-logo-img" width="160" height="40">
         </a>
 
         <!-- Desktop links -->
         <ul class="nav-links" role="list">
           <li><a href="#services">Services</a></li>
+          <li><a href="#product">ViroBuilder</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#process">Process</a></li>
           <li><a href="#portfolio">Industries</a></li>
           <li><a href="#pricing">Pricing</a></li>
           <li><a href="#faq">FAQ</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#contact" style="position: relative;">Contact</a></li>
         </ul>
 
         <!-- Actions -->
         <div class="nav-actions">
           <!-- Client Login icon button (link CMS later) -->
-          <a href="#" id="client-login-btn" class="theme-toggle" aria-label="Client Login" title="Client Login" style="text-decoration:none;">
-            <i data-lucide="user" width="16" height="16"></i>
+          <a href="#" id="client-login-btn" class="theme-toggle" aria-label="Client Login" title="Client Login" style="text-decoration: none; position: relative;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
           </a>
           <!-- Theme toggle -->
-          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode">
-            <i data-lucide="sun" width="16" height="16" id="theme-icon-sun" style="display:none"></i>
-            <i data-lucide="moon" width="16" height="16" id="theme-icon-moon"></i>
+          <button class="theme-toggle" id="theme-toggle" aria-label="Switch to light mode" style="position: relative;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="sun" aria-hidden="true" id="theme-icon-sun" style="display: block;" class="lucide lucide-sun"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="moon" aria-hidden="true" id="theme-icon-moon" class="lucide lucide-moon" style="display: none;"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"></path></svg>
           </button>
-          <a href="https://linktr.ee/virodigital" target="_blank" rel="noopener noreferrer" class="btn-primary" style="display:none" id="nav-cta">Get a Quote</a>
+          <a href="#contact" target="_blank" rel="noopener noreferrer" class="btn-primary" style="display: inline-flex; position: relative;" id="nav-cta">Get a Quote </a>
           <!-- Hamburger -->
           <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
             <span></span><span></span><span></span>
@@ -1902,6 +1895,7 @@
     <!-- Mobile drawer -->
     <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
       <a href="#services" class="mobile-nav-link">Services</a>
+      <a href="#product" class="mobile-nav-link">ViroBuilder</a>
       <a href="#about" class="mobile-nav-link">About</a>
       <a href="#process" class="mobile-nav-link">Process</a>
       <a href="#portfolio" class="mobile-nav-link">Industries</a>
@@ -1918,32 +1912,32 @@
          ============================================================ -->
     <section id="hero" aria-label="Hero">
       <!-- Particle canvas background -->
-      <canvas id="particle-canvas" aria-hidden="true"></canvas>
+      <canvas id="particle-canvas" aria-hidden="true" width="1301" height="765"></canvas>
       <!-- Glow overlay -->
       <div class="hero-glow" aria-hidden="true"></div>
       <!-- Parallax shapes -->
-      <div class="hero-shape hero-shape-1" data-parallax="0.3" aria-hidden="true"></div>
-      <div class="hero-shape hero-shape-2" data-parallax="0.5" aria-hidden="true"></div>
+      <div class="hero-shape hero-shape-1" data-parallax="0.3" aria-hidden="true" style="transform: translateY(3715.47px);"></div>
+      <div class="hero-shape hero-shape-2" data-parallax="0.5" aria-hidden="true" style="transform: translateY(6192.44px);"></div>
 
       <div class="hero-content">
-        <div class="hero-badge fade-in">
+        <div class="hero-badge fade-in visible">
           <div class="hero-badge-dot" aria-hidden="true"></div>
           U.S.-Based &amp; Section 508 Compliant
         </div>
 
-        <h1 class="hero-title fade-in stagger-1">
+        <h1 class="hero-title fade-in stagger-1 visible">
           Secure IT<br>
           <span class="text-gradient">Solutions</span><br>
           Built to Last
         </h1>
 
-        <p class="hero-sub fade-in stagger-2">
+        <p class="hero-sub fade-in stagger-2 visible">
           Viro Digital LLC delivers enterprise-grade WordPress development, managed cloud hosting, and government-compliant IT services for businesses and agencies across the nation — anchored in Connecticut, trusted nationwide.
         </p>
 
-        <div class="hero-actions fade-in stagger-3">
-          <a href="https://linktr.ee/virodigital" target="_blank" rel="noopener noreferrer" class="btn-primary btn-lg">Get a Free Consultation</a>
-          <a href="#services" class="btn-secondary btn-lg">Explore Services</a>
+        <div class="hero-actions fade-in stagger-3 visible">
+          <a href="#contact" target="_blank" rel="noopener noreferrer" class="btn-primary btn-lg" style="position: relative;">Get a Free Consultation </a>
+          <a href="#services" class="btn-secondary btn-lg" style="position: relative;">Explore Services</a>
         </div>
 
       </div>
@@ -1958,18 +1952,18 @@
       <div class="bg-grid" aria-hidden="true"></div>
       <div class="container">
         <div class="section-header">
-          <p class="section-label fade-in">What We Do</p>
-          <h2 class="display-lg fade-in stagger-1" id="services-heading">
+          <p class="section-label fade-in visible">What We Do</p>
+          <h2 class="display-lg fade-in stagger-1 visible" id="services-heading">
             End-to-End IT Services<br>You Can Rely On
           </h2>
-          <p class="fade-in stagger-2">From initial strategy to ongoing support, Viro Digital provides comprehensive digital services tailored to your organization's unique needs and compliance requirements.</p>
+          <p class="fade-in stagger-2 visible">From initial strategy to ongoing support, Viro Digital provides comprehensive digital services tailored to your organization's unique needs and compliance requirements.</p>
         </div>
 
         <div class="grid-3" role="list">
           <!-- Service 1 -->
-          <article class="service-card fade-in stagger-1" role="listitem">
+          <article class="service-card fade-in stagger-1 visible" role="listitem">
             <div class="service-icon" aria-hidden="true">
-              <i data-lucide="code-2" width="24" height="24"></i>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="code-2" aria-hidden="true" class="lucide lucide-code-2"><path d="m18 16 4-4-4-4"></path><path d="m6 8-4 4 4 4"></path><path d="m14.5 4-5 16"></path></svg>
             </div>
             <h3>WordPress Development</h3>
             <p>Custom WordPress solutions built from the ground up — from theme development and plugin engineering to full-scale enterprise builds and API integrations.</p>
@@ -1982,9 +1976,9 @@
           </article>
 
           <!-- Service 2 -->
-          <article class="service-card fade-in stagger-2" role="listitem">
+          <article class="service-card fade-in stagger-2 visible" role="listitem">
             <div class="service-icon" aria-hidden="true">
-              <i data-lucide="shield-check" width="24" height="24"></i>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="shield-check" aria-hidden="true" class="lucide lucide-shield-check"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>
             </div>
             <h3>Section 508 Compliance</h3>
             <p>We ensure your digital presence meets WCAG 2.1 AA and Section 508 federal accessibility standards. Our audits, remediation services, and compliant builds help government agencies and contractors meet legal obligations.</p>
@@ -1997,9 +1991,9 @@
           </article>
 
           <!-- Service 3 -->
-          <article class="service-card fade-in stagger-3" role="listitem">
+          <article class="service-card fade-in stagger-3 visible" role="listitem">
             <div class="service-icon" aria-hidden="true">
-              <i data-lucide="server" width="24" height="24"></i>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="server" aria-hidden="true" class="lucide lucide-server"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"></rect><rect width="20" height="8" x="2" y="14" rx="2" ry="2"></rect><line x1="6" x2="6.01" y1="6" y2="6"></line><line x1="6" x2="6.01" y1="18" y2="18"></line></svg>
             </div>
             <h3>Managed Secure Hosting</h3>
             <p>U.S.-based managed hosting with enterprise-level security, daily backups, SSL/TLS encryption, DDoS protection, and 24/7 uptime monitoring. Never worry about server management again.</p>
@@ -2012,11 +2006,11 @@
           </article>
 
           <!-- Service 4 -->
-          <article class="service-card fade-in stagger-1" role="listitem">
+          <article class="service-card fade-in stagger-1 visible" role="listitem">
             <div class="service-icon" aria-hidden="true">
-              <i data-lucide="lock" width="24" height="24"></i>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="lock" aria-hidden="true" class="lucide lucide-lock"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
             </div>
-            <h3>Cybersecurity & IT Consulting</h3>
+            <h3>Cybersecurity &amp; IT Consulting</h3>
             <p>Comprehensive security assessments, vulnerability scanning, penetration testing scoping, and strategic IT roadmap planning to keep your organization protected and forward-thinking.</p>
             <div class="service-tags" aria-label="Related technologies">
               <span class="service-tag">Security Audits</span>
@@ -2026,9 +2020,9 @@
           </article>
 
           <!-- Service 5 -->
-          <article class="service-card fade-in stagger-2" role="listitem">
+          <article class="service-card fade-in stagger-2 visible" role="listitem">
             <div class="service-icon" aria-hidden="true">
-              <i data-lucide="globe" width="24" height="24"></i>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="globe" aria-hidden="true" class="lucide lucide-globe"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
             </div>
             <h3>Government Digital Services</h3>
             <p>Specialized IT support for civil government agencies — compliant CMS implementations, citizen-facing portals, digital form processing, and secure document management systems.</p>
@@ -2040,11 +2034,11 @@
           </article>
 
           <!-- Service 6 -->
-          <article class="service-card fade-in stagger-3" role="listitem">
+          <article class="service-card fade-in stagger-3 visible" role="listitem">
             <div class="service-icon" aria-hidden="true">
-              <i data-lucide="wrench" width="24" height="24"></i>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="wrench" aria-hidden="true" class="lucide lucide-wrench"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z"></path></svg>
             </div>
-            <h3>Ongoing Support & Maintenance</h3>
+            <h3>Ongoing Support &amp; Maintenance</h3>
             <p>Proactive WordPress maintenance plans covering core/plugin updates, performance optimization, security patching, content updates, and dedicated technical support with defined response SLAs.</p>
             <div class="service-tags" aria-label="Related technologies">
               <span class="service-tag">Monthly Plans</span>
@@ -2056,6 +2050,96 @@
       </div>
     </section>
 
+
+    <!-- ============================================================
+         FLAGSHIP PRODUCT — ViroBuilder
+         ============================================================ -->
+    <section id="product" class="section" aria-labelledby="product-heading">
+      <div class="bg-grid" aria-hidden="true"></div>
+      <div class="vb-band-glow" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-header">
+          <p class="section-label fade-in visible">Flagship Product</p>
+          <h2 class="display-lg fade-in stagger-1 visible" id="product-heading">Meet <span class="text-gradient">ViroBuilder</span></h2>
+          <p class="fade-in stagger-2 visible">Our own WordPress plugin. It designs a complete landing page from a short description — then lets you refine every detail by chat and click.</p>
+        </div>
+
+        <div class="vb-feature fade-in stagger-1 visible">
+          <!-- Left: positioning + benefits -->
+          <div class="vb-copy">
+            <span class="vb-badge"><span class="vb-badge-dot" aria-hidden="true"></span> WordPress Plugin · Free to start</span>
+            <h3 class="vb-title">Not a page builder.<br><span class="text-gradient">A page designer.</span></h3>
+            <p class="vb-desc">Describe your business and ViroBuilder writes the copy, designs a bespoke layout, places real photos, and adds SEO. Then you adjust anything in a visual chat-and-click editor — no templates, no code.</p>
+            <ul class="vb-points" role="list">
+              <li role="listitem"><span class="vb-tick" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" aria-hidden="true" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"></path></svg></span> AI-designed pages, unique to each business</li>
+              <li role="listitem"><span class="vb-tick" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" aria-hidden="true" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"></path></svg></span> Real stock photos placed automatically</li>
+              <li role="listitem"><span class="vb-tick" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" aria-hidden="true" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"></path></svg></span> Edit by chat &amp; click — nothing to learn</li>
+              <li role="listitem"><span class="vb-tick" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" aria-hidden="true" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"></path></svg></span> Clean, standards-based output you own</li>
+            </ul>
+            <div class="vb-actions">
+              <a href="/virobuilder/" class="btn-primary btn-lg" style="position: relative;">Explore ViroBuilder →</a>
+              <a href="/virobuilder/" class="btn-secondary btn-lg" style="position: relative;">Get it free</a>
+            </div>
+          </div>
+
+          <!-- Right: editor mock -->
+          <div class="vb-visual" aria-hidden="true">
+            <div class="vb-frame">
+              <div class="vb-bar"><i></i><i></i><i></i><span>ViroBuilder — editor</span></div>
+              <div class="vb-body">
+                <div class="vb-preview">
+                  <div class="vb-eyebrow">Cold-pressed daily</div>
+                  <div class="vb-h">The juice that <em>actually</em> tastes like fruit</div>
+                  <div class="vb-p">No powders. No concentrates. Pressed fresh from whole fruit, every morning.</div>
+                  <span class="vb-cta">Explore the menu →</span>
+                </div>
+                <div class="vb-chat">
+                  <div class="vb-chat-title">Design editor</div>
+                  <div class="vb-bubble vb-sys">Click any element to edit, or describe a change.</div>
+                  <div class="vb-bubble vb-me">make the headline bolder</div>
+                  <div class="vb-bubble vb-ok">✓ Updated</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      /* ===== Flagship product band (scoped) ===== */
+      #product { position: relative; background: var(--bg-surface); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); overflow: hidden; }
+      #product .vb-band-glow { position:absolute; inset:0; background: radial-gradient(680px 340px at 78% 0%, rgba(0,102,255,0.10), transparent 70%); pointer-events:none; }
+      .vb-feature { position:relative; display:grid; grid-template-columns: 1fr 1fr; gap: var(--space-xxl); align-items:center; }
+      .vb-badge { display:inline-flex; align-items:center; gap:8px; padding:6px 14px; background:rgba(0,102,255,0.10); border:1px solid rgba(0,102,255,0.25); border-radius:100px; font-size:0.78rem; font-weight:600; color:var(--brand-secondary); margin-bottom:var(--space-md); letter-spacing:0.04em; }
+      .vb-badge-dot { width:6px; height:6px; border-radius:50%; background:var(--brand-accent); }
+      .vb-title { font-family:var(--font-display); font-size:clamp(1.9rem,3.6vw,2.7rem); font-weight:800; line-height:1.07; letter-spacing:-0.025em; margin-bottom:var(--space-md); }
+      .vb-desc { color:var(--text-secondary); font-size:1rem; line-height:1.7; margin-bottom:var(--space-md); max-width:48ch; }
+      .vb-points { display:flex; flex-direction:column; gap:12px; margin-bottom:var(--space-lg); }
+      .vb-points li { display:flex; align-items:center; gap:12px; font-size:0.92rem; color:var(--text-secondary); }
+      .vb-tick { flex-shrink:0; width:22px; height:22px; border-radius:50%; background:linear-gradient(135deg,var(--brand-primary),var(--brand-secondary)); display:flex; align-items:center; justify-content:center; color:#fff; }
+      .vb-actions { display:flex; gap:var(--space-sm); flex-wrap:wrap; }
+      .vb-visual { position:relative; }
+      .vb-frame { border:1px solid var(--border-default); border-radius:var(--radius-lg); overflow:hidden; background:var(--bg-card); box-shadow:var(--shadow-lg), 0 0 0 1px rgba(0,102,255,0.12); }
+      .vb-bar { display:flex; align-items:center; gap:6px; padding:11px 14px; background:var(--bg-elevated); border-bottom:1px solid var(--border-subtle); }
+      .vb-bar i { width:10px; height:10px; border-radius:50%; background:var(--border-default); display:block; }
+      .vb-bar span { margin-left:10px; font-size:0.72rem; color:var(--text-muted); }
+      .vb-body { display:grid; grid-template-columns:1.5fr 1fr; min-height:260px; }
+      .vb-preview { padding:var(--space-md); background:linear-gradient(160deg,var(--bg-elevated),var(--bg-card)); }
+      .vb-eyebrow { font-size:0.6rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--brand-secondary); margin-bottom:10px; }
+      .vb-h { font-family:var(--font-display); font-weight:800; font-size:1.3rem; line-height:1.12; margin-bottom:10px; color:var(--text-primary); }
+      .vb-h em { font-style:normal; color:var(--brand-primary); }
+      .vb-p { color:var(--text-secondary); font-size:0.78rem; margin-bottom:var(--space-md); max-width:32ch; }
+      .vb-cta { display:inline-block; background:linear-gradient(135deg,var(--brand-primary),var(--brand-secondary)); color:#fff; font-size:0.72rem; font-weight:600; padding:8px 14px; border-radius:var(--radius-sm); }
+      .vb-chat { border-left:1px solid var(--border-subtle); background:var(--bg-surface); padding:var(--space-sm); display:flex; flex-direction:column; gap:8px; }
+      .vb-chat-title { font-family:var(--font-display); font-weight:700; font-size:0.78rem; margin-bottom:4px; color:var(--text-primary); }
+      .vb-bubble { font-size:0.72rem; padding:8px 10px; border-radius:9px; max-width:96%; line-height:1.4; }
+      .vb-sys { background:var(--bg-card); border:1px solid var(--border-subtle); color:var(--text-secondary); align-self:flex-start; }
+      .vb-me { background:linear-gradient(135deg,var(--brand-primary),var(--brand-secondary)); color:#fff; align-self:flex-end; }
+      .vb-ok { color:var(--brand-accent); font-size:0.7rem; align-self:flex-start; }
+      @media (max-width:1024px){ .vb-feature{ grid-template-columns:1fr; gap:var(--space-xl); } }
+      @media (max-width:480px){ .vb-actions{ flex-direction:column; } .vb-actions .btn-primary,.vb-actions .btn-secondary{ width:100%; text-align:center; } .vb-body{ grid-template-columns:1fr; } .vb-chat{ border-left:none; border-top:1px solid var(--border-subtle); } }
+    </style>
     <!-- ============================================================
          TECHNOLOGY WE USE — 20 logos, original colors, 2x size
          ============================================================ -->
@@ -2066,123 +2150,103 @@
         <div class="tech-grid">
 
           <!-- 1. Amazon Web Services -->
-          <div class="tech-item fade-in stagger-1">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg"
-              alt="Amazon Web Services" loading="lazy" class="tech-logo" />
+          <div class="tech-item fade-in stagger-1 visible">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="Amazon Web Services" loading="lazy" class="tech-logo">
           </div>
 
           <!-- 2. Microsoft Azure -->
-          <div class="tech-item fade-in stagger-2">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg"
-              alt="Microsoft Azure" loading="lazy" class="tech-logo" />
+          <div class="tech-item fade-in stagger-2 visible">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg" alt="Microsoft Azure" loading="lazy" class="tech-logo">
           </div>
 
           <!-- 3. Google Cloud -->
-          <div class="tech-item fade-in stagger-3">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/0/01/Google-cloud-platform.svg"
-              alt="Google Cloud" loading="lazy" class="tech-logo" />
+          <div class="tech-item fade-in stagger-3 visible">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/01/Google-cloud-platform.svg" alt="Google Cloud" loading="lazy" class="tech-logo">
           </div>
 
           <!-- 4. WordPress — wordmark is dark text, invert in dark mode -->
-          <div class="tech-item fade-in stagger-4">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/WordPress_logo.svg"
-              alt="WordPress" loading="lazy" class="tech-logo tech-logo-dark-only" />
+          <div class="tech-item fade-in stagger-4 visible">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/WordPress_logo.svg" alt="WordPress" loading="lazy" class="tech-logo tech-logo-dark-only">
           </div>
 
           <!-- 5. cPanel — devicons reliable source -->
-          <div class="tech-item fade-in stagger-1">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cpanel/cpanel-original.svg"
-              alt="cPanel" loading="lazy" class="tech-logo" />
+          <div class="tech-item fade-in stagger-1 visible">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cpanel/cpanel-original.svg" alt="cPanel" loading="lazy" class="tech-logo">
           </div>
 
           <!-- 6. HTML5 -->
-          <div class="tech-item fade-in stagger-2">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
-              alt="HTML5" loading="lazy" class="tech-logo" />
+          <div class="tech-item fade-in stagger-2 visible">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5" loading="lazy" class="tech-logo">
           </div>
 
           <!-- 7. CSS3 -->
-          <div class="tech-item fade-in stagger-3">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
-              alt="CSS3" loading="lazy" class="tech-logo" />
+          <div class="tech-item fade-in stagger-3 visible">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS3" loading="lazy" class="tech-logo">
           </div>
 
           <!-- 8. JavaScript -->
-          <div class="tech-item fade-in stagger-4">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
-              alt="JavaScript" loading="lazy" class="tech-logo" />
+          <div class="tech-item fade-in stagger-4 visible">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" loading="lazy" class="tech-logo">
           </div>
 
           <!-- 9. PHP -->
-          <div class="tech-item fade-in stagger-1">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg"
-              alt="PHP" loading="lazy" class="tech-logo" />
+          <div class="tech-item fade-in stagger-1 visible">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" alt="PHP" loading="lazy" class="tech-logo">
           </div>
 
           <!-- 10. MySQL -->
-          <div class="tech-item fade-in stagger-2">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg"
-              alt="MySQL" loading="lazy" class="tech-logo" />
+          <div class="tech-item fade-in stagger-2 visible">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg" alt="MySQL" loading="lazy" class="tech-logo">
           </div>
 
           <!-- 11. React -->
-          <div class="tech-item fade-in stagger-3">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
-              alt="React" loading="lazy" class="tech-logo" />
+          <div class="tech-item fade-in stagger-3 visible">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" loading="lazy" class="tech-logo">
           </div>
 
           <!-- 12. Node.js -->
-          <div class="tech-item fade-in stagger-4">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg"
-              alt="Node.js" loading="lazy" class="tech-logo" />
+          <div class="tech-item fade-in stagger-4 visible">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg" alt="Node.js" loading="lazy" class="tech-logo">
           </div>
 
           <!-- 13. Git -->
-          <div class="tech-item fade-in stagger-1">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original-wordmark.svg"
-              alt="Git" loading="lazy" class="tech-logo" />
+          <div class="tech-item fade-in stagger-1 visible">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original-wordmark.svg" alt="Git" loading="lazy" class="tech-logo">
           </div>
 
           <!-- 14. Docker -->
-          <div class="tech-item fade-in stagger-2">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original-wordmark.svg"
-              alt="Docker" loading="lazy" class="tech-logo" />
+          <div class="tech-item fade-in stagger-2 visible">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original-wordmark.svg" alt="Docker" loading="lazy" class="tech-logo">
           </div>
 
           <!-- 15. Nginx -->
-          <div class="tech-item fade-in stagger-3">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nginx/nginx-original.svg"
-              alt="Nginx" loading="lazy" class="tech-logo" />
+          <div class="tech-item fade-in stagger-3 visible">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nginx/nginx-original.svg" alt="Nginx" loading="lazy" class="tech-logo">
           </div>
 
           <!-- 16. Linux -->
-          <div class="tech-item fade-in stagger-4">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg"
-              alt="Linux" loading="lazy" class="tech-logo" />
+          <div class="tech-item fade-in stagger-4 visible">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux" loading="lazy" class="tech-logo">
           </div>
 
           <!-- 17. Python -->
-          <div class="tech-item fade-in stagger-1">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg"
-              alt="Python" loading="lazy" class="tech-logo" />
+          <div class="tech-item fade-in stagger-1 visible">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg" alt="Python" loading="lazy" class="tech-logo">
           </div>
 
           <!-- 18. TypeScript -->
-          <div class="tech-item fade-in stagger-2">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
-              alt="TypeScript" loading="lazy" class="tech-logo" />
+          <div class="tech-item fade-in stagger-2 visible">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="TypeScript" loading="lazy" class="tech-logo">
           </div>
 
           <!-- 19. GraphQL -->
-          <div class="tech-item fade-in stagger-3">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/graphql/graphql-plain-wordmark.svg"
-              alt="GraphQL" loading="lazy" class="tech-logo" />
+          <div class="tech-item fade-in stagger-3 visible">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/graphql/graphql-plain-wordmark.svg" alt="GraphQL" loading="lazy" class="tech-logo">
           </div>
 
           <!-- 20. Cloudflare -->
-          <div class="tech-item fade-in stagger-4">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cloudflare/cloudflare-original-wordmark.svg"
-              alt="Cloudflare" loading="lazy" class="tech-logo" />
+          <div class="tech-item fade-in stagger-4 visible">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cloudflare/cloudflare-original-wordmark.svg" alt="Cloudflare" loading="lazy" class="tech-logo">
           </div>
 
         </div>
@@ -2197,16 +2261,12 @@
       <div class="container">
         <div class="about-grid">
           <!-- Image column -->
-          <div class="about-image-wrap fade-in-left">
-            <img
-              src="https://picsum.photos/seed/viro-office/700/520"
-              alt="Viro Digital team collaborating in a modern Connecticut office"
-              loading="lazy"
-            />
+          <div class="about-image-wrap fade-in-left visible" style="position: relative;">
+            <img src="https://picsum.photos/seed/viro-office/700/520" alt="Viro Digital team collaborating in a modern Connecticut office" loading="lazy">
           </div>
 
           <!-- Text column -->
-          <div class="about-text fade-in-right">
+          <div class="about-text fade-in-right visible">
             <p class="section-label">About Viro Digital</p>
             <h2 class="display-lg" id="about-heading">
               Built on Trust.<br>Driven by Security.
@@ -2237,37 +2297,37 @@
             <div class="about-values" role="list">
               <div class="value-item" role="listitem">
                 <div class="value-check" aria-hidden="true">
-                  <i data-lucide="check" width="10" height="10"></i>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" aria-hidden="true" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"></path></svg>
                 </div>
                 <span>100% U.S.-Based Operations</span>
               </div>
               <div class="value-item" role="listitem">
                 <div class="value-check" aria-hidden="true">
-                  <i data-lucide="check" width="10" height="10"></i>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" aria-hidden="true" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"></path></svg>
                 </div>
                 <span>Section 508 Specialists</span>
               </div>
               <div class="value-item" role="listitem">
                 <div class="value-check" aria-hidden="true">
-                  <i data-lucide="check" width="10" height="10"></i>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" aria-hidden="true" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"></path></svg>
                 </div>
                 <span>Transparent Pricing</span>
               </div>
               <div class="value-item" role="listitem">
                 <div class="value-check" aria-hidden="true">
-                  <i data-lucide="check" width="10" height="10"></i>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" aria-hidden="true" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"></path></svg>
                 </div>
                 <span>Enterprise-Grade Security</span>
               </div>
               <div class="value-item" role="listitem">
                 <div class="value-check" aria-hidden="true">
-                  <i data-lucide="check" width="10" height="10"></i>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" aria-hidden="true" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"></path></svg>
                 </div>
                 <span>Nationwide Service Delivery</span>
               </div>
               <div class="value-item" role="listitem">
                 <div class="value-check" aria-hidden="true">
-                  <i data-lucide="check" width="10" height="10"></i>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" aria-hidden="true" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"></path></svg>
                 </div>
                 <span>WCAG 2.1 AA Compliant Builds</span>
               </div>
@@ -2283,15 +2343,15 @@
     <section id="process" class="section" aria-labelledby="process-heading">
       <div class="container">
         <div class="section-header">
-          <p class="section-label fade-in">How We Work</p>
-          <h2 class="display-lg fade-in stagger-1" id="process-heading">Our Proven Process</h2>
-          <p class="fade-in stagger-2">From the first conversation to post-launch support, we follow a transparent, milestone-driven workflow that keeps you informed and in control at every stage.</p>
+          <p class="section-label fade-in visible">How We Work</p>
+          <h2 class="display-lg fade-in stagger-1 visible" id="process-heading">Our Proven Process</h2>
+          <p class="fade-in stagger-2 visible">From the first conversation to post-launch support, we follow a transparent, milestone-driven workflow that keeps you informed and in control at every stage.</p>
         </div>
 
         <div class="timeline" role="list">
           <div class="timeline-line" aria-hidden="true"></div>
 
-          <div class="timeline-item fade-in" role="listitem">
+          <div class="timeline-item fade-in visible" role="listitem">
             <div class="timeline-content">
               <h3>Discovery &amp; Strategy</h3>
               <p>We start with a deep-dive consultation to understand your business goals, technical constraints, compliance requirements, and target audience. From here, we build a detailed project brief.</p>
@@ -2302,7 +2362,7 @@
             <div class="timeline-empty"></div>
           </div>
 
-          <div class="timeline-item fade-in stagger-1" role="listitem">
+          <div class="timeline-item fade-in stagger-1 visible" role="listitem">
             <div class="timeline-empty"></div>
             <div class="timeline-node" aria-hidden="true">
               <div class="timeline-dot">02</div>
@@ -2313,7 +2373,7 @@
             </div>
           </div>
 
-          <div class="timeline-item fade-in stagger-2" role="listitem">
+          <div class="timeline-item fade-in stagger-2 visible" role="listitem">
             <div class="timeline-content">
               <h3>Development &amp; Integration</h3>
               <p>Our engineers build your solution with clean, documented code. We integrate third-party APIs, configure CMS structures, implement custom functionality, and conduct ongoing quality assurance.</p>
@@ -2324,7 +2384,7 @@
             <div class="timeline-empty"></div>
           </div>
 
-          <div class="timeline-item fade-in stagger-3" role="listitem">
+          <div class="timeline-item fade-in stagger-3 visible" role="listitem">
             <div class="timeline-empty"></div>
             <div class="timeline-node" aria-hidden="true">
               <div class="timeline-dot">04</div>
@@ -2335,7 +2395,7 @@
             </div>
           </div>
 
-          <div class="timeline-item fade-in stagger-4" role="listitem">
+          <div class="timeline-item fade-in stagger-4 visible" role="listitem">
             <div class="timeline-content">
               <h3>Launch &amp; Deployment</h3>
               <p>We handle the full deployment to your secure hosting environment, configure DNS, CDN, SSL certificates, and monitoring. Zero-downtime deployments are standard for all production environments.</p>
@@ -2346,7 +2406,7 @@
             <div class="timeline-empty"></div>
           </div>
 
-          <div class="timeline-item fade-in stagger-5" role="listitem">
+          <div class="timeline-item fade-in stagger-5 visible" role="listitem">
             <div class="timeline-empty"></div>
             <div class="timeline-node" aria-hidden="true">
               <div class="timeline-dot">06</div>
@@ -2366,77 +2426,77 @@
     <section id="portfolio" class="section" aria-labelledby="portfolio-heading">
       <div class="container">
         <div class="section-header">
-          <p class="section-label fade-in">Who We Serve</p>
-          <h2 class="display-lg fade-in stagger-1" id="portfolio-heading">Industries We Serve</h2>
-          <p class="fade-in stagger-2">We bring the same dedication, security standards, and technical excellence to every industry — from neighborhood bakeries to corporate IT departments and beyond.</p>
+          <p class="section-label fade-in visible">Who We Serve</p>
+          <h2 class="display-lg fade-in stagger-1 visible" id="portfolio-heading">Industries We Serve</h2>
+          <p class="fade-in stagger-2 visible">We bring the same dedication, security standards, and technical excellence to every industry — from neighborhood bakeries to corporate IT departments and beyond.</p>
         </div>
 
         <div class="industry-grid">
           <!-- Small Businesses — wide featured -->
-          <div class="industry-card wide fade-in" aria-label="Small Businesses">
-            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=900&h=500&fit=crop&crop=center&auto=format" alt="Small business owner at a modern retail storefront" loading="lazy" />
+          <div class="industry-card wide fade-in visible" aria-label="Small Businesses">
+            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=900&amp;h=500&amp;fit=crop&amp;crop=center&amp;auto=format" alt="Small business owner at a modern retail storefront" loading="lazy">
             <div class="industry-overlay">
-              <div class="industry-icon-wrap" aria-hidden="true"><i data-lucide="store" width="18" height="18"></i></div>
+              <div class="industry-icon-wrap" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="store" aria-hidden="true" class="lucide lucide-store"><path d="M15 21v-5a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v5"></path><path d="M17.774 10.31a1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.451 0 1.12 1.12 0 0 0-1.548 0 2.5 2.5 0 0 1-3.452 0 1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.77-3.248l2.889-4.184A2 2 0 0 1 7 2h10a2 2 0 0 1 1.653.873l2.895 4.192a2.5 2.5 0 0 1-3.774 3.244"></path><path d="M4 10.95V19a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8.05"></path></svg></div>
               <h4>Small Businesses</h4>
               <p>Professional web presence and secure hosting that gives small businesses a big-business edge — without the overhead.</p>
             </div>
           </div>
 
           <!-- Healthcare -->
-          <div class="industry-card fade-in stagger-1" aria-label="Healthcare">
-            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&h=800&fit=crop&crop=faces,top&auto=format" alt="Professional female doctor in white coat smiling confidently" loading="lazy" />
+          <div class="industry-card fade-in stagger-1 visible" aria-label="Healthcare">
+            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&amp;h=800&amp;fit=crop&amp;crop=faces,top&amp;auto=format" alt="Professional female doctor in white coat smiling confidently" loading="lazy">
             <div class="industry-overlay">
-              <div class="industry-icon-wrap" aria-hidden="true"><i data-lucide="heart-pulse" width="18" height="18"></i></div>
+              <div class="industry-icon-wrap" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="heart-pulse" aria-hidden="true" class="lucide lucide-heart-pulse"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"></path><path d="M3.22 13H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"></path></svg></div>
               <h4>Healthcare</h4>
               <p>HIPAA-aware portals, patient information systems, and compliant digital forms for medical practices.</p>
             </div>
           </div>
 
           <!-- Corporate -->
-          <div class="industry-card fade-in stagger-2" aria-label="Corporate">
-            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=800&fit=crop&crop=center&auto=format" alt="Modern corporate office interior with professionals at work" loading="lazy" />
+          <div class="industry-card fade-in stagger-2 visible" aria-label="Corporate">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&amp;h=800&amp;fit=crop&amp;crop=center&amp;auto=format" alt="Modern corporate office interior with professionals at work" loading="lazy">
             <div class="industry-overlay">
-              <div class="industry-icon-wrap" aria-hidden="true"><i data-lucide="building-2" width="18" height="18"></i></div>
+              <div class="industry-icon-wrap" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="building-2" aria-hidden="true" class="lucide lucide-building-2"><path d="M10 12h4"></path><path d="M10 8h4"></path><path d="M14 21v-3a2 2 0 0 0-4 0v3"></path><path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"></path><path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"></path></svg></div>
               <h4>Corporate</h4>
               <p>Enterprise-grade WordPress deployments, intranets, and managed infrastructure for mid-to-large companies.</p>
             </div>
           </div>
 
           <!-- IT -->
-          <div class="industry-card fade-in stagger-3" aria-label="Information Technology">
-            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=800&fit=crop&crop=center&auto=format" alt="Server racks and IT infrastructure in a data center" loading="lazy" />
+          <div class="industry-card fade-in stagger-3 visible" aria-label="Information Technology">
+            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&amp;h=800&amp;fit=crop&amp;crop=center&amp;auto=format" alt="Server racks and IT infrastructure in a data center" loading="lazy">
             <div class="industry-overlay">
-              <div class="industry-icon-wrap" aria-hidden="true"><i data-lucide="cpu" width="18" height="18"></i></div>
+              <div class="industry-icon-wrap" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="cpu" aria-hidden="true" class="lucide lucide-cpu"><path d="M12 20v2"></path><path d="M12 2v2"></path><path d="M17 20v2"></path><path d="M17 2v2"></path><path d="M2 12h2"></path><path d="M2 17h2"></path><path d="M2 7h2"></path><path d="M20 12h2"></path><path d="M20 17h2"></path><path d="M20 7h2"></path><path d="M7 20v2"></path><path d="M7 2v2"></path><rect x="4" y="4" width="16" height="16" rx="2"></rect><rect x="8" y="8" width="8" height="8" rx="1"></rect></svg></div>
               <h4>Information Technology</h4>
               <p>Technical documentation portals, SaaS landing pages, and secure hosting for IT-focused companies.</p>
             </div>
           </div>
 
           <!-- Administrative -->
-          <div class="industry-card fade-in stagger-1" aria-label="Administrative">
-            <img src="https://images.unsplash.com/photo-1575505586569-646b2ca898fc?w=600&h=800&fit=crop&crop=center&auto=format" alt="Government administrative building exterior" loading="lazy" />
+          <div class="industry-card fade-in stagger-1 visible" aria-label="Administrative">
+            <img src="https://images.unsplash.com/photo-1575505586569-646b2ca898fc?w=600&amp;h=800&amp;fit=crop&amp;crop=center&amp;auto=format" alt="Government administrative building exterior" loading="lazy">
             <div class="industry-overlay">
-              <div class="industry-icon-wrap" aria-hidden="true"><i data-lucide="landmark" width="18" height="18"></i></div>
+              <div class="industry-icon-wrap" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="landmark" aria-hidden="true" class="lucide lucide-landmark"><path d="M10 18v-7"></path><path d="M11.119 2.205a2 2 0 0 1 1.762 0l7.84 3.846A.5.5 0 0 1 20.5 7h-17a.5.5 0 0 1-.22-.949z"></path><path d="M14 18v-7"></path><path d="M18 18v-7"></path><path d="M3 22h18"></path><path d="M6 18v-7"></path></svg></div>
               <h4>Administrative</h4>
               <p>Section 508-compliant sites, digital workflows, and document management for administrative bodies.</p>
             </div>
           </div>
 
           <!-- Bakeries -->
-          <div class="industry-card fade-in stagger-2" aria-label="Bakeries and Food Businesses">
-            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&h=800&fit=crop&crop=center&auto=format" alt="Artisan bakery display with fresh breads and pastries" loading="lazy" />
+          <div class="industry-card fade-in stagger-2 visible" aria-label="Bakeries and Food Businesses">
+            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&amp;h=800&amp;fit=crop&amp;crop=center&amp;auto=format" alt="Artisan bakery display with fresh breads and pastries" loading="lazy">
             <div class="industry-overlay">
-              <div class="industry-icon-wrap" aria-hidden="true"><i data-lucide="cake" width="18" height="18"></i></div>
+              <div class="industry-icon-wrap" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="cake" aria-hidden="true" class="lucide lucide-cake"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"></path><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"></path><path d="M2 21h20"></path><path d="M7 8v3"></path><path d="M12 8v3"></path><path d="M17 8v3"></path><path d="M7 4h.01"></path><path d="M12 4h.01"></path><path d="M17 4h.01"></path></svg></div>
               <h4>Bakeries &amp; Food</h4>
               <p>Beautiful, mobile-first websites with online ordering, menus, and booking systems that showcase your products.</p>
             </div>
           </div>
 
           <!-- Local Businesses — wide featured -->
-          <div class="industry-card wide fade-in stagger-3" aria-label="Local Businesses">
-            <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=900&h=500&fit=crop&crop=center&auto=format" alt="Vibrant local Main Street with small business storefronts" loading="lazy" />
+          <div class="industry-card wide fade-in stagger-3 visible" aria-label="Local Businesses">
+            <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=900&amp;h=500&amp;fit=crop&amp;crop=center&amp;auto=format" alt="Vibrant local Main Street with small business storefronts" loading="lazy">
             <div class="industry-overlay">
-              <div class="industry-icon-wrap" aria-hidden="true"><i data-lucide="map-pin" width="18" height="18"></i></div>
+              <div class="industry-icon-wrap" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="map-pin" aria-hidden="true" class="lucide lucide-map-pin"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg></div>
               <h4>Local Businesses</h4>
               <p>From hair salons to law offices — we help local businesses grow their online presence, capture leads, and compete in today's digital marketplace.</p>
             </div>
@@ -2453,14 +2513,14 @@
       <div class="bg-grid" aria-hidden="true"></div>
       <div class="container">
         <div class="section-header">
-          <p class="section-label fade-in">Client Feedback</p>
-          <h2 class="display-lg fade-in stagger-1" id="testimonials-heading">What Our Clients Say</h2>
-          <p class="fade-in stagger-2">Real feedback from the business owners and organizations we've had the privilege to serve.</p>
+          <p class="section-label fade-in visible">Client Feedback</p>
+          <h2 class="display-lg fade-in stagger-1 visible" id="testimonials-heading">What Our Clients Say</h2>
+          <p class="fade-in stagger-2 visible">Real feedback from the business owners and organizations we've had the privilege to serve.</p>
         </div>
 
-        <div class="testimonial-slider fade-in" role="region" aria-label="Testimonials carousel" aria-live="polite">
+        <div class="testimonial-slider fade-in visible" role="region" aria-label="Testimonials carousel" aria-live="polite">
           <div class="testimonial-track">
-            <div class="testimonial-viewport" id="testimonial-viewport">
+            <div class="testimonial-viewport" id="testimonial-viewport" style="transform: translateX(-300%);">
 
               <!-- Slide 1 — Small Business / Retail -->
               <div class="testimonial-slide" role="group" aria-label="Testimonial 1 of 4">
@@ -2477,7 +2537,7 @@
                     "Viro Digital completely transformed our online presence. As a small business owner, I was nervous about the cost and complexity — but they made the entire process simple, transparent, and affordable. Our new site has driven a real increase in walk-in customers and online inquiries."
                   </blockquote>
                   <div class="testimonial-author">
-                    <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Portrait of Sandra M." loading="lazy" />
+                    <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Portrait of Sandra M." loading="lazy">
                     <div>
                       <div class="testimonial-author-name">Sandra M.</div>
                       <div class="testimonial-author-role">Owner — Small Business, Retail</div>
@@ -2501,7 +2561,7 @@
                     "We hired Viro Digital to overhaul our WooCommerce store after a string of disappointments with other agencies. The difference was night and day. Site speed improved by 65%, conversion rates jumped, and their managed hosting keeps everything running smoothly without any input from us."
                   </blockquote>
                   <div class="testimonial-author">
-                    <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Portrait of Marcus T." loading="lazy" />
+                    <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Portrait of Marcus T." loading="lazy">
                     <div>
                       <div class="testimonial-author-name">Marcus T.</div>
                       <div class="testimonial-author-role">CEO — E-Commerce &amp; Corporate</div>
@@ -2525,7 +2585,7 @@
                     "As a healthcare organization, data security and compliance are non-negotiable for us. Viro Digital understood this from day one. They built us a HIPAA-aware patient information portal on WordPress that's both beautiful and bulletproof. Two years in, we've had zero security incidents."
                   </blockquote>
                   <div class="testimonial-author">
-                    <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Portrait of Dr. Patricia L." loading="lazy" />
+                    <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Portrait of Dr. Patricia L." loading="lazy">
                     <div>
                       <div class="testimonial-author-name">Dr. Patricia L.</div>
                       <div class="testimonial-author-role">Chief Information Officer — Healthcare</div>
@@ -2549,7 +2609,7 @@
                     "I needed a full website redesign for my bakery and had no idea where to start. Viro Digital walked me through every step, built something gorgeous, and set up hosting I never have to think about. My online orders have tripled since launch. Best investment I've made for my business."
                   </blockquote>
                   <div class="testimonial-author">
-                    <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/women/25.jpg" alt="Portrait of Rebecca K." loading="lazy" />
+                    <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/women/25.jpg" alt="Portrait of Rebecca K." loading="lazy">
                     <div>
                       <div class="testimonial-author-name">Rebecca K.</div>
                       <div class="testimonial-author-role">Owner — Bakery &amp; Local Business</div>
@@ -2564,16 +2624,16 @@
           <!-- Slider controls -->
           <div class="slider-controls">
             <button class="slider-btn" id="prev-slide" aria-label="Previous testimonial">
-              <i data-lucide="chevron-left" width="18" height="18"></i>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-left" aria-hidden="true" class="lucide lucide-chevron-left"><path d="m15 18-6-6 6-6"></path></svg>
             </button>
             <div class="slider-dots" id="slider-dots" role="tablist" aria-label="Testimonial navigation">
-              <button class="slider-dot active" data-index="0" role="tab" aria-selected="true" aria-label="Testimonial 1"></button>
+              <button class="slider-dot" data-index="0" role="tab" aria-selected="false" aria-label="Testimonial 1"></button>
               <button class="slider-dot" data-index="1" role="tab" aria-selected="false" aria-label="Testimonial 2"></button>
               <button class="slider-dot" data-index="2" role="tab" aria-selected="false" aria-label="Testimonial 3"></button>
-              <button class="slider-dot" data-index="3" role="tab" aria-selected="false" aria-label="Testimonial 4"></button>
+              <button class="slider-dot active" data-index="3" role="tab" aria-selected="true" aria-label="Testimonial 4"></button>
             </div>
             <button class="slider-btn" id="next-slide" aria-label="Next testimonial">
-              <i data-lucide="chevron-right" width="18" height="18"></i>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-right" aria-hidden="true" class="lucide lucide-chevron-right"><path d="m9 18 6-6-6-6"></path></svg>
             </button>
           </div>
         </div>
@@ -2586,14 +2646,14 @@
     <section id="pricing" class="section" aria-labelledby="pricing-heading">
       <div class="container">
         <div class="section-header">
-          <p class="section-label fade-in">Transparent Pricing</p>
-          <h2 class="display-lg fade-in stagger-1" id="pricing-heading">Managed Hosting Plans</h2>
-          <p class="fade-in stagger-2">Straightforward managed WordPress hosting with no hidden fees. All plans include U.S.-based servers, proactive support, and enterprise security. Custom project pricing available on request.</p>
+          <p class="section-label fade-in visible">Transparent Pricing</p>
+          <h2 class="display-lg fade-in stagger-1 visible" id="pricing-heading">Managed Hosting Plans</h2>
+          <p class="fade-in stagger-2 visible">Straightforward managed WordPress hosting with no hidden fees. All plans include U.S.-based servers, proactive support, and enterprise security. Custom project pricing available on request.</p>
         </div>
 
         <div class="pricing-grid">
           <!-- Starter -->
-          <article class="pricing-card fade-in stagger-1" aria-labelledby="plan-starter">
+          <article class="pricing-card fade-in stagger-1 visible" aria-labelledby="plan-starter">
             <p class="pricing-tier">Starter</p>
             <h3 class="pricing-name" id="plan-starter">Essentials</h3>
             <p class="pricing-desc">For small businesses launching their digital presence with confidence.</p>
@@ -2604,39 +2664,39 @@
             </div>
             <ul class="pricing-features" aria-label="Essentials plan features">
               <li class="pricing-feature">
-                <i data-lucide="check-circle-2" class="check" width="16" height="16" aria-hidden="true"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check-circle-2" class="lucide lucide-check-circle-2 check" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
                 Managed WordPress Hosting
               </li>
               <li class="pricing-feature">
-                <i data-lucide="check-circle-2" class="check" width="16" height="16" aria-hidden="true"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check-circle-2" class="lucide lucide-check-circle-2 check" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
                 SSL Certificate Included
               </li>
               <li class="pricing-feature">
-                <i data-lucide="check-circle-2" class="check" width="16" height="16" aria-hidden="true"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check-circle-2" class="lucide lucide-check-circle-2 check" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
                 Daily Backups (7-Day Retention)
               </li>
               <li class="pricing-feature">
-                <i data-lucide="check-circle-2" class="check" width="16" height="16" aria-hidden="true"></i>
-                Core & Plugin Updates
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check-circle-2" class="lucide lucide-check-circle-2 check" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
+                Core &amp; Plugin Updates
               </li>
               <li class="pricing-feature">
-                <i data-lucide="x-circle" class="cross" width="16" height="16" aria-hidden="true"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="x-circle" class="lucide lucide-x-circle cross" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="m15 9-6 6"></path><path d="m9 9 6 6"></path></svg>
                 <span style="opacity:0.45">Priority Support (48hr SLA)</span>
               </li>
               <li class="pricing-feature">
-                <i data-lucide="x-circle" class="cross" width="16" height="16" aria-hidden="true"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="x-circle" class="lucide lucide-x-circle cross" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="m15 9-6 6"></path><path d="m9 9 6 6"></path></svg>
                 <span style="opacity:0.45">Monthly Performance Report</span>
               </li>
               <li class="pricing-feature">
-                <i data-lucide="x-circle" class="cross" width="16" height="16" aria-hidden="true"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="x-circle" class="lucide lucide-x-circle cross" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="m15 9-6 6"></path><path d="m9 9 6 6"></path></svg>
                 <span style="opacity:0.45">Accessibility Monitoring</span>
               </li>
             </ul>
-            <a href="#contact" class="btn-secondary" style="display:block; text-align:center; padding:12px;" aria-label="Get started with Essentials plan">Get Started</a>
+            <a href="#contact" class="btn-secondary" style="display: block; text-align: center; padding: 12px; position: relative;" aria-label="Get started with Essentials plan">Get Started</a>
           </article>
 
           <!-- Professional (Featured) -->
-          <article class="pricing-card featured fade-in stagger-2" aria-labelledby="plan-professional">
+          <article class="pricing-card featured fade-in stagger-2 visible" aria-labelledby="plan-professional">
             <p class="pricing-tier">Professional</p>
             <h3 class="pricing-name" id="plan-professional">Professional</h3>
             <p class="pricing-desc">For growing businesses that demand performance, security, and hands-on support.</p>
@@ -2647,39 +2707,39 @@
             </div>
             <ul class="pricing-features" aria-label="Professional plan features">
               <li class="pricing-feature">
-                <i data-lucide="check-circle-2" class="check" width="16" height="16" aria-hidden="true"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check-circle-2" class="lucide lucide-check-circle-2 check" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
                 Everything in Essentials
               </li>
               <li class="pricing-feature">
-                <i data-lucide="check-circle-2" class="check" width="16" height="16" aria-hidden="true"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check-circle-2" class="lucide lucide-check-circle-2 check" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
                 Priority Support (24hr SLA)
               </li>
               <li class="pricing-feature">
-                <i data-lucide="check-circle-2" class="check" width="16" height="16" aria-hidden="true"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check-circle-2" class="lucide lucide-check-circle-2 check" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
                 Daily Backups (30-Day Retention)
               </li>
               <li class="pricing-feature">
-                <i data-lucide="check-circle-2" class="check" width="16" height="16" aria-hidden="true"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check-circle-2" class="lucide lucide-check-circle-2 check" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
                 Monthly Performance Report
               </li>
               <li class="pricing-feature">
-                <i data-lucide="check-circle-2" class="check" width="16" height="16" aria-hidden="true"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check-circle-2" class="lucide lucide-check-circle-2 check" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
                 2 Hours Monthly Content Support
               </li>
               <li class="pricing-feature">
-                <i data-lucide="check-circle-2" class="check" width="16" height="16" aria-hidden="true"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check-circle-2" class="lucide lucide-check-circle-2 check" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
                 DDoS Protection &amp; WAF
               </li>
               <li class="pricing-feature">
-                <i data-lucide="x-circle" class="cross" width="16" height="16" aria-hidden="true"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="x-circle" class="lucide lucide-x-circle cross" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="m15 9-6 6"></path><path d="m9 9 6 6"></path></svg>
                 <span style="opacity:0.45">Accessibility Monitoring</span>
               </li>
             </ul>
-            <a href="#contact" class="btn-primary" style="display:block; text-align:center; padding:12px;" aria-label="Get started with Professional plan">Get Started</a>
+            <a href="#contact" class="btn-primary" style="display: block; text-align: center; padding: 12px; position: relative;" aria-label="Get started with Professional plan">Get Started</a>
           </article>
 
           <!-- Enterprise -->
-          <article class="pricing-card fade-in stagger-3" aria-labelledby="plan-enterprise">
+          <article class="pricing-card fade-in stagger-3 visible" aria-labelledby="plan-enterprise">
             <p class="pricing-tier">Enterprise</p>
             <h3 class="pricing-name" id="plan-enterprise">Enterprise &amp; Gov</h3>
             <p class="pricing-desc">For organizations with compliance mandates, dedicated support needs, and complex requirements.</p>
@@ -2690,40 +2750,40 @@
             </div>
             <ul class="pricing-features" aria-label="Enterprise plan features">
               <li class="pricing-feature">
-                <i data-lucide="check-circle-2" class="check" width="16" height="16" aria-hidden="true"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check-circle-2" class="lucide lucide-check-circle-2 check" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
                 Everything in Professional
               </li>
               <li class="pricing-feature">
-                <i data-lucide="check-circle-2" class="check" width="16" height="16" aria-hidden="true"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check-circle-2" class="lucide lucide-check-circle-2 check" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
                 4hr Emergency Response SLA
               </li>
               <li class="pricing-feature">
-                <i data-lucide="check-circle-2" class="check" width="16" height="16" aria-hidden="true"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check-circle-2" class="lucide lucide-check-circle-2 check" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
                 Section 508 Monitoring &amp; Alerts
               </li>
               <li class="pricing-feature">
-                <i data-lucide="check-circle-2" class="check" width="16" height="16" aria-hidden="true"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check-circle-2" class="lucide lucide-check-circle-2 check" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
                 Quarterly Security Audits
               </li>
               <li class="pricing-feature">
-                <i data-lucide="check-circle-2" class="check" width="16" height="16" aria-hidden="true"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check-circle-2" class="lucide lucide-check-circle-2 check" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
                 Dedicated Account Manager
               </li>
               <li class="pricing-feature">
-                <i data-lucide="check-circle-2" class="check" width="16" height="16" aria-hidden="true"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check-circle-2" class="lucide lucide-check-circle-2 check" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
                 5 Hours Monthly Dev Support
               </li>
               <li class="pricing-feature">
-                <i data-lucide="check-circle-2" class="check" width="16" height="16" aria-hidden="true"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check-circle-2" class="lucide lucide-check-circle-2 check" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
                 Custom SLA &amp; Contracts Available
               </li>
             </ul>
-            <a href="#contact" class="btn-secondary" style="display:block; text-align:center; padding:12px;" aria-label="Contact us about Enterprise plan">Contact Us</a>
+            <a href="#contact" class="btn-secondary" style="display: block; text-align: center; padding: 12px; position: relative;" aria-label="Contact us about Enterprise plan">Contact Us</a>
           </article>
         </div>
 
-        <p class="fade-in" style="text-align:center; margin-top:var(--space-lg); color:var(--text-muted); font-size:0.85rem;">
-          All prices are billed monthly. Annual plans available at 15% discount. Custom project development priced separately after discovery. <a href="#contact" style="color:var(--brand-primary);">Request a custom quote →</a>
+        <p class="fade-in visible" style="text-align:center; margin-top:var(--space-lg); color:var(--text-muted); font-size:0.85rem;">
+          All prices are billed monthly. Annual plans available at 15% discount. Custom project development priced separately after discovery. <a href="#contact" style="color: var(--brand-primary); position: relative;">Request a custom quote →</a>
         </p>
       </div>
     </section>
@@ -2735,21 +2795,21 @@
       <div class="bg-grid" aria-hidden="true"></div>
       <div class="container">
         <div class="section-header">
-          <p class="section-label fade-in">Have Questions?</p>
-          <h2 class="display-lg fade-in stagger-1" id="faq-heading">Frequently Asked Questions</h2>
-          <p class="fade-in stagger-2">Everything you need to know about working with Viro Digital. Can't find your answer? <a href="#contact" style="color:var(--brand-primary)">Reach out directly →</a></p>
+          <p class="section-label fade-in visible">Have Questions?</p>
+          <h2 class="display-lg fade-in stagger-1 visible" id="faq-heading">Frequently Asked Questions</h2>
+          <p class="fade-in stagger-2 visible">Everything you need to know about working with Viro Digital. Can't find your answer? <a href="#contact" style="color:var(--brand-primary)">Reach out directly →</a></p>
         </div>
 
         <div class="faq-list" role="list" id="faq-list">
           <!-- FAQ 1 -->
           <div class="faq-item" role="listitem">
-            <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1" style="position: relative;">
               What makes Viro Digital different from other WordPress agencies?
               <span class="faq-icon" aria-hidden="true">
-                <i data-lucide="plus" width="14" height="14"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="plus" aria-hidden="true" class="lucide lucide-plus"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
               </span>
             </button>
-            <div class="faq-answer" id="faq-answer-1" role="region">
+            <div class="faq-answer" id="faq-answer-1" role="region" style="display: block; overflow: hidden; max-height: 0px; transition: max-height 0.38s;">
               <p>Viro Digital combines deep WordPress expertise with specialized knowledge in federal accessibility compliance (Section 508) and government-grade security. We operate exclusively within the United States, meaning your data and support team are always domestic. We don't outsource development or support, and we don't use cookie-cutter templates — every project is built with intention and maintained with care.</p>
             </div>
           </div>
@@ -2759,10 +2819,10 @@
             <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2">
               Do you work with government agencies? What compliance standards do you meet?
               <span class="faq-icon" aria-hidden="true">
-                <i data-lucide="plus" width="14" height="14"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="plus" aria-hidden="true" class="lucide lucide-plus"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
               </span>
             </button>
-            <div class="faq-answer" id="faq-answer-2" role="region">
+            <div class="faq-answer" id="faq-answer-2" role="region" style="display: block; overflow: hidden; max-height: 0px; transition: max-height 0.38s;">
               <p>Yes, civil government agencies represent a core part of our client base. We have extensive experience meeting Section 508 of the Rehabilitation Act and WCAG 2.1 AA standards. We can provide VPAT (Voluntary Product Accessibility Template) documentation, conduct formal accessibility audits, and build compliant digital solutions from the ground up. Contact us to discuss your agency's specific compliance requirements.</p>
             </div>
           </div>
@@ -2772,10 +2832,10 @@
             <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3">
               Where are your servers located? Is my data stored in the United States?
               <span class="faq-icon" aria-hidden="true">
-                <i data-lucide="plus" width="14" height="14"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="plus" aria-hidden="true" class="lucide lucide-plus"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
               </span>
             </button>
-            <div class="faq-answer" id="faq-answer-3" role="region">
+            <div class="faq-answer" id="faq-answer-3" role="region" style="display: block; overflow: hidden; max-height: 0px; transition: max-height 0.38s;">
               <p>All of our hosting infrastructure is located in U.S.-based data centers. We do not offshore any data storage, support operations, or development work. For government clients with specific data residency requirements, we can accommodate additional compliance configurations. Data sovereignty is one of our core principles — not an afterthought.</p>
             </div>
           </div>
@@ -2785,23 +2845,23 @@
             <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-4">
               How long does a typical WordPress development project take?
               <span class="faq-icon" aria-hidden="true">
-                <i data-lucide="plus" width="14" height="14"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="plus" aria-hidden="true" class="lucide lucide-plus"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
               </span>
             </button>
-            <div class="faq-answer" id="faq-answer-4" role="region">
+            <div class="faq-answer" id="faq-answer-4" role="region" style="display: block; overflow: hidden; max-height: 0px; transition: max-height 0.38s;">
               <p>7 to 10 business days. Complex or government projects typically take 5 to 7 weeks depending on complexity. These numbers are estimates only.</p>
             </div>
           </div>
 
           <!-- FAQ 5 -->
           <div class="faq-item" role="listitem">
-            <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-5">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-5" style="position: relative;">
               Do you provide support after a project launches?
               <span class="faq-icon" aria-hidden="true">
-                <i data-lucide="plus" width="14" height="14"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="plus" aria-hidden="true" class="lucide lucide-plus"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
               </span>
             </button>
-            <div class="faq-answer" id="faq-answer-5" role="region">
+            <div class="faq-answer" id="faq-answer-5" role="region" style="display: block; overflow: hidden; max-height: 0px; transition: max-height 0.38s;">
               <p>Absolutely. We offer flexible managed support plans that include WordPress updates, security monitoring, performance optimization, and ongoing development hours. Our clients typically transition to a monthly support retainer after launch. We also offer one-time support hours for clients who prefer a pay-as-you-go model. No client is left without a path to ongoing support.</p>
             </div>
           </div>
@@ -2811,10 +2871,10 @@
             <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-6">
               Can you migrate an existing WordPress site to your hosting?
               <span class="faq-icon" aria-hidden="true">
-                <i data-lucide="plus" width="14" height="14"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="plus" aria-hidden="true" class="lucide lucide-plus"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
               </span>
             </button>
-            <div class="faq-answer" id="faq-answer-6" role="region">
+            <div class="faq-answer" id="faq-answer-6" role="region" style="display: block; overflow: hidden; max-height: 0px; transition: max-height 0.38s;">
               <p>Yes, we handle migrations regularly. Our team will audit your existing site, handle the full migration to our secure hosting environment, and verify that everything — including databases, media files, custom code, and third-party integrations — transfers correctly. We conduct migrations with zero planned downtime using staging environments and DNS cutover procedures.</p>
             </div>
           </div>
@@ -2824,10 +2884,10 @@
             <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-7">
               What is your pricing structure for custom development projects?
               <span class="faq-icon" aria-hidden="true">
-                <i data-lucide="plus" width="14" height="14"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="plus" aria-hidden="true" class="lucide lucide-plus"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
               </span>
             </button>
-            <div class="faq-answer" id="faq-answer-7" role="region">
+            <div class="faq-answer" id="faq-answer-7" role="region" style="display: block; overflow: hidden; max-height: 0px; transition: max-height 0.38s;">
               <p>Custom development projects are priced based on scope, complexity, and timeline. We provide fixed-fee quotes after a discovery consultation, meaning no surprise bills at the end. Our rates are competitive with U.S.-based boutique agencies but reflect the quality, security, and compliance expertise we bring. Contact us for a detailed estimate tailored to your project.</p>
             </div>
           </div>
@@ -2840,12 +2900,12 @@
          ============================================================ -->
     <section id="cta-banner" aria-label="Call to action">
       <div class="container">
-        <div class="cta-content fade-in">
+        <div class="cta-content fade-in visible">
           <h2>Ready to Build Something Exceptional?</h2>
           <p>Let's start with a free consultation. No pressure, no obligations — just an honest conversation about what you need and how we can help.</p>
           <div class="cta-btns">
-            <a href="https://linktr.ee/virodigital" target="_blank" rel="noopener noreferrer" class="btn-white">Schedule a Free Consultation</a>
-            <a href="tel:+12036996621" class="btn-outline-white">Call Us: 203-699-6621</a>
+            <a href="#contact" target="_blank" rel="noopener noreferrer" class="btn-white" style="position: relative;">Schedule a Free Consultation </a>
+            <a href="#contact" class="btn-outline-white" style="position: relative;">Get a Quote </a>
           </div>
         </div>
       </div>
@@ -2857,17 +2917,17 @@
     <section id="contact" class="section" aria-labelledby="contact-heading">
       <div class="container">
         <div class="section-header">
-          <p class="section-label fade-in">Get In Touch</p>
-          <h2 class="display-lg fade-in stagger-1" id="contact-heading">Let's Start a Conversation</h2>
-          <p class="fade-in stagger-2">Whether you need a new WordPress site, accessibility remediation, or enterprise hosting — we're ready to help. Fill out the form and we'll respond within one business day.</p>
+          <p class="section-label fade-in visible">Get In Touch</p>
+          <h2 class="display-lg fade-in stagger-1 visible" id="contact-heading">Let's Start a Conversation</h2>
+          <p class="fade-in stagger-2 visible">Whether you need a new WordPress site, accessibility remediation, or enterprise hosting — we're ready to help. Fill out the form and we'll respond within one business day.</p>
         </div>
 
         <div class="contact-grid">
           <!-- Contact Info -->
-          <div class="fade-in-left">
+          <div class="fade-in-left visible">
             <div class="contact-detail">
               <div class="contact-detail-icon" aria-hidden="true">
-                <i data-lucide="map-pin" width="18" height="18"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="map-pin" aria-hidden="true" class="lucide lucide-map-pin"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
               </div>
               <div class="contact-detail-text">
                 <strong>Office Location</strong>
@@ -2877,17 +2937,17 @@
 
             <div class="contact-detail">
               <div class="contact-detail-icon" aria-hidden="true">
-                <i data-lucide="phone" width="18" height="18"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="phone" aria-hidden="true" class="lucide lucide-phone"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path></svg>
               </div>
               <div class="contact-detail-text">
                 <strong>Phone</strong>
-                <span><a href="tel:+12036996621" style="color:inherit">203-699-6621</a></span>
+                <span><a href="#contact" style="color: inherit; position: relative;">Submit a request </a></span>
               </div>
             </div>
 
             <div class="contact-detail">
               <div class="contact-detail-icon" aria-hidden="true">
-                <i data-lucide="mail" width="18" height="18"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="mail" aria-hidden="true" class="lucide lucide-mail"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path><rect x="2" y="4" width="20" height="16" rx="2"></rect></svg>
               </div>
               <div class="contact-detail-text">
                 <strong>Email</strong>
@@ -2897,7 +2957,7 @@
 
             <div class="contact-detail">
               <div class="contact-detail-icon" aria-hidden="true">
-                <i data-lucide="clock" width="18" height="18"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="clock" aria-hidden="true" class="lucide lucide-clock"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
               </div>
               <div class="contact-detail-text">
                 <strong>Business Hours</strong>
@@ -2909,20 +2969,20 @@
               <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:var(--space-sm);">Follow us on social media</p>
               <div class="social-links" role="list">
                 <a href="https://www.linkedin.com/company/virodigitalct/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Viro Digital on LinkedIn" role="listitem">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"></path><circle cx="4" cy="4" r="2"></circle></svg>
                 </a>
                 <a href="https://x.com/virodigitalct" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Viro Digital on X (Twitter)" role="listitem">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
                 </a>
                 <a href="https://linktr.ee/virodigital" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Viro Digital on Linktree" role="listitem">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.953 15.066c-.08.163-.08.324-.08.486 0 1.296 1.054 2.35 2.35 2.35s2.35-1.054 2.35-2.35v-3.893l3.39 1.948c.405.243.891.243 1.296 0 .405-.243.648-.648.648-1.134s-.243-.891-.648-1.134l-3.39-1.948 3.39-1.948c.405-.243.648-.648.648-1.134s-.243-.891-.648-1.134a1.296 1.296 0 0 0-1.296 0l-3.39 1.948V3.231C12.573 1.935 11.519.881 10.223.881S7.873 1.935 7.873 3.231v3.893L4.483 5.176a1.296 1.296 0 0 0-1.296 0c-.405.243-.648.648-.648 1.134s.243.891.648 1.134l3.39 1.948-3.39 1.948c-.405.243-.648.648-.648 1.134s.243.891.648 1.134c.405.243.891.243 1.296 0l3.39-1.948.08 3.406z"/></svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.953 15.066c-.08.163-.08.324-.08.486 0 1.296 1.054 2.35 2.35 2.35s2.35-1.054 2.35-2.35v-3.893l3.39 1.948c.405.243.891.243 1.296 0 .405-.243.648-.648.648-1.134s-.243-.891-.648-1.134l-3.39-1.948 3.39-1.948c.405-.243.648-.648.648-1.134s-.243-.891-.648-1.134a1.296 1.296 0 0 0-1.296 0l-3.39 1.948V3.231C12.573 1.935 11.519.881 10.223.881S7.873 1.935 7.873 3.231v3.893L4.483 5.176a1.296 1.296 0 0 0-1.296 0c-.405.243-.648.648-.648 1.134s.243.891.648 1.134l3.39 1.948-3.39 1.948c-.405.243-.648.648-.648 1.134s.243.891.648 1.134c.405.243.891.243 1.296 0l3.39-1.948.08 3.406z"></path></svg>
                 </a>
               </div>
             </div>
           </div>
 
           <!-- Contact Form -->
-          <div class="contact-form fade-in-right">
+          <div class="contact-form fade-in-right visible">
             <div id="form-body">
               <h3 style="font-family:var(--font-display); font-size:1.3rem; font-weight:700; margin-bottom:var(--space-md);">Send Us a Message</h3>
 
@@ -2934,50 +2994,44 @@
                 4. Replace YOUR_FORM_ID below with that ID
                 The form will then send submissions to virodigitalllc@gmail.com
               -->
-              <form
-                id="contact-form"
-                action="https://formspree.io/f/mlgzroqp"
-                method="POST"
-                novalidate
-                aria-label="Contact form"
-              >
+              <form id="contact-form" action="https://formspree.io/f/mlgzroqp" method="POST" novalidate="" aria-label="Contact form">
                 <!-- Formspree hidden fields -->
-                <input type="hidden" name="_subject" value="New Inquiry — Viro Digital Website" />
-                <input type="hidden" name="_next" value="" id="form-next-url" />
+                <input type="hidden" name="_subject" value="New Inquiry — Viro Digital Website">
+                <input type="hidden" name="_next" value="http://a.local/wp-admin/admin.php?page=virobuilder-designer-edit&amp;post_id=216#contact" id="form-next-url">
                 <div class="form-row">
                   <div class="form-group">
                     <label for="first-name">First Name <span aria-hidden="true" style="color:#FF4D4D">*</span></label>
-                    <input type="text" id="first-name" name="firstName" placeholder="Jane" required autocomplete="given-name" aria-required="true" />
+                    <input type="text" id="first-name" name="firstName" placeholder="Jane" required="" autocomplete="given-name" aria-required="true">
                     <span class="error-msg" role="alert">Please enter your first name.</span>
                   </div>
                   <div class="form-group">
                     <label for="last-name">Last Name <span aria-hidden="true" style="color:#FF4D4D">*</span></label>
-                    <input type="text" id="last-name" name="lastName" placeholder="Smith" required autocomplete="family-name" aria-required="true" />
+                    <input type="text" id="last-name" name="lastName" placeholder="Smith" required="" autocomplete="family-name" aria-required="true">
                     <span class="error-msg" role="alert">Please enter your last name.</span>
                   </div>
                 </div>
 
                 <div class="form-group">
                   <label for="email">Email Address <span aria-hidden="true" style="color:#FF4D4D">*</span></label>
-                  <input type="email" id="email" name="email" placeholder="jane@organization.gov" required autocomplete="email" aria-required="true" />
+                  <input type="email" id="email" name="email" placeholder="jane@organization.gov" required="" autocomplete="email" aria-required="true">
                   <span class="error-msg" role="alert">Please enter a valid email address.</span>
                 </div>
 
                 <div class="form-row">
                   <div class="form-group">
                     <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" placeholder="(860) 555-0100" autocomplete="tel" />
+                    <input type="tel" id="phone" name="phone" placeholder="(860) 555-0100" autocomplete="tel">
                   </div>
                   <div class="form-group">
                     <label for="organization">Organization</label>
-                    <input type="text" id="organization" name="organization" placeholder="Your Company or Agency" autocomplete="organization" />
+                    <input type="text" id="organization" name="organization" placeholder="Your Company or Agency" autocomplete="organization">
                   </div>
                 </div>
 
                 <div class="form-group">
                   <label for="service">Service of Interest <span aria-hidden="true" style="color:#FF4D4D">*</span></label>
-                  <select id="service" name="service" required aria-required="true">
-                    <option value="" disabled selected>Select a service...</option>
+                  <select id="service" name="service" required="" aria-required="true">
+                    <option value="" disabled="" selected="">Select a service...</option>
                     <option value="wordpress">WordPress Development</option>
                     <option value="section508">Section 508 Compliance</option>
                     <option value="hosting">Managed Hosting</option>
@@ -2992,7 +3046,7 @@
                 <div class="form-group">
                   <label for="budget">Estimated Project Budget</label>
                   <select id="budget" name="budget">
-                    <option value="" disabled selected>Select a range...</option>
+                    <option value="" disabled="" selected="">Select a range...</option>
                     <option value="under-5k">Under $5,000</option>
                     <option value="5k-15k">$5,000 – $15,000</option>
                     <option value="15k-50k">$15,000 – $50,000</option>
@@ -3003,13 +3057,13 @@
 
                 <div class="form-group">
                   <label for="message">Project Details <span aria-hidden="true" style="color:#FF4D4D">*</span></label>
-                  <textarea id="message" name="message" placeholder="Tell us about your project, goals, and any specific requirements (e.g., Section 508, government compliance, current pain points)..." required aria-required="true"></textarea>
+                  <textarea id="message" name="message" placeholder="Tell us about your project, goals, and any specific requirements (e.g., Section 508, government compliance, current pain points)..." required="" aria-required="true"></textarea>
                   <span class="error-msg" role="alert">Please provide some details about your project.</span>
                 </div>
 
                 <button type="submit" class="btn-primary btn-lg" style="width:100%; font-size:1rem;">
                   Send Message
-                  <i data-lucide="send" width="16" height="16" style="margin-left:8px; vertical-align:middle;" aria-hidden="true"></i>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="send" style="margin-left:8px; vertical-align:middle;" aria-hidden="true" class="lucide lucide-send"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"></path><path d="m21.854 2.147-10.94 10.939"></path></svg>
                 </button>
 
                 <p style="font-size:0.75rem; color:var(--text-muted); text-align:center; margin-top:var(--space-sm);">
@@ -3021,7 +3075,7 @@
             <!-- Success state (hidden by default) -->
             <div class="form-success" id="form-success" aria-live="polite" aria-atomic="true">
               <div class="success-icon" aria-hidden="true">
-                <i data-lucide="check" width="28" height="28"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" aria-hidden="true" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"></path></svg>
               </div>
               <h3>Message Sent!</h3>
               <p>Thank you for reaching out to Viro Digital. A member of our team will review your inquiry and be in touch within one business day.</p>
@@ -3042,23 +3096,18 @@
         <div class="footer-brand">
           <div class="footer-brand-logo">
             <!-- REQ 2: Responsive logo image — swapped via JS on theme toggle -->
-            <img
-              src="media/viro-logo-white.png"
-              alt="Viro Digital"
-              id="footer-logo-img"
-              style="height:36px;width:auto;max-width:160px;object-fit:contain;"
-            />
+            <img src="media/viro-logo-white.png" alt="Viro Digital" id="footer-logo-img" style="height:36px;width:auto;max-width:160px;object-fit:contain;">
           </div>
           <p>Secure, U.S.-based IT solutions for businesses and government agencies. Specializing in WordPress development, Section 508 compliance, and managed hosting — based in Connecticut, serving clients nationwide.</p>
           <div class="social-links" role="list" aria-label="Social media links">
-            <a href="https://www.linkedin.com/company/virodigitalct/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn" role="listitem">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            <a href="https://www.linkedin.com/company/virodigitalct/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn" role="listitem" style="position: relative;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"></path><circle cx="4" cy="4" r="2"></circle></svg>
             </a>
-            <a href="https://x.com/virodigitalct" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="X (Twitter)" role="listitem">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            <a href="https://x.com/virodigitalct" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="X (Twitter)" role="listitem" style="position: relative;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
             </a>
-            <a href="https://linktr.ee/virodigital" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Linktree" role="listitem">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.953 15.066c-.08.163-.08.324-.08.486 0 1.296 1.054 2.35 2.35 2.35s2.35-1.054 2.35-2.35v-3.893l3.39 1.948c.405.243.891.243 1.296 0 .405-.243.648-.648.648-1.134s-.243-.891-.648-1.134l-3.39-1.948 3.39-1.948c.405-.243.648-.648.648-1.134s-.243-.891-.648-1.134a1.296 1.296 0 0 0-1.296 0l-3.39 1.948V3.231C12.573 1.935 11.519.881 10.223.881S7.873 1.935 7.873 3.231v3.893L4.483 5.176a1.296 1.296 0 0 0-1.296 0c-.405.243-.648.648-.648 1.134s.243.891.648 1.134l3.39 1.948-3.39 1.948c-.405.243-.648.648-.648 1.134s.243.891.648 1.134c.405.243.891.243 1.296 0l3.39-1.948.08 3.406z"/></svg>
+            <a href="https://linktr.ee/virodigital" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Linktree" role="listitem" style="position: relative;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.953 15.066c-.08.163-.08.324-.08.486 0 1.296 1.054 2.35 2.35 2.35s2.35-1.054 2.35-2.35v-3.893l3.39 1.948c.405.243.891.243 1.296 0 .405-.243.648-.648.648-1.134s-.243-.891-.648-1.134l-3.39-1.948 3.39-1.948c.405-.243.648-.648.648-1.134s-.243-.891-.648-1.134a1.296 1.296 0 0 0-1.296 0l-3.39 1.948V3.231C12.573 1.935 11.519.881 10.223.881S7.873 1.935 7.873 3.231v3.893L4.483 5.176a1.296 1.296 0 0 0-1.296 0c-.405.243-.648.648-.648 1.134s.243.891.648 1.134l3.39 1.948-3.39 1.948c-.405.243-.648.648-.648 1.134s.243.891.648 1.134c.405.243.891.243 1.296 0l3.39-1.948.08 3.406z"></path></svg>
             </a>
           </div>
         </div>
@@ -3081,6 +3130,7 @@
           <h4>Company</h4>
           <ul class="footer-links" role="list">
             <li><a href="#about">About Viro Digital</a></li>
+            <li><a href="#product">ViroBuilder</a></li>
             <li><a href="#process">Our Process</a></li>
             <li><a href="#portfolio">Industries We Serve</a></li>
             <li><a href="#testimonials">Client Reviews</a></li>
@@ -3094,23 +3144,21 @@
           <h4>Get In Touch</h4>
           <ul class="footer-links" role="list" style="margin-bottom:var(--space-md);">
             <li>
-              <a href="tel:+12036996621">
-                <i data-lucide="phone" width="13" height="13" style="vertical-align:middle;margin-right:6px;" aria-hidden="true"></i>203-699-6621
+              <a href="#contact" style="position: relative;">Submit a request </a>
+            </li>
+            <li>
+              <a href="mailto:support@virodigital.net" style="position: relative;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="mail" style="vertical-align:middle;margin-right:6px;" aria-hidden="true" class="lucide lucide-mail"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path><rect x="2" y="4" width="20" height="16" rx="2"></rect></svg>support@virodigital.net
               </a>
             </li>
             <li>
-              <a href="mailto:support@virodigital.net">
-                <i data-lucide="mail" width="13" height="13" style="vertical-align:middle;margin-right:6px;" aria-hidden="true"></i>support@virodigital.net
-              </a>
-            </li>
-            <li>
-              <a href="#contact">
-                <i data-lucide="message-square" width="13" height="13" style="vertical-align:middle;margin-right:6px;" aria-hidden="true"></i>Send a Message
+              <a href="#contact" style="position: relative;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="message-square" style="vertical-align:middle;margin-right:6px;" aria-hidden="true" class="lucide lucide-message-square"><path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"></path></svg>Send a Message
               </a>
             </li>
             <li>
               <a href="https://linktr.ee/virodigital" target="_blank" rel="noopener noreferrer">
-                <i data-lucide="link" width="13" height="13" style="vertical-align:middle;margin-right:6px;" aria-hidden="true"></i>Linktree
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="link" style="vertical-align:middle;margin-right:6px;" aria-hidden="true" class="lucide lucide-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>Linktree
               </a>
             </li>
           </ul>
@@ -3120,7 +3168,7 @@
           </div>
           <div style="margin-top:var(--space-md);">
             <p style="font-size:0.78rem; color:var(--text-muted);">
-              <i data-lucide="shield" width="12" height="12" style="vertical-align:middle;margin-right:4px;" aria-hidden="true"></i>
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="shield" style="vertical-align:middle;margin-right:4px;" aria-hidden="true" class="lucide lucide-shield"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path></svg>
               U.S.-Based · Section 508 · WCAG 2.1 AA
             </p>
           </div>
@@ -3129,7 +3177,7 @@
 
       <!-- Footer bottom bar -->
       <div class="footer-bottom">
-        <p>© <span id="copyright-year">2025</span> Viro Digital LLC. All rights reserved. Based in Connecticut, USA.</p>
+        <p>© <span id="copyright-year">2026</span> Viro Digital LLC. All rights reserved. Based in Connecticut, USA.</p>
         <nav class="footer-bottom-links" aria-label="Legal links">
           <a href="#" onclick="openPage('privacy'); return false;">Privacy Policy</a>
           <a href="#" onclick="openPage('terms'); return false;">Terms of Service</a>
@@ -3167,8 +3215,8 @@
   </div>
 
   <!-- Back to Top Button -->
-  <button id="back-to-top" aria-label="Scroll back to top of page" title="Back to top">
-    <i data-lucide="chevron-up" width="20" height="20" aria-hidden="true"></i>
+  <button id="back-to-top" aria-label="Scroll back to top of page" title="Back to top" class="visible">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-up" aria-hidden="true" class="lucide lucide-chevron-up"><path d="m18 15-6-6-6 6"></path></svg>
   </button>
 
   <!-- ============================================================
@@ -3853,5 +3901,6 @@
       });
     })();
   </script>
-</body>
-</html>
+
+
+</body></html>
