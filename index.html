@@ -13,8 +13,51 @@
   <meta property="og:title" content="Viro Digital — IT Solutions, WordPress Development &amp; Secure Hosting">
   <meta property="og:description" content="Secure, U.S.-based IT solutions for businesses and government agencies. Connecticut-based, serving clients nationwide.">
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Viro Digital">
+  <meta property="og:url" content="https://virodigital.net/">
+  <meta property="og:image" content="https://virodigital.net/media/og-home.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Viro Digital — IT Solutions, WordPress Development & Secure Hosting">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Viro Digital — IT Solutions, WordPress Development &amp; Secure Hosting">
+  <meta name="twitter:description" content="Secure, U.S.-based IT solutions for businesses and government agencies. Connecticut-based, serving clients nationwide.">
+  <meta name="twitter:image" content="https://virodigital.net/media/og-home.jpg">
+  <link rel="canonical" href="https://virodigital.net/">
   <meta name="robots" content="index, follow">
-  <title>Viro Digital — IT Solutions,  &amp; Secure Hosting</title>
+
+  <!-- Structured data: business profile for local/organic SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Viro Digital LLC",
+    "url": "https://virodigital.net",
+    "image": "https://virodigital.net/media/og-home.jpg",
+    "logo": "https://virodigital.net/media/viro-logo-blue.png",
+    "description": "Secure, U.S.-based IT solutions specializing in WordPress development, Section 508 compliance, and managed hosting for small businesses, corporations, and civil government agencies.",
+    "email": "support@virodigital.net",
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "CT",
+      "addressCountry": "US"
+    },
+    "areaServed": "US",
+    "priceRange": "$$",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "16:00"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/virodigitalct/",
+      "https://x.com/virodigitalct",
+      "https://linktr.ee/virodigital"
+    ]
+  }
+  </script>
+  <title>Viro Digital — IT Solutions, WordPress Development &amp; Secure Hosting</title>
 
   <!-- REQ 1: Favicon -->
   <link rel="icon" type="image/png" href="media/viro-favicon.png">
@@ -25,7 +68,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&amp;family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&amp;display=swap" rel="stylesheet">
 
   <!-- Lucide Icons via CDN -->
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <script src="media/lib/lucide.min.js"></script>
 
   <style>
     /* ============================================================
@@ -635,8 +678,10 @@
     }
     .about-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--space-xxl);
+      grid-template-columns: 1fr;
+      max-width: 820px;
+      margin: 0 auto;
+      gap: var(--space-lg);
       align-items: center;
     }
     .about-image-wrap {
@@ -890,121 +935,6 @@
     .pricing-feature:last-child { border-bottom: none; }
     .pricing-feature .check { color: var(--brand-accent); flex-shrink: 0; }
     .pricing-feature .cross { color: var(--text-muted); flex-shrink: 0; }
-
-    /* ============================================================
-       TESTIMONIALS — Carousel
-       ============================================================ */
-    #testimonials {
-      background: var(--bg-base);
-      overflow: hidden;
-    }
-    .testimonial-slider {
-      position: relative;
-      max-width: 860px;
-      margin: 0 auto;
-    }
-    .testimonial-track {
-      overflow: hidden;
-    }
-    .testimonial-viewport {
-      display: flex;
-      transition: transform var(--transition-slow);
-    }
-    .testimonial-slide {
-      min-width: 100%;
-      padding: 0 var(--space-xs);
-    }
-    .testimonial-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-xl);
-      padding: var(--space-xl);
-      position: relative;
-    }
-    .testimonial-quote-mark {
-      font-family: var(--font-display);
-      font-size: 5rem;
-      line-height: 1;
-      color: var(--brand-primary);
-      opacity: 0.3;
-      position: absolute;
-      top: 20px; left: 32px;
-    }
-    .testimonial-text {
-      font-size: 1.1rem;
-      line-height: 1.7;
-      color: var(--text-primary);
-      font-style: italic;
-      margin-bottom: var(--space-lg);
-      padding-top: var(--space-md);
-    }
-    .testimonial-author {
-      display: flex;
-      align-items: center;
-      gap: var(--space-sm);
-    }
-    .testimonial-avatar {
-      width: 52px; height: 52px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid rgba(0,102,255,0.25);
-    }
-    .testimonial-author-name {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 0.95rem;
-    }
-    .testimonial-author-role {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-    .stars {
-      display: flex;
-      gap: 3px;
-      margin-bottom: 6px;
-    }
-    .star { color: #FFBA08; font-size: 0.9rem; }
-    /* Slider controls */
-    .slider-controls {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: var(--space-sm);
-      margin-top: var(--space-lg);
-    }
-    .slider-btn {
-      width: 44px; height: 44px;
-      border-radius: 50%;
-      background: var(--bg-card);
-      border: 1px solid var(--border-default);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text-secondary);
-      transition: all var(--transition-fast);
-      cursor: pointer;
-    }
-    .slider-btn:hover {
-      background: var(--brand-primary);
-      border-color: var(--brand-primary);
-      color: #fff;
-    }
-    .slider-dots {
-      display: flex;
-      gap: 8px;
-    }
-    .slider-dot {
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      background: var(--border-default);
-      cursor: pointer;
-      transition: all var(--transition-fast);
-    }
-    .slider-dot.active {
-      background: var(--brand-primary);
-      width: 24px;
-      border-radius: 4px;
-    }
 
     /* ============================================================
        INDUSTRIES WE SERVE — REQ 5 (replaces portfolio gallery)
@@ -2151,102 +2081,102 @@
 
           <!-- 1. Amazon Web Services -->
           <div class="tech-item fade-in stagger-1 visible">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="Amazon Web Services" loading="lazy" class="tech-logo">
+            <img src="media/tech/aws.svg" alt="Amazon Web Services" loading="lazy" class="tech-logo">
           </div>
 
           <!-- 2. Microsoft Azure -->
           <div class="tech-item fade-in stagger-2 visible">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg" alt="Microsoft Azure" loading="lazy" class="tech-logo">
+            <img src="media/tech/azure.svg" alt="Microsoft Azure" loading="lazy" class="tech-logo">
           </div>
 
           <!-- 3. Google Cloud -->
           <div class="tech-item fade-in stagger-3 visible">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/0/01/Google-cloud-platform.svg" alt="Google Cloud" loading="lazy" class="tech-logo">
+            <img src="media/tech/google-cloud.svg" alt="Google Cloud" loading="lazy" class="tech-logo">
           </div>
 
           <!-- 4. WordPress — wordmark is dark text, invert in dark mode -->
           <div class="tech-item fade-in stagger-4 visible">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/WordPress_logo.svg" alt="WordPress" loading="lazy" class="tech-logo tech-logo-dark-only">
+            <img src="media/tech/wordpress.svg" alt="WordPress" loading="lazy" class="tech-logo tech-logo-dark-only">
           </div>
 
           <!-- 5. cPanel — devicons reliable source -->
           <div class="tech-item fade-in stagger-1 visible">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cpanel/cpanel-original.svg" alt="cPanel" loading="lazy" class="tech-logo">
+            <img src="media/tech/cpanel.svg" alt="cPanel" loading="lazy" class="tech-logo">
           </div>
 
           <!-- 6. HTML5 -->
           <div class="tech-item fade-in stagger-2 visible">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5" loading="lazy" class="tech-logo">
+            <img src="media/tech/html5.svg" alt="HTML5" loading="lazy" class="tech-logo">
           </div>
 
           <!-- 7. CSS3 -->
           <div class="tech-item fade-in stagger-3 visible">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS3" loading="lazy" class="tech-logo">
+            <img src="media/tech/css3.svg" alt="CSS3" loading="lazy" class="tech-logo">
           </div>
 
           <!-- 8. JavaScript -->
           <div class="tech-item fade-in stagger-4 visible">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" loading="lazy" class="tech-logo">
+            <img src="media/tech/javascript.svg" alt="JavaScript" loading="lazy" class="tech-logo">
           </div>
 
           <!-- 9. PHP -->
           <div class="tech-item fade-in stagger-1 visible">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" alt="PHP" loading="lazy" class="tech-logo">
+            <img src="media/tech/php.svg" alt="PHP" loading="lazy" class="tech-logo">
           </div>
 
           <!-- 10. MySQL -->
           <div class="tech-item fade-in stagger-2 visible">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg" alt="MySQL" loading="lazy" class="tech-logo">
+            <img src="media/tech/mysql.svg" alt="MySQL" loading="lazy" class="tech-logo">
           </div>
 
           <!-- 11. React -->
           <div class="tech-item fade-in stagger-3 visible">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" loading="lazy" class="tech-logo">
+            <img src="media/tech/react.svg" alt="React" loading="lazy" class="tech-logo">
           </div>
 
           <!-- 12. Node.js -->
           <div class="tech-item fade-in stagger-4 visible">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg" alt="Node.js" loading="lazy" class="tech-logo">
+            <img src="media/tech/nodejs.svg" alt="Node.js" loading="lazy" class="tech-logo">
           </div>
 
           <!-- 13. Git -->
           <div class="tech-item fade-in stagger-1 visible">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original-wordmark.svg" alt="Git" loading="lazy" class="tech-logo">
+            <img src="media/tech/git.svg" alt="Git" loading="lazy" class="tech-logo">
           </div>
 
           <!-- 14. Docker -->
           <div class="tech-item fade-in stagger-2 visible">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original-wordmark.svg" alt="Docker" loading="lazy" class="tech-logo">
+            <img src="media/tech/docker.svg" alt="Docker" loading="lazy" class="tech-logo">
           </div>
 
           <!-- 15. Nginx -->
           <div class="tech-item fade-in stagger-3 visible">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nginx/nginx-original.svg" alt="Nginx" loading="lazy" class="tech-logo">
+            <img src="media/tech/nginx.svg" alt="Nginx" loading="lazy" class="tech-logo">
           </div>
 
           <!-- 16. Linux -->
           <div class="tech-item fade-in stagger-4 visible">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux" loading="lazy" class="tech-logo">
+            <img src="media/tech/linux.svg" alt="Linux" loading="lazy" class="tech-logo">
           </div>
 
           <!-- 17. Python -->
           <div class="tech-item fade-in stagger-1 visible">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg" alt="Python" loading="lazy" class="tech-logo">
+            <img src="media/tech/python.svg" alt="Python" loading="lazy" class="tech-logo">
           </div>
 
           <!-- 18. TypeScript -->
           <div class="tech-item fade-in stagger-2 visible">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="TypeScript" loading="lazy" class="tech-logo">
+            <img src="media/tech/typescript.svg" alt="TypeScript" loading="lazy" class="tech-logo">
           </div>
 
           <!-- 19. GraphQL -->
           <div class="tech-item fade-in stagger-3 visible">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/graphql/graphql-plain-wordmark.svg" alt="GraphQL" loading="lazy" class="tech-logo">
+            <img src="media/tech/graphql.svg" alt="GraphQL" loading="lazy" class="tech-logo">
           </div>
 
           <!-- 20. Cloudflare -->
           <div class="tech-item fade-in stagger-4 visible">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cloudflare/cloudflare-original-wordmark.svg" alt="Cloudflare" loading="lazy" class="tech-logo">
+            <img src="media/tech/cloudflare.svg" alt="Cloudflare" loading="lazy" class="tech-logo">
           </div>
 
         </div>
@@ -2260,28 +2190,23 @@
       <div class="bg-grid" aria-hidden="true"></div>
       <div class="container">
         <div class="about-grid">
-          <!-- Image column -->
-          <div class="about-image-wrap fade-in-left visible" style="position: relative;">
-            <img src="https://picsum.photos/seed/viro-office/700/520" alt="Viro Digital team collaborating in a modern Connecticut office" loading="lazy">
-          </div>
-
           <!-- Text column -->
-          <div class="about-text fade-in-right visible">
+          <div class="about-text fade-in visible">
             <p class="section-label">About Viro Digital</p>
             <h2 class="display-lg" id="about-heading">
               Built on Trust.<br>Driven by Security.
             </h2>
 
-            <p>The people behind Viro Digital have been in the trenches of web development and IT infrastructure since 2012 — that's over a decade of hands-on experience before a single line of company code was written. When we say we've seen it all, we mean it.</p>
+            <p>The people behind Viro Digital bring over eight years of hands-on experience in web development and IT — across dozens of projects delivered — well before the first line of company code was written. That real-world experience shapes everything we build.</p>
 
             <p>Viro Digital LLC was founded with a clear purpose: to give small businesses, mid-sized corporations, and civil government agencies access to the same caliber of IT services that Fortune 500 companies rely on — without the enterprise price tag or the runaround.</p>
 
-            <p>Based in Connecticut and operating entirely within U.S. borders, we take data sovereignty seriously. Every server, every support ticket, and every line of code stays onshore. Our team's deep WordPress expertise, combined with genuine mastery of federal accessibility standards and security frameworks, means you get a partner — not just a vendor.</p>
+            <p>Based in Connecticut and operating entirely within U.S. borders, we take data sovereignty seriously. Every server, every support ticket, and every line of code stays onshore. Our team's deep WordPress expertise, combined with hands-on experience in federal accessibility standards and security frameworks, means you get a partner — not just a vendor.</p>
 
             <!-- Experience milestones -->
             <div class="experience-stats-container">
               <div class="experience-stat">
-                <div class="experience-stat-value">12+</div>
+                <div class="experience-stat-value">8+</div>
                 <div class="experience-stat-label">Yrs Experience</div>
               </div>
               <div class="experience-stat">
@@ -2289,8 +2214,8 @@
                 <div class="experience-stat-label">Projects Delivered</div>
               </div>
               <div class="experience-stat">
-                <div class="experience-stat-value">99.9%</div>
-                <div class="experience-stat-label">Uptime SLA</div>
+                <div class="experience-stat-value">100%</div>
+                <div class="experience-stat-label">U.S.-Based</div>
               </div>
             </div>
 
@@ -2434,7 +2359,7 @@
         <div class="industry-grid">
           <!-- Small Businesses — wide featured -->
           <div class="industry-card wide fade-in visible" aria-label="Small Businesses">
-            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=900&amp;h=500&amp;fit=crop&amp;crop=center&amp;auto=format" alt="Small business owner at a modern retail storefront" loading="lazy">
+            <img src="media/industries/small-business.jpg" alt="Small business owner at a modern retail storefront" loading="lazy">
             <div class="industry-overlay">
               <div class="industry-icon-wrap" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="store" aria-hidden="true" class="lucide lucide-store"><path d="M15 21v-5a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v5"></path><path d="M17.774 10.31a1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.451 0 1.12 1.12 0 0 0-1.548 0 2.5 2.5 0 0 1-3.452 0 1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.77-3.248l2.889-4.184A2 2 0 0 1 7 2h10a2 2 0 0 1 1.653.873l2.895 4.192a2.5 2.5 0 0 1-3.774 3.244"></path><path d="M4 10.95V19a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8.05"></path></svg></div>
               <h4>Small Businesses</h4>
@@ -2444,7 +2369,7 @@
 
           <!-- Healthcare -->
           <div class="industry-card fade-in stagger-1 visible" aria-label="Healthcare">
-            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&amp;h=800&amp;fit=crop&amp;crop=faces,top&amp;auto=format" alt="Professional female doctor in white coat smiling confidently" loading="lazy">
+            <img src="media/industries/healthcare.jpg" alt="Professional female doctor in white coat smiling confidently" loading="lazy">
             <div class="industry-overlay">
               <div class="industry-icon-wrap" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="heart-pulse" aria-hidden="true" class="lucide lucide-heart-pulse"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"></path><path d="M3.22 13H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"></path></svg></div>
               <h4>Healthcare</h4>
@@ -2454,7 +2379,7 @@
 
           <!-- Corporate -->
           <div class="industry-card fade-in stagger-2 visible" aria-label="Corporate">
-            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&amp;h=800&amp;fit=crop&amp;crop=center&amp;auto=format" alt="Modern corporate office interior with professionals at work" loading="lazy">
+            <img src="media/industries/corporate.jpg" alt="Modern corporate office interior with professionals at work" loading="lazy">
             <div class="industry-overlay">
               <div class="industry-icon-wrap" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="building-2" aria-hidden="true" class="lucide lucide-building-2"><path d="M10 12h4"></path><path d="M10 8h4"></path><path d="M14 21v-3a2 2 0 0 0-4 0v3"></path><path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"></path><path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"></path></svg></div>
               <h4>Corporate</h4>
@@ -2464,7 +2389,7 @@
 
           <!-- IT -->
           <div class="industry-card fade-in stagger-3 visible" aria-label="Information Technology">
-            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&amp;h=800&amp;fit=crop&amp;crop=center&amp;auto=format" alt="Server racks and IT infrastructure in a data center" loading="lazy">
+            <img src="media/industries/it.jpg" alt="Server racks and IT infrastructure in a data center" loading="lazy">
             <div class="industry-overlay">
               <div class="industry-icon-wrap" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="cpu" aria-hidden="true" class="lucide lucide-cpu"><path d="M12 20v2"></path><path d="M12 2v2"></path><path d="M17 20v2"></path><path d="M17 2v2"></path><path d="M2 12h2"></path><path d="M2 17h2"></path><path d="M2 7h2"></path><path d="M20 12h2"></path><path d="M20 17h2"></path><path d="M20 7h2"></path><path d="M7 20v2"></path><path d="M7 2v2"></path><rect x="4" y="4" width="16" height="16" rx="2"></rect><rect x="8" y="8" width="8" height="8" rx="1"></rect></svg></div>
               <h4>Information Technology</h4>
@@ -2474,7 +2399,7 @@
 
           <!-- Administrative -->
           <div class="industry-card fade-in stagger-1 visible" aria-label="Administrative">
-            <img src="https://images.unsplash.com/photo-1575505586569-646b2ca898fc?w=600&amp;h=800&amp;fit=crop&amp;crop=center&amp;auto=format" alt="Government administrative building exterior" loading="lazy">
+            <img src="media/industries/administrative.jpg" alt="Government administrative building exterior" loading="lazy">
             <div class="industry-overlay">
               <div class="industry-icon-wrap" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="landmark" aria-hidden="true" class="lucide lucide-landmark"><path d="M10 18v-7"></path><path d="M11.119 2.205a2 2 0 0 1 1.762 0l7.84 3.846A.5.5 0 0 1 20.5 7h-17a.5.5 0 0 1-.22-.949z"></path><path d="M14 18v-7"></path><path d="M18 18v-7"></path><path d="M3 22h18"></path><path d="M6 18v-7"></path></svg></div>
               <h4>Administrative</h4>
@@ -2484,7 +2409,7 @@
 
           <!-- Bakeries -->
           <div class="industry-card fade-in stagger-2 visible" aria-label="Bakeries and Food Businesses">
-            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&amp;h=800&amp;fit=crop&amp;crop=center&amp;auto=format" alt="Artisan bakery display with fresh breads and pastries" loading="lazy">
+            <img src="media/industries/bakery.jpg" alt="Artisan bakery display with fresh breads and pastries" loading="lazy">
             <div class="industry-overlay">
               <div class="industry-icon-wrap" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="cake" aria-hidden="true" class="lucide lucide-cake"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"></path><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"></path><path d="M2 21h20"></path><path d="M7 8v3"></path><path d="M12 8v3"></path><path d="M17 8v3"></path><path d="M7 4h.01"></path><path d="M12 4h.01"></path><path d="M17 4h.01"></path></svg></div>
               <h4>Bakeries &amp; Food</h4>
@@ -2494,147 +2419,12 @@
 
           <!-- Local Businesses — wide featured -->
           <div class="industry-card wide fade-in stagger-3 visible" aria-label="Local Businesses">
-            <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=900&amp;h=500&amp;fit=crop&amp;crop=center&amp;auto=format" alt="Vibrant local Main Street with small business storefronts" loading="lazy">
+            <img src="media/industries/local-business.jpg" alt="Vibrant local Main Street with small business storefronts" loading="lazy">
             <div class="industry-overlay">
               <div class="industry-icon-wrap" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="map-pin" aria-hidden="true" class="lucide lucide-map-pin"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg></div>
               <h4>Local Businesses</h4>
               <p>From hair salons to law offices — we help local businesses grow their online presence, capture leads, and compete in today's digital marketplace.</p>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         REQ 6: TESTIMONIALS — Industry roles, no public sector refs,
-         randomuser.me AI-style headshot placeholders
-         ============================================================ -->
-    <section id="testimonials" class="section" aria-labelledby="testimonials-heading">
-      <div class="bg-grid" aria-hidden="true"></div>
-      <div class="container">
-        <div class="section-header">
-          <p class="section-label fade-in visible">Client Feedback</p>
-          <h2 class="display-lg fade-in stagger-1 visible" id="testimonials-heading">What Our Clients Say</h2>
-          <p class="fade-in stagger-2 visible">Real feedback from the business owners and organizations we've had the privilege to serve.</p>
-        </div>
-
-        <div class="testimonial-slider fade-in visible" role="region" aria-label="Testimonials carousel" aria-live="polite">
-          <div class="testimonial-track">
-            <div class="testimonial-viewport" id="testimonial-viewport" style="transform: translateX(-300%);">
-
-              <!-- Slide 1 — Small Business / Retail -->
-              <div class="testimonial-slide" role="group" aria-label="Testimonial 1 of 4">
-                <div class="testimonial-card">
-                  <div class="testimonial-quote-mark" aria-hidden="true">"</div>
-                  <div class="stars" aria-label="5 stars">
-                    <span class="star" aria-hidden="true">★</span>
-                    <span class="star" aria-hidden="true">★</span>
-                    <span class="star" aria-hidden="true">★</span>
-                    <span class="star" aria-hidden="true">★</span>
-                    <span class="star" aria-hidden="true">★</span>
-                  </div>
-                  <blockquote class="testimonial-text">
-                    "Viro Digital completely transformed our online presence. As a small business owner, I was nervous about the cost and complexity — but they made the entire process simple, transparent, and affordable. Our new site has driven a real increase in walk-in customers and online inquiries."
-                  </blockquote>
-                  <div class="testimonial-author">
-                    <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Portrait of Sandra M." loading="lazy">
-                    <div>
-                      <div class="testimonial-author-name">Sandra M.</div>
-                      <div class="testimonial-author-role">Owner — Small Business, Retail</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Slide 2 — E-Commerce / Corporate -->
-              <div class="testimonial-slide" role="group" aria-label="Testimonial 2 of 4">
-                <div class="testimonial-card">
-                  <div class="testimonial-quote-mark" aria-hidden="true">"</div>
-                  <div class="stars" aria-label="5 stars">
-                    <span class="star" aria-hidden="true">★</span>
-                    <span class="star" aria-hidden="true">★</span>
-                    <span class="star" aria-hidden="true">★</span>
-                    <span class="star" aria-hidden="true">★</span>
-                    <span class="star" aria-hidden="true">★</span>
-                  </div>
-                  <blockquote class="testimonial-text">
-                    "We hired Viro Digital to overhaul our WooCommerce store after a string of disappointments with other agencies. The difference was night and day. Site speed improved by 65%, conversion rates jumped, and their managed hosting keeps everything running smoothly without any input from us."
-                  </blockquote>
-                  <div class="testimonial-author">
-                    <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Portrait of Marcus T." loading="lazy">
-                    <div>
-                      <div class="testimonial-author-name">Marcus T.</div>
-                      <div class="testimonial-author-role">CEO — E-Commerce &amp; Corporate</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Slide 3 — Healthcare -->
-              <div class="testimonial-slide" role="group" aria-label="Testimonial 3 of 4">
-                <div class="testimonial-card">
-                  <div class="testimonial-quote-mark" aria-hidden="true">"</div>
-                  <div class="stars" aria-label="5 stars">
-                    <span class="star" aria-hidden="true">★</span>
-                    <span class="star" aria-hidden="true">★</span>
-                    <span class="star" aria-hidden="true">★</span>
-                    <span class="star" aria-hidden="true">★</span>
-                    <span class="star" aria-hidden="true">★</span>
-                  </div>
-                  <blockquote class="testimonial-text">
-                    "As a healthcare organization, data security and compliance are non-negotiable for us. Viro Digital understood this from day one. They built us a HIPAA-aware patient information portal on WordPress that's both beautiful and bulletproof. Two years in, we've had zero security incidents."
-                  </blockquote>
-                  <div class="testimonial-author">
-                    <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Portrait of Dr. Patricia L." loading="lazy">
-                    <div>
-                      <div class="testimonial-author-name">Dr. Patricia L.</div>
-                      <div class="testimonial-author-role">Chief Information Officer — Healthcare</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Slide 4 — Bakery / Local Business -->
-              <div class="testimonial-slide" role="group" aria-label="Testimonial 4 of 4">
-                <div class="testimonial-card">
-                  <div class="testimonial-quote-mark" aria-hidden="true">"</div>
-                  <div class="stars" aria-label="5 stars">
-                    <span class="star" aria-hidden="true">★</span>
-                    <span class="star" aria-hidden="true">★</span>
-                    <span class="star" aria-hidden="true">★</span>
-                    <span class="star" aria-hidden="true">★</span>
-                    <span class="star" aria-hidden="true">★</span>
-                  </div>
-                  <blockquote class="testimonial-text">
-                    "I needed a full website redesign for my bakery and had no idea where to start. Viro Digital walked me through every step, built something gorgeous, and set up hosting I never have to think about. My online orders have tripled since launch. Best investment I've made for my business."
-                  </blockquote>
-                  <div class="testimonial-author">
-                    <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/women/25.jpg" alt="Portrait of Rebecca K." loading="lazy">
-                    <div>
-                      <div class="testimonial-author-name">Rebecca K.</div>
-                      <div class="testimonial-author-role">Owner — Bakery &amp; Local Business</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div><!-- /viewport -->
-          </div><!-- /track -->
-
-          <!-- Slider controls -->
-          <div class="slider-controls">
-            <button class="slider-btn" id="prev-slide" aria-label="Previous testimonial">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-left" aria-hidden="true" class="lucide lucide-chevron-left"><path d="m15 18-6-6 6-6"></path></svg>
-            </button>
-            <div class="slider-dots" id="slider-dots" role="tablist" aria-label="Testimonial navigation">
-              <button class="slider-dot" data-index="0" role="tab" aria-selected="false" aria-label="Testimonial 1"></button>
-              <button class="slider-dot" data-index="1" role="tab" aria-selected="false" aria-label="Testimonial 2"></button>
-              <button class="slider-dot" data-index="2" role="tab" aria-selected="false" aria-label="Testimonial 3"></button>
-              <button class="slider-dot active" data-index="3" role="tab" aria-selected="true" aria-label="Testimonial 4"></button>
-            </div>
-            <button class="slider-btn" id="next-slide" aria-label="Next testimonial">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-right" aria-hidden="true" class="lucide lucide-chevron-right"><path d="m9 18 6-6-6-6"></path></svg>
-            </button>
           </div>
         </div>
       </div>
@@ -2823,7 +2613,7 @@
               </span>
             </button>
             <div class="faq-answer" id="faq-answer-2" role="region" style="display: block; overflow: hidden; max-height: 0px; transition: max-height 0.38s;">
-              <p>Yes, civil government agencies represent a core part of our client base. We have extensive experience meeting Section 508 of the Rehabilitation Act and WCAG 2.1 AA standards. We can provide VPAT (Voluntary Product Accessibility Template) documentation, conduct formal accessibility audits, and build compliant digital solutions from the ground up. Contact us to discuss your agency's specific compliance requirements.</p>
+              <p>Yes — we build to the standards civil government agencies require. Our team works to Section 508 of the Rehabilitation Act and WCAG 2.1 AA, and we can provide VPAT (Voluntary Product Accessibility Template) documentation, conduct formal accessibility audits, and build compliant digital solutions from the ground up. Contact us to discuss your agency's specific compliance requirements.</p>
             </div>
           </div>
 
@@ -2997,7 +2787,6 @@
               <form id="contact-form" action="https://formspree.io/f/mlgzroqp" method="POST" novalidate="" aria-label="Contact form">
                 <!-- Formspree hidden fields -->
                 <input type="hidden" name="_subject" value="New Inquiry — Viro Digital Website">
-                <input type="hidden" name="_next" value="http://a.local/wp-admin/admin.php?page=virobuilder-designer-edit&amp;post_id=216#contact" id="form-next-url">
                 <div class="form-row">
                   <div class="form-group">
                     <label for="first-name">First Name <span aria-hidden="true" style="color:#FF4D4D">*</span></label>
@@ -3133,7 +2922,6 @@
             <li><a href="#product">ViroBuilder</a></li>
             <li><a href="#process">Our Process</a></li>
             <li><a href="#portfolio">Industries We Serve</a></li>
-            <li><a href="#testimonials">Client Reviews</a></li>
             <li><a href="#pricing">Pricing</a></li>
             <li><a href="#contact">Contact Us</a></li>
           </ul>
@@ -3457,65 +3245,6 @@
     })();
 
     /* ============================================================
-       TESTIMONIAL SLIDER
-       ============================================================ */
-    (function() {
-      const viewport = document.getElementById('testimonial-viewport');
-      const dots = document.querySelectorAll('.slider-dot');
-      let current = 0;
-      const total = dots.length;
-      let autoPlay;
-
-      function goTo(index) {
-        current = (index + total) % total;
-        viewport.style.transform = `translateX(-${current * 100}%)`;
-        dots.forEach((dot, i) => {
-          dot.classList.toggle('active', i === current);
-          dot.setAttribute('aria-selected', i === current);
-        });
-      }
-
-      document.getElementById('prev-slide').addEventListener('click', () => {
-        goTo(current - 1);
-        resetAuto();
-      });
-      document.getElementById('next-slide').addEventListener('click', () => {
-        goTo(current + 1);
-        resetAuto();
-      });
-      dots.forEach(dot => {
-        dot.addEventListener('click', () => {
-          goTo(parseInt(dot.dataset.index));
-          resetAuto();
-        });
-      });
-
-      // Auto-play
-      function startAuto() {
-        autoPlay = setInterval(() => goTo(current + 1), 5500);
-      }
-      function resetAuto() {
-        clearInterval(autoPlay);
-        startAuto();
-      }
-      startAuto();
-
-      // Keyboard support
-      document.getElementById('testimonial-viewport').addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowLeft') goTo(current - 1);
-        if (e.key === 'ArrowRight') goTo(current + 1);
-      });
-
-      // Touch swipe support
-      let touchStart = 0;
-      viewport.addEventListener('touchstart', e => { touchStart = e.touches[0].clientX; }, { passive: true });
-      viewport.addEventListener('touchend', e => {
-        const diff = touchStart - e.changedTouches[0].clientX;
-        if (Math.abs(diff) > 40) diff > 0 ? goTo(current + 1) : goTo(current - 1);
-      }, { passive: true });
-    })();
-
-    /* ============================================================
        LIGHTBOX — Gallery image viewer
        ============================================================ */
     (function() {
@@ -3577,10 +3306,6 @@
 
       if (!form) return;
 
-      // Set the _next hidden field to return user to this page after submission
-      var nextUrl = document.getElementById('form-next-url');
-      if (nextUrl) nextUrl.value = window.location.href.split('#')[0] + '#contact';
-
       function validateField(input) {
         var group = input.closest('.form-group');
         if (!group) return true;
@@ -3615,36 +3340,32 @@
           return;
         }
 
-        var formId = form.action;
-        var hasRealId = formId && !formId.includes('YOUR_FORM_ID');
+        // Submit via AJAX so the visitor stays on this page and sees the
+        // in-page success message (no redirect away to Formspree).
+        e.preventDefault();
+        var submitBtn = form.querySelector('[type="submit"]');
+        var originalBtn = submitBtn ? submitBtn.innerHTML : '';
+        if (submitBtn) { submitBtn.textContent = 'Sending…'; submitBtn.disabled = true; }
 
-        if (hasRealId) {
-          // ✅ Real Formspree ID set — let the form submit natively (POST to Formspree)
-          // Formspree handles delivery to virodigitalllc@gmail.com
-          // No e.preventDefault() — browser submits naturally
-          var submitBtn = form.querySelector('[type="submit"]');
-          if (submitBtn) {
-            submitBtn.textContent = 'Sending…';
-            submitBtn.disabled = true;
-          }
-          // Let native submit happen
-        } else {
-          // ⚠️ YOUR_FORM_ID not yet replaced — show demo success UI instead of 404
-          e.preventDefault();
-          var btn = form.querySelector('[type="submit"]');
-          if (btn) { btn.textContent = 'Sending…'; btn.disabled = true; }
-
-          setTimeout(function() {
+        fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        })
+        .then(function(response) {
+          if (response.ok) {
             formBody.style.display = 'none';
             formSuccess.style.display = 'block';
-            formSuccess.innerHTML = '<div style="text-align:center; padding:var(--space-lg);">' +
-              '<div style="width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,#0066FF,#00FFD1);display:flex;align-items:center;justify-content:center;margin:0 auto var(--space-md);color:#fff;font-size:1.5rem;">✓</div>' +
-              '<h3 style="font-family:var(--font-display);font-size:1.5rem;margin-bottom:8px;">Form Not Yet Activated</h3>' +
-              '<p style="color:var(--text-secondary);margin-bottom:var(--space-md);">To activate: sign up at <strong>formspree.io</strong>, create a form for <strong>virodigitalllc@gmail.com</strong>, and replace <code>YOUR_FORM_ID</code> in the form\'s action URL.</p>' +
-              '<p style="color:var(--text-secondary);font-size:0.875rem;">In the meantime, email us directly at <a href="mailto:support@virodigital.net" style="color:#0066FF">support@virodigital.net</a></p>' +
-              '</div>';
-          }, 800);
-        }
+            formSuccess.setAttribute('tabindex', '-1');
+            formSuccess.focus();
+          } else {
+            throw new Error('Submission failed');
+          }
+        })
+        .catch(function() {
+          if (submitBtn) { submitBtn.innerHTML = originalBtn; submitBtn.disabled = false; }
+          alert('Sorry — something went wrong sending your message. Please email us directly at support@virodigital.net.');
+        });
       });
     })();
 
@@ -3685,7 +3406,7 @@
     var pageContent = {
       privacy: {
         title: 'Privacy Policy',
-        updated: 'Last updated: January 1, 2025',
+        updated: 'Last updated: July 24, 2026',
         body: [
           { h: 'Overview' },
           { p: 'Viro Digital LLC ("we," "us," or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard information when you visit our website or use our services.' },
@@ -3702,12 +3423,12 @@
           { h: 'Your Rights' },
           { p: 'You have the right to access, correct, or delete any personal information we hold about you. To exercise these rights, please contact us at support@virodigital.net.' },
           { h: 'Contact' },
-          { p: 'If you have questions about this Privacy Policy, please contact us at: support@virodigital.net | 203-699-6621 | Connecticut, United States.' }
+          { p: 'If you have questions about this Privacy Policy, please contact us at: support@virodigital.net | Connecticut, United States.' }
         ]
       },
       terms: {
         title: 'Terms of Service',
-        updated: 'Last updated: January 1, 2025',
+        updated: 'Last updated: July 24, 2026',
         body: [
           { h: 'Acceptance of Terms' },
           { p: 'By accessing or using the Viro Digital LLC website or any of our services, you agree to be bound by these Terms of Service. If you do not agree with any part of these terms, you may not use our services.' },
@@ -3729,7 +3450,7 @@
       },
       accessibility: {
         title: 'Accessibility Statement',
-        updated: 'Last updated: January 1, 2025',
+        updated: 'Last updated: July 24, 2026',
         body: [
           { h: 'Our Commitment' },
           { p: 'Viro Digital LLC is committed to ensuring digital accessibility for people with disabilities. We continually improve the user experience for everyone and apply relevant accessibility standards to all of our web properties.' },
@@ -3740,7 +3461,7 @@
           { h: 'Known Limitations' },
           { p: 'While we strive for full accessibility compliance, some third-party content or tools integrated into our sites may not fully meet WCAG 2.1 AA standards. We are actively working to address any known gaps.' },
           { h: 'Feedback & Contact' },
-          { p: 'We welcome feedback on the accessibility of our website. If you experience any barriers or have suggestions for improvement, please contact us: Email: support@virodigital.net | Phone: 203-699-6621. We aim to respond to accessibility feedback within 2 business days.' },
+          { p: 'We welcome feedback on the accessibility of our website. If you experience any barriers or have suggestions for improvement, please contact us: Email: support@virodigital.net. We aim to respond to accessibility feedback within 2 business days.' },
           { h: 'Formal Complaints' },
           { p: 'If you are not satisfied with our response, you may contact the U.S. Access Board or file a complaint with the relevant oversight authority for Section 508 compliance.' }
         ]
@@ -3757,7 +3478,6 @@
             { label: 'About Viro Digital', href: '#about' },
             { label: 'Our Process', href: '#process' },
             { label: 'Industries We Serve', href: '#portfolio' },
-            { label: 'Client Testimonials', href: '#testimonials' },
             { label: 'Pricing Plans', href: '#pricing' },
             { label: 'FAQs', href: '#faq' },
             { label: 'Contact Us', href: '#contact' }
@@ -3788,8 +3508,7 @@
             { label: 'LinkedIn', href: 'https://www.linkedin.com/company/virodigitalct/', external: true },
             { label: 'X (Twitter)', href: 'https://x.com/virodigitalct', external: true },
             { label: 'Linktree', href: 'https://linktr.ee/virodigital', external: true },
-            { label: 'Email: support@virodigital.net', href: 'mailto:support@virodigital.net' },
-            { label: 'Phone: 203-699-6621', href: 'tel:+12036996621' }
+            { label: 'Email: support@virodigital.net', href: 'mailto:support@virodigital.net' }
           ]}
         ]
       }
