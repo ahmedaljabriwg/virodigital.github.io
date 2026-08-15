@@ -339,20 +339,20 @@
       <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:26px">
         <a class="btn btn-fill" href="https://wordpress.org/plugins/virobuilder/" target="_blank" rel="noopener noreferrer">View on WordPress.org &rarr;</a>
       </div>
-      <p class="micro" style="margin-bottom:14px">Prefer to install the .zip manually? Enter your email and we'll show your download link right away — and let you know when Pro opens.</p>
+      <p class="micro" style="margin-bottom:26px">Always the latest version, straight from WordPress.org. Free &amp; open source. Requires your own Anthropic &amp; Pexels API keys.</p>
+
+      <p class="micro" style="margin-bottom:14px">Want a heads-up when <b>ViroBuilder Pro</b> lands? Drop your email and we'll keep you posted.</p>
       <form class="cform" id="cform" action="#" method="post" novalidate>
         <label for="email" class="skip">Email address</label>
         <input id="email" type="email" name="email" placeholder="you@business.com" required aria-label="Email address">
-        <button type="submit" class="btn btn-fill">Email me the download →</button>
+        <button type="submit" class="btn btn-fill">Notify me →</button>
         <input type="hidden" name="_subject" value="New ViroBuilder waitlist signup">
         <input type="hidden" name="source" value="virobuilder-landing">
         <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
       </form>
-      <p class="micro">No spam. Unsubscribe anytime. Requires your own Anthropic &amp; Pexels API keys.</p>
+      <p class="micro">No spam — only ViroBuilder updates. Unsubscribe anytime.</p>
       <div class="ok" role="status">
-        <p style="margin-bottom:18px">✓ Thanks! Your download is ready.</p>
-        <a class="btn btn-fill" id="dl-btn" href="thanks/?dl=1">↓ Get ViroBuilder (.zip)</a>
-        <p class="micro" style="margin-top:14px">Install via <b>Plugins → Add New → Upload Plugin</b> in your WordPress admin.</p>
+        <p>✓ Thanks! You're on the list — we'll be in touch.</p>
       </div>
     </div>
   </section>
@@ -396,37 +396,25 @@
   })();
 
   /* ============================================================
-     EMAIL → DOWNLOAD (Formspree).
-
-     1) DOWNLOAD_URL — your plugin zip in this same folder.
-     2) SIGNUP_ENDPOINT — your Formspree form URL:
-          https://formspree.io/f/XXXXXXXX
-        (Create a form at formspree.io, or reuse your existing
-         form ID. The page already sends Accept: application/json,
-         so Formspree returns JSON instead of redirecting.)
-
-     Leave SIGNUP_ENDPOINT empty for demo mode (reveals the
-     download but does NOT store the email).
+     WAITLIST (Formspree). Collects the email, then shows a
+     thank-you. No file download — the plugin lives on WordPress.org.
      ============================================================ */
-  var DOWNLOAD_URL    = 'virobuilder.zip';                    // <-- your plugin zip (same folder)
-  var THANKS_URL      = 'thanks/?dl=1';                       // post-download page (auto-starts the download)
   var SIGNUP_ENDPOINT = 'https://formspree.io/f/mbdeywak';    // ViroBuilder Waitlist form
 
-  document.getElementById('cform').addEventListener('submit', function (e) {
+  var cform = document.getElementById('cform');
+  if (cform) cform.addEventListener('submit', function (e) {
     e.preventDefault();
     var form  = e.currentTarget;
     var email = form.querySelector('input[type="email"]').value.trim();
     if (!email || email.indexOf('@') === -1) return;
 
-    // Reveal the download right away — never block it on the network call
-    var dl = document.getElementById('dl-btn');
-    if (dl) dl.setAttribute('href', THANKS_URL);
+    // Show the confirmation immediately — don't block it on the network.
     document.querySelector('.capture').classList.add('done');
 
-    // Capture the email in the background (best-effort; won't affect the download)
+    // Capture the email in the background (best-effort).
     if (SIGNUP_ENDPOINT && SIGNUP_ENDPOINT.indexOf('XXXXXXXX') === -1) {
       fetch(SIGNUP_ENDPOINT, { method:'POST', body:new FormData(form), headers:{'Accept':'application/json'} })
-        .catch(function(){ /* ignore — user already has the download */ });
+        .catch(function(){ /* ignore — the user is already thanked */ });
     }
   });
 </script>
