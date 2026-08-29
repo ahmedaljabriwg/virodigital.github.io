@@ -76,7 +76,6 @@
        ============================================================ */
     :root {
       /* Brand Colors */
-      --brand-primary: #0066FF;
       --brand-secondary: #00C2FF;
       --brand-accent: #00FFD1;
       --brand-glow: rgba(0, 102, 255, 0.35);
@@ -113,6 +112,8 @@
 
     /* Dark theme (default) */
     [data-theme="dark"] {
+      --brand-primary: #3D8BFD;
+      --brand-glow: rgba(61, 139, 253, 0.35);
       --bg-base: #060912;
       --bg-surface: #0D1220;
       --bg-elevated: #131929;
@@ -120,7 +121,7 @@
       --bg-card-hover: #161F30;
       --text-primary: #F0F4FF;
       --text-secondary: #8A9BBF;
-      --text-muted: #4A5880;
+      --text-muted: #8A9BBF;
       --border-subtle: rgba(255,255,255,0.06);
       --border-default: rgba(255,255,255,0.1);
       --nav-bg: rgba(6, 9, 18, 0.85);
@@ -130,6 +131,7 @@
 
     /* Light theme */
     [data-theme="light"] {
+      --brand-primary: #0066FF;
       --bg-base: #F5F8FF;
       --bg-surface: #FFFFFF;
       --bg-elevated: #EDF1FC;
@@ -137,13 +139,17 @@
       --bg-card-hover: #F0F5FF;
       --text-primary: #0A0F1E;
       --text-secondary: #3D5080;
-      --text-muted: #8A9BBF;
+      --text-muted: #5A6B94;
       --border-subtle: rgba(0,0,0,0.05);
       --border-default: rgba(0,0,0,0.1);
       --nav-bg: rgba(245, 248, 255, 0.88);
       --overlay: rgba(245, 248, 255, 0.65);
       --grid-color: rgba(0, 102, 255, 0.05);
     }
+
+    /* Skip link (WCAG 2.4.1 Bypass Blocks) */
+    .skip-link { position: absolute; left: -9999px; }
+    .skip-link:focus { left: 1rem; top: 1rem; z-index: 9999; background: var(--bg-surface); color: var(--text-primary); padding: .75rem 1rem; border-radius: var(--radius-sm); outline: 2px solid var(--brand-primary); }
 
     /* ============================================================
        RESET & BASE
@@ -453,11 +459,12 @@
       padding: var(--space-md) var(--space-lg);
       z-index: 999;
       transform: translateY(-110%);
-      transition: transform var(--transition-base);
+      visibility: hidden;
+      transition: transform var(--transition-base), visibility 0s linear 0.32s;
       max-height: calc(100vh - 70px);
       overflow-y: auto;
     }
-    .mobile-menu.open { transform: translateY(0); }
+    .mobile-menu.open { transform: translateY(0); visibility: visible; transition: transform var(--transition-base), visibility 0s; }
     .mobile-menu a {
       display: block;
       padding: 12px 0;
@@ -1460,12 +1467,19 @@
       display: flex;
       gap: var(--space-md);
     }
-    .footer-bottom-links a {
+    .footer-bottom-links a,
+    .footer-bottom-links button {
+      font-family: inherit;
       font-size: 0.82rem;
       color: var(--text-muted);
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
       transition: color var(--transition-fast);
     }
-    .footer-bottom-links a:hover { color: var(--text-secondary); }
+    .footer-bottom-links a:hover,
+    .footer-bottom-links button:hover { color: var(--text-secondary); }
 
     /* ============================================================
        BACK TO TOP BUTTON
@@ -1778,6 +1792,7 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
   <!-- ============================================================
        NAVIGATION
@@ -1804,10 +1819,11 @@
 
         <!-- Actions -->
         <div class="nav-actions">
-          <!-- Client Login icon button (link CMS later) -->
+          <!-- Client Login button hidden until the client portal launches (portal.virodigital.net, Vercel+Supabase). Restore this block and point href at the portal when ready.
           <a href="#" id="client-login-btn" class="theme-toggle" aria-label="Client Login" title="Client Login" style="text-decoration: none; position: relative;">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
           </a>
+          -->
           <!-- Theme toggle -->
           <button class="theme-toggle" id="theme-toggle" aria-label="Switch to light mode" style="position: relative;">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="sun" aria-hidden="true" id="theme-icon-sun" style="display: block;" class="lucide lucide-sun"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
@@ -1836,7 +1852,7 @@
     </nav>
   </header>
 
-  <main>
+  <main id="main" tabindex="-1">
     <!-- ============================================================
          HERO SECTION
          ============================================================ -->
@@ -2573,7 +2589,7 @@
         </div>
 
         <p class="fade-in visible" style="text-align:center; margin-top:var(--space-lg); color:var(--text-muted); font-size:0.85rem;">
-          All prices are billed monthly. Annual plans available at 15% discount. Custom project development priced separately after discovery. <a href="#contact" style="color: var(--brand-primary); position: relative;">Request a custom quote →</a>
+          All prices are billed monthly. Annual plans available at 15% discount. Custom project development priced separately after discovery. <a href="#contact" style="color: var(--brand-primary); text-decoration: underline; position: relative;">Request a custom quote →</a>
         </p>
       </div>
     </section>
@@ -2967,10 +2983,10 @@
       <div class="footer-bottom">
         <p>© <span id="copyright-year">2026</span> Viro Digital LLC. All rights reserved. Based in Connecticut, USA.</p>
         <nav class="footer-bottom-links" aria-label="Legal links">
-          <a href="#" onclick="openPage('privacy'); return false;">Privacy Policy</a>
-          <a href="#" onclick="openPage('terms'); return false;">Terms of Service</a>
-          <a href="#" onclick="openPage('accessibility'); return false;">Accessibility Statement</a>
-          <a href="#" onclick="openPage('sitemap'); return false;">Sitemap</a>
+          <button type="button" onclick="openPage('privacy')">Privacy Policy</button>
+          <button type="button" onclick="openPage('terms')">Terms of Service</button>
+          <button type="button" onclick="openPage('accessibility')">Accessibility Statement</button>
+          <button type="button" onclick="openPage('sitemap')">Sitemap</button>
         </nav>
       </div>
     </div>
@@ -3136,6 +3152,7 @@
           hamburger.classList.remove('open');
           mobileMenu.classList.remove('open');
           hamburger.setAttribute('aria-expanded', 'false');
+          hamburger.focus();
         });
       });
 
@@ -3166,8 +3183,6 @@
        ============================================================ */
     (function() {
       const toggle = document.getElementById('theme-toggle');
-      const iconSun = document.getElementById('theme-icon-sun');
-      const iconMoon = document.getElementById('theme-icon-moon');
       const html = document.documentElement;
       const navLogo = document.getElementById('nav-logo-img');
       const footerLogo = document.getElementById('footer-logo-img');
@@ -3186,22 +3201,25 @@
       });
 
       function applyTheme(theme) {
+        // Re-query each call: lucide.createIcons() replaces these SVG nodes,
+        // so any cached reference goes stale and the icon stops toggling.
+        const iconSun = document.getElementById('theme-icon-sun');
+        const iconMoon = document.getElementById('theme-icon-moon');
         if (theme === 'dark') {
-          iconSun.style.display = 'block';
-          iconMoon.style.display = 'none';
+          if (iconSun) iconSun.style.display = 'block';
+          if (iconMoon) iconMoon.style.display = 'none';
           toggle.setAttribute('aria-label', 'Switch to light mode');
           // Dark background: white logos
           if (navLogo) navLogo.src = 'media/viro-logo-white.png';
           if (footerLogo) footerLogo.src = 'media/viro-logo-white.png';
         } else {
-          iconSun.style.display = 'none';
-          iconMoon.style.display = 'block';
+          if (iconSun) iconSun.style.display = 'none';
+          if (iconMoon) iconMoon.style.display = 'block';
           toggle.setAttribute('aria-label', 'Switch to dark mode');
           // Light background: blue logos
           if (navLogo) navLogo.src = 'media/viro-logo-blue.png';
           if (footerLogo) footerLogo.src = 'media/viro-logo-blue.png';
         }
-        lucide.createIcons();
       }
     })();
 
