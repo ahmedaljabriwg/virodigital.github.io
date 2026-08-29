@@ -3166,8 +3166,6 @@
        ============================================================ */
     (function() {
       const toggle = document.getElementById('theme-toggle');
-      const iconSun = document.getElementById('theme-icon-sun');
-      const iconMoon = document.getElementById('theme-icon-moon');
       const html = document.documentElement;
       const navLogo = document.getElementById('nav-logo-img');
       const footerLogo = document.getElementById('footer-logo-img');
@@ -3186,22 +3184,25 @@
       });
 
       function applyTheme(theme) {
+        // Re-query each call: lucide.createIcons() replaces these SVG nodes,
+        // so any cached reference goes stale and the icon stops toggling.
+        const iconSun = document.getElementById('theme-icon-sun');
+        const iconMoon = document.getElementById('theme-icon-moon');
         if (theme === 'dark') {
-          iconSun.style.display = 'block';
-          iconMoon.style.display = 'none';
+          if (iconSun) iconSun.style.display = 'block';
+          if (iconMoon) iconMoon.style.display = 'none';
           toggle.setAttribute('aria-label', 'Switch to light mode');
           // Dark background: white logos
           if (navLogo) navLogo.src = 'media/viro-logo-white.png';
           if (footerLogo) footerLogo.src = 'media/viro-logo-white.png';
         } else {
-          iconSun.style.display = 'none';
-          iconMoon.style.display = 'block';
+          if (iconSun) iconSun.style.display = 'none';
+          if (iconMoon) iconMoon.style.display = 'block';
           toggle.setAttribute('aria-label', 'Switch to dark mode');
           // Light background: blue logos
           if (navLogo) navLogo.src = 'media/viro-logo-blue.png';
           if (footerLogo) footerLogo.src = 'media/viro-logo-blue.png';
         }
-        lucide.createIcons();
       }
     })();
 
