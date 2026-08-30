@@ -76,7 +76,6 @@
        ============================================================ */
     :root {
       /* Brand Colors */
-      --brand-primary: #0066FF;
       --brand-secondary: #00C2FF;
       --brand-accent: #00FFD1;
       --brand-glow: rgba(0, 102, 255, 0.35);
@@ -113,6 +112,8 @@
 
     /* Dark theme (default) */
     [data-theme="dark"] {
+      --brand-primary: #3D8BFD;
+      --brand-glow: rgba(61, 139, 253, 0.35);
       --bg-base: #060912;
       --bg-surface: #0D1220;
       --bg-elevated: #131929;
@@ -120,7 +121,7 @@
       --bg-card-hover: #161F30;
       --text-primary: #F0F4FF;
       --text-secondary: #8A9BBF;
-      --text-muted: #4A5880;
+      --text-muted: #8A9BBF;
       --border-subtle: rgba(255,255,255,0.06);
       --border-default: rgba(255,255,255,0.1);
       --nav-bg: rgba(6, 9, 18, 0.85);
@@ -130,6 +131,7 @@
 
     /* Light theme */
     [data-theme="light"] {
+      --brand-primary: #0066FF;
       --bg-base: #F5F8FF;
       --bg-surface: #FFFFFF;
       --bg-elevated: #EDF1FC;
@@ -137,13 +139,17 @@
       --bg-card-hover: #F0F5FF;
       --text-primary: #0A0F1E;
       --text-secondary: #3D5080;
-      --text-muted: #8A9BBF;
+      --text-muted: #5A6B94;
       --border-subtle: rgba(0,0,0,0.05);
       --border-default: rgba(0,0,0,0.1);
       --nav-bg: rgba(245, 248, 255, 0.88);
       --overlay: rgba(245, 248, 255, 0.65);
       --grid-color: rgba(0, 102, 255, 0.05);
     }
+
+    /* Skip link (WCAG 2.4.1 Bypass Blocks) */
+    .skip-link { position: absolute; left: -9999px; }
+    .skip-link:focus { left: 1rem; top: 1rem; z-index: 9999; background: var(--bg-surface); color: var(--text-primary); padding: .75rem 1rem; border-radius: var(--radius-sm); outline: 2px solid var(--brand-primary); }
 
     /* ============================================================
        RESET & BASE
@@ -453,11 +459,12 @@
       padding: var(--space-md) var(--space-lg);
       z-index: 999;
       transform: translateY(-110%);
-      transition: transform var(--transition-base);
+      visibility: hidden;
+      transition: transform var(--transition-base), visibility 0s linear 0.32s;
       max-height: calc(100vh - 70px);
       overflow-y: auto;
     }
-    .mobile-menu.open { transform: translateY(0); }
+    .mobile-menu.open { transform: translateY(0); visibility: visible; transition: transform var(--transition-base), visibility 0s; }
     .mobile-menu a {
       display: block;
       padding: 12px 0;
@@ -1460,12 +1467,19 @@
       display: flex;
       gap: var(--space-md);
     }
-    .footer-bottom-links a {
+    .footer-bottom-links a,
+    .footer-bottom-links button {
+      font-family: inherit;
       font-size: 0.82rem;
       color: var(--text-muted);
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
       transition: color var(--transition-fast);
     }
-    .footer-bottom-links a:hover { color: var(--text-secondary); }
+    .footer-bottom-links a:hover,
+    .footer-bottom-links button:hover { color: var(--text-secondary); }
 
     /* ============================================================
        BACK TO TOP BUTTON
@@ -1778,6 +1792,7 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
   <!-- ============================================================
        NAVIGATION
@@ -1837,7 +1852,7 @@
     </nav>
   </header>
 
-  <main>
+  <main id="main" tabindex="-1">
     <!-- ============================================================
          HERO SECTION
          ============================================================ -->
@@ -2808,6 +2823,9 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="shield" style="vertical-align:middle;margin-right:4px;" aria-hidden="true" class="lucide lucide-shield"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path></svg>
               U.S.-Based · Section 508 · WCAG 2.1 AA · SAM.gov Registered
             </p>
+            <p style="font-size:0.72rem; color:var(--text-muted); margin-top:6px; letter-spacing:0.02em;">
+              UEI: SEGBR96ACVG7 &nbsp;·&nbsp; CAGE: 21FD4
+            </p>
           </div>
         </div>
       </div>
@@ -2816,10 +2834,10 @@
       <div class="footer-bottom">
         <p>© <span id="copyright-year">2026</span> Viro Digital LLC. All rights reserved. Based in Connecticut, USA.</p>
         <nav class="footer-bottom-links" aria-label="Legal links">
-          <a href="#" onclick="openPage('privacy'); return false;">Privacy Policy</a>
-          <a href="#" onclick="openPage('terms'); return false;">Terms of Service</a>
-          <a href="#" onclick="openPage('accessibility'); return false;">Accessibility Statement</a>
-          <a href="#" onclick="openPage('sitemap'); return false;">Sitemap</a>
+          <button type="button" onclick="openPage('privacy')">Privacy Policy</button>
+          <button type="button" onclick="openPage('terms')">Terms of Service</button>
+          <button type="button" onclick="openPage('accessibility')">Accessibility Statement</button>
+          <button type="button" onclick="openPage('sitemap')">Sitemap</button>
         </nav>
       </div>
     </div>
@@ -2985,6 +3003,7 @@
           hamburger.classList.remove('open');
           mobileMenu.classList.remove('open');
           hamburger.setAttribute('aria-expanded', 'false');
+          hamburger.focus();
         });
       });
 
