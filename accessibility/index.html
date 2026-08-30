@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessibility Compliance — Section 508 &amp; WCAG Audits | Viro Digital</title>
+  <meta name="description" content="Section 508 and WCAG 2.1 AA accessibility audits, remediation, and VPAT reports for businesses, agencies, and government contractors. U.S.-based, SAM.gov registered.">
+  <meta name="author" content="Viro Digital LLC">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://virodigital.net/accessibility/">
+  <link rel="icon" type="image/png" href="/media/viro-favicon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Viro Digital">
+  <meta property="og:title" content="Accessibility Compliance — Section 508 &amp; WCAG Audits">
+  <meta property="og:description" content="Audits, remediation, and VPAT reports to WCAG 2.1 AA and Section 508. U.S.-based, SAM.gov registered.">
+  <meta property="og:url" content="https://virodigital.net/accessibility/">
+  <meta property="og:image" content="https://virodigital.net/media/og-home.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://virodigital.net/media/og-home.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Web Accessibility Audit and Remediation",
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": "Viro Digital LLC",
+      "url": "https://virodigital.net",
+      "areaServed": "US",
+      "email": "support@virodigital.net"
+    },
+    "description": "Section 508 and WCAG 2.1 AA accessibility audits, remediation, and VPAT reports.",
+    "url": "https://virodigital.net/accessibility/"
+  }
+  </script>
+
+  <style>
+    :root{
+      --brand-secondary:#00C2FF; --brand-accent:#00FFD1;
+      --font-display:'Syne',sans-serif; --font-body:'DM Sans',sans-serif;
+      --r-sm:8px; --r-md:14px; --r-lg:22px;
+      --sp-sm:1rem; --sp-md:1.5rem; --sp-lg:2.5rem; --sp-xl:4rem; --sp-xxl:6.5rem;
+      --maxw:1080px;
+    }
+    :root:not([data-theme="light"]){
+      --brand-primary:#3D8BFD; --brand-glow:rgba(61,139,253,.30);
+      --bg:#060912; --surface:#0D1220; --card:#0F1724; --card-2:#131c2e;
+      --line:rgba(255,255,255,.08); --line-2:rgba(255,255,255,.14);
+      --ink:#F0F4FF; --ink-2:#9FB0D4; --ink-3:#8A9BBF;
+      --ok:#00FFD1; --bad:#FF6B6B;
+    }
+    [data-theme="light"]{
+      --brand-primary:#0066FF; --brand-glow:rgba(0,102,255,.18);
+      --bg:#F5F8FF; --surface:#FFFFFF; --card:#FFFFFF; --card-2:#F0F5FF;
+      --line:rgba(0,0,0,.08); --line-2:rgba(0,0,0,.14);
+      --ink:#0A0F1E; --ink-2:#3D5080; --ink-3:#5A6B94;
+      --ok:#0F9E7E; --bad:#D64545;
+    }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--font-body);background:var(--bg);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    h1,h2,h3{font-family:var(--font-display);line-height:1.1;letter-spacing:-.02em;font-weight:700}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+    :focus-visible{outline:2px solid var(--brand-primary);outline-offset:3px;border-radius:4px}
+    .skip-link{position:absolute;left:-9999px}
+    .skip-link:focus{left:1rem;top:1rem;z-index:200;background:var(--surface);color:var(--ink);padding:.75rem 1rem;border-radius:var(--r-sm);outline:2px solid var(--brand-primary)}
+
+    /* nav */
+    header.nav{position:sticky;top:0;z-index:100;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+    .nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .brand{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-weight:700;font-size:1.05rem}
+    .brand img{height:26px;width:auto}
+    .nav-right{display:flex;align-items:center;gap:20px}
+    .nav-right a.back{font-size:.9rem;color:var(--ink-3)}
+    .nav-right a.back:hover{color:var(--ink)}
+    .btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-body);font-weight:600;font-size:.95rem;padding:12px 22px;border-radius:var(--r-sm);border:1.5px solid transparent;cursor:pointer;transition:transform .16s,background .16s,border-color .16s;white-space:nowrap}
+    .btn-primary{background:linear-gradient(135deg,var(--brand-primary),var(--brand-secondary));color:#04101f}
+    .btn-primary:hover{transform:translateY(-2px)}
+    .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line-2)}
+    .btn-ghost:hover{border-color:var(--brand-primary)}
+    @media(max-width:640px){.nav-right a.back{display:none}}
+
+    /* hero */
+    .hero{position:relative;padding:88px 0 64px;text-align:center;overflow:hidden}
+    .hero::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(680px 340px at 50% -8%,var(--brand-glow),transparent 70%)}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brand-secondary);border:1px solid var(--line-2);border-radius:999px;padding:7px 15px;margin-bottom:24px}
+    .hero h1{font-size:clamp(2.3rem,6vw,4rem);font-weight:800;max-width:16ch;margin:0 auto 20px}
+    .hero h1 .grad{background:linear-gradient(100deg,var(--brand-primary),var(--brand-secondary));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .hero p.lead{font-size:clamp(1.05rem,2vw,1.25rem);color:var(--ink-2);max-width:60ch;margin:0 auto 32px}
+    .hero .cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+    section{padding:var(--sp-xxl) 0}
+    .sec-head{max-width:62ch;margin:0 auto var(--sp-lg);text-align:center}
+    .sec-head .label{font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brand-secondary);display:block;margin-bottom:12px}
+    .sec-head h2{font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:14px}
+    .sec-head p{color:var(--ink-2);font-size:1.05rem}
+
+    /* problem cards */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    @media(max-width:820px){.grid{grid-template-columns:1fr}}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);padding:28px 24px}
+    .card .ic{width:44px;height:44px;border-radius:11px;display:grid;place-items:center;margin-bottom:16px;background:rgba(0,194,255,.10);border:1px solid rgba(0,194,255,.25);color:var(--brand-secondary)}
+    .card h3{font-size:1.15rem;margin-bottom:8px}
+    .card p{color:var(--ink-2);font-size:.95rem}
+
+    /* process */
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:step}
+    @media(max-width:820px){.steps{grid-template-columns:1fr 1fr}}
+    @media(max-width:480px){.steps{grid-template-columns:1fr}}
+    .step{background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);padding:26px 22px}
+    .step .n{font-family:var(--font-display);font-weight:800;font-size:.9rem;color:var(--brand-primary);width:34px;height:34px;border-radius:9px;display:grid;place-items:center;border:1px solid var(--line-2);margin-bottom:14px}
+    .step h3{font-size:1.05rem;margin-bottom:6px}
+    .step p{color:var(--ink-2);font-size:.9rem}
+
+    /* case study */
+    #case{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .case-wrap{max-width:960px;margin:0 auto}
+    .ba{display:grid;grid-template-columns:1fr auto 1fr;gap:20px;align-items:stretch;margin:var(--sp-lg) 0}
+    @media(max-width:720px){.ba{grid-template-columns:1fr;gap:14px}.ba .arrow{transform:rotate(90deg);justify-self:center}}
+    .ba-card{border-radius:var(--r-lg);padding:30px 26px;text-align:center;border:1px solid var(--line)}
+    .ba-before{background:color-mix(in srgb,var(--bad) 8%,var(--card))}
+    .ba-after{background:color-mix(in srgb,var(--ok) 9%,var(--card))}
+    .ba-card .tag{font-size:.74rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-bottom:10px}
+    .ba-card .num{font-family:var(--font-display);font-weight:800;font-size:4rem;line-height:1}
+    .ba-before .num{color:var(--bad)}
+    .ba-after .num{color:var(--ok)}
+    .ba-card .num-label{font-size:.95rem;color:var(--ink-2);margin-top:6px}
+    .arrow{display:grid;place-items:center;color:var(--brand-secondary)}
+    .case-list{background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);padding:26px 28px;margin-top:8px}
+    .case-list h3{font-size:1.1rem;margin-bottom:16px}
+    .case-list ul{list-style:none;display:grid;gap:12px}
+    .case-list li{display:flex;gap:12px;align-items:flex-start;color:var(--ink-2);font-size:.96rem}
+    .case-list li svg{flex-shrink:0;color:var(--ok);margin-top:3px}
+    .case-note{font-size:.86rem;color:var(--ink-3);margin-top:18px;max-width:70ch}
+    .verify{display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-size:.9rem;color:var(--brand-secondary);border-bottom:1px solid color-mix(in srgb,var(--brand-secondary) 40%,transparent)}
+
+    /* deliverables */
+    .deliv{display:grid;grid-template-columns:1fr 1fr;gap:14px 34px;max-width:820px;margin:0 auto}
+    @media(max-width:640px){.deliv{grid-template-columns:1fr}}
+    .deliv li{display:flex;gap:12px;align-items:flex-start;color:var(--ink-2);font-size:1rem;list-style:none}
+    .deliv li svg{flex-shrink:0;color:var(--brand-secondary);margin-top:4px}
+    .deliv li b{color:var(--ink);font-weight:600}
+
+    /* trust */
+    .trust-band{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 34px;padding:22px;border:1px solid var(--line);border-radius:var(--r-md);background:var(--card);max-width:920px;margin:0 auto}
+    .trust-band span{display:inline-flex;align-items:center;gap:9px;font-size:.92rem;font-weight:600;color:var(--ink-2)}
+    .trust-band svg{color:var(--brand-secondary)}
+    .trust-ids{text-align:center;color:var(--ink-3);font-size:.82rem;margin-top:16px}
+
+    /* CTA */
+    #cta .box{background:linear-gradient(160deg,var(--card),var(--card-2));border:1px solid var(--line);border-radius:var(--r-lg);padding:56px 28px;text-align:center;max-width:820px;margin:0 auto}
+    #cta h2{font-size:clamp(1.8rem,4vw,2.5rem);margin-bottom:14px}
+    #cta p{color:var(--ink-2);max-width:52ch;margin:0 auto 26px}
+    #cta .cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+    /* disclaimer + footer */
+    .disclaimer{max-width:820px;margin:0 auto;padding:22px 24px;border:1px solid var(--line);border-radius:var(--r-md);background:var(--surface)}
+    .disclaimer h3{font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:10px;font-family:var(--font-body);font-weight:700}
+    .disclaimer p{font-size:.86rem;color:var(--ink-3);line-height:1.7}
+    footer{border-top:1px solid var(--line);padding:40px 0;text-align:center;color:var(--ink-3);font-size:.86rem}
+    footer a{color:var(--ink-2);text-decoration:underline}
+    footer a:hover{color:var(--brand-primary)}
+    /* stats */
+    .stats-band{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);max-width:1000px;margin:0 auto}
+    .stat{text-align:center;padding:0 22px;display:flex;flex-direction:column;align-items:center;min-width:0}
+    .stat + .stat{border-left:1px solid var(--line)}
+    @media(max-width:760px){
+      .stats-grid{grid-template-columns:1fr 1fr;row-gap:34px}
+      .stat + .stat{border-left:none}
+      .stat:nth-child(even){border-left:1px solid var(--line)}
+    }
+    @media(max-width:600px){
+      .stats-grid{grid-template-columns:1fr;row-gap:0}
+      .stat{padding:28px 16px}
+      .stat:nth-child(even){border-left:none}
+      .stat + .stat{border-top:1px solid var(--line)}
+    }
+    .stat .big{font-family:var(--font-display);font-weight:800;font-size:clamp(1.9rem,3.8vw,2.75rem);line-height:1;white-space:nowrap;background:linear-gradient(120deg,var(--brand-primary),var(--brand-secondary));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .stat .lbl{color:var(--ink-2);font-size:.9rem;margin-top:16px;line-height:1.45}
+    .stat .src{color:var(--ink-3);font-size:.72rem;margin-top:auto;padding-top:12px}
+
+    /* tools row */
+    .tools-row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:26px}
+    .tool-chip{font-size:.82rem;font-weight:600;color:var(--ink-2);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:9px 17px}
+    .tools-cap{text-align:center;color:var(--ink-3);font-size:.82rem;margin-top:16px}
+
+    /* sample report */
+    #report{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .report-doc{max-width:760px;margin:0 auto;background:var(--card);border:1px solid var(--line-2);border-radius:var(--r-md);box-shadow:0 30px 70px -40px rgba(0,0,0,.6);overflow:hidden}
+    .report-top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:20px 26px;border-bottom:1px solid var(--line);background:var(--card-2)}
+    .report-top .rt-title{font-family:var(--font-display);font-weight:700;font-size:1.02rem}
+    .report-top .rt-badge{font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--brand-secondary);border:1px solid var(--line-2);border-radius:999px;padding:5px 12px;white-space:nowrap}
+    .report-body{padding:26px}
+    .sev-summary{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:24px}
+    @media(max-width:480px){.sev-summary{grid-template-columns:1fr 1fr;gap:12px}.report-body{padding:20px}}
+    .sev{border-radius:var(--r-sm);padding:14px 10px;text-align:center;border:1px solid var(--line);background:var(--card-2)}
+    .sev .c{font-family:var(--font-display);font-weight:800;font-size:1.7rem;line-height:1}
+    .sev .s{font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-3);margin-top:6px}
+    .sev-crit .c{color:var(--bad)} .sev-serious .c{color:#FF9F43} .sev-mod .c{color:#F7C948} .sev-minor .c{color:var(--ink-2)}
+    .finding{border:1px solid var(--line);border-radius:var(--r-sm);padding:16px 18px;margin-bottom:12px}
+    .finding:last-child{margin-bottom:0}
+    .finding-head{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:8px}
+    .finding-head .wcag{font-family:var(--font-body);font-weight:700;font-size:.85rem;color:var(--ink)}
+    .badge-lvl{font-size:.68rem;font-weight:700;color:var(--brand-secondary);border:1px solid var(--line-2);border-radius:4px;padding:2px 7px}
+    .badge-sev{font-size:.68rem;font-weight:700;border-radius:4px;padding:2px 8px}
+    .bs-serious{background:rgba(255,159,67,.16);color:#FF9F43} .bs-mod{background:rgba(247,201,72,.16);color:#F7C948}
+    .finding p{font-size:.88rem;color:var(--ink-2);margin:2px 0}
+    .finding .fix{font-size:.85rem;color:var(--ink-2);margin-top:8px;padding-top:8px;border-top:1px dashed var(--line)}
+    .finding .fix b{color:var(--ok)}
+    .report-caption{text-align:center;color:var(--ink-3);font-size:.84rem;margin-top:18px}
+
+    /* deadlines */
+    .dl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    @media(max-width:820px){.dl-grid{grid-template-columns:1fr}}
+    .dl-card{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--brand-primary);border-radius:var(--r-md);padding:26px 24px;display:flex;flex-direction:column}
+    .dl-tag{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--brand-secondary);margin-bottom:10px}
+    .dl-card h3{font-size:1.2rem;margin-bottom:10px}
+    .dl-card>p{color:var(--ink-2);font-size:.92rem;margin-bottom:16px}
+    .dl-dates{list-style:none;display:grid;gap:8px;border-top:1px solid var(--line);padding-top:14px;margin-top:auto}
+    .dl-dates li{font-size:.9rem;color:var(--ink-2);display:flex;gap:8px;align-items:baseline}
+    .dl-dates b{color:var(--ink);font-family:var(--font-display);font-weight:700;white-space:nowrap}
+    .dl-src{text-align:center;color:var(--ink-3);font-size:.78rem;margin:22px auto 0;max-width:78ch;line-height:1.6}
+
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn:hover{transform:none}}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="nav">
+    <div class="wrap nav-in">
+      <a class="brand" href="/" aria-label="Viro Digital home">
+        <img src="/media/viro-logo-white.png" alt="Viro Digital">
+      </a>
+      <div class="nav-right">
+        <a class="back" href="/">← Back to site</a>
+        <a class="btn btn-primary" href="/#contact">Request an Audit</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap">
+        <span class="eyebrow"><span aria-hidden="true">◆</span> Section 508 &amp; WCAG 2.1 AA</span>
+        <h1>Accessibility that <span class="grad">holds up</span> to scrutiny.</h1>
+        <p class="lead">We audit, remediate, and document your website to WCAG 2.1 AA and Section 508 standards — so people can actually use it, and your organization can show its work.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="/#contact">Request an Audit</a>
+          <a class="btn btn-ghost" href="#case">See our own case study</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats-band" aria-labelledby="stats-h">
+      <div class="wrap">
+        <h2 id="stats-h" class="sec-head" style="margin-bottom:var(--sp-md)"><span class="label">The reality</span><span style="font-size:clamp(1.5rem,3.5vw,2.1rem);font-family:var(--font-display);">Accessibility isn't optional anymore.</span></h2>
+        <div class="stats-grid">
+          <div class="stat"><div class="big">96%</div><div class="lbl">of the top 1,000,000 home pages have detectable WCAG failures</div><div class="src">WebAIM Million</div></div>
+          <div class="stat"><div class="big">1 in 4</div><div class="lbl">U.S. adults live with a disability</div><div class="src">CDC</div></div>
+          <div class="stat"><div class="big">4,000+</div><div class="lbl">ADA web-accessibility lawsuits filed in a single year</div><div class="src">UsableNet</div></div>
+          <div class="stat"><div class="big">$490B</div><div class="lbl">disposable income of working-age Americans with disabilities</div><div class="src">Am. Institutes for Research</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLEM -->
+    <section aria-labelledby="why-h">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="label">Why it matters</span>
+          <h2 id="why-h">Inaccessible sites cost you customers — and carry real risk.</h2>
+          <p>Accessibility isn't just good practice. For many organizations it's a legal requirement and a condition of doing business.</p>
+        </div>
+        <div class="grid">
+          <div class="card">
+            <div class="ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg></div>
+            <h3>ADA &amp; legal exposure</h3>
+            <p>Web-accessibility lawsuits and demand letters keep rising. An audit and a documented remediation plan are your best defense.</p>
+          </div>
+          <div class="card">
+            <div class="ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 18v-7"/><path d="M11.12 2.2a2 2 0 0 1 1.76 0l7.84 3.85A.5.5 0 0 1 20.5 7h-17a.5.5 0 0 1-.22-.95Z"/><path d="M14 18v-7"/><path d="M18 18v-7"/><path d="M3 22h18"/><path d="M6 18v-7"/></svg></div>
+            <h3>Section 508 mandates</h3>
+            <p>Selling to government or working with agencies means conforming to Section 508 and providing a VPAT. No conformance, no contract.</p>
+          </div>
+          <div class="card">
+            <div class="ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg></div>
+            <h3>Lost customers</h3>
+            <p>Roughly 1 in 4 U.S. adults lives with a disability. If they can't navigate, read, or check out on your site, that's revenue walking away.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEADLINES -->
+    <section id="deadlines" aria-labelledby="dl-h">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="label">Why now</span>
+          <h2 id="dl-h">The deadlines are real — and remediation takes months.</h2>
+          <p>Accessibility isn't a once-a-year filing, but the law now sets hard dates. A full audit and fix runs weeks to months — so the organizations that wait until the deadline are the ones that miss it.</p>
+        </div>
+        <div class="dl-grid">
+          <div class="dl-card">
+            <div class="dl-tag">U.S. · State &amp; Local Gov</div>
+            <h3>ADA Title II</h3>
+            <p>The DOJ's 2024 rule requires public websites and apps to meet WCAG 2.1 AA.</p>
+            <ul class="dl-dates">
+              <li><b>Apr 2027</b> <span>entities serving 50,000+ people</span></li>
+              <li><b>Apr 2028</b> <span>smaller entities &amp; special districts</span></li>
+            </ul>
+          </div>
+          <div class="dl-card">
+            <div class="dl-tag">EU · Private Sector</div>
+            <h3>European Accessibility Act</h3>
+            <p>Applies to businesses selling into the EU — e-commerce, finance, media and more (micro-enterprises exempt).</p>
+            <ul class="dl-dates">
+              <li><b>In force</b> <span>since June 2025 · WCAG 2.1 AA / EN 301 549</span></li>
+            </ul>
+          </div>
+          <div class="dl-card">
+            <div class="dl-tag">U.S. · Federal</div>
+            <h3>Section 508</h3>
+            <p>An ongoing requirement for federal agencies and the vendors that sell to them — no conformance, no contract.</p>
+            <ul class="dl-dates">
+              <li><b>Ongoing</b> <span>WCAG 2.1 AA · VPAT required</span></li>
+            </ul>
+          </div>
+        </div>
+        <p class="dl-src">Sources: U.S. DOJ ADA Title II final rule (2024; compliance deadlines extended April 2026) · European Accessibility Act (Directive 2019/882) · Section 508 of the Rehabilitation Act. Dates reflect current federal guidance and may change.</p>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section aria-labelledby="proc-h">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="label">How we work</span>
+          <h2 id="proc-h">A clear path from audit to conformance.</h2>
+        </div>
+        <div class="steps">
+          <div class="step"><div class="n" aria-hidden="true">1</div><h3>Audit</h3><p>Automated scan plus hands-on manual testing — keyboard, screen reader, focus order, and reading flow.</p></div>
+          <div class="step"><div class="n" aria-hidden="true">2</div><h3>Report</h3><p>A prioritized findings report mapped to WCAG 2.1 AA success criteria — and a VPAT/ACR when you need one.</p></div>
+          <div class="step"><div class="n" aria-hidden="true">3</div><h3>Remediate</h3><p>We fix the issues in your code, or guide your team through them, with practical, standards-based solutions.</p></div>
+          <div class="step"><div class="n" aria-hidden="true">4</div><h3>Verify</h3><p>We re-test to confirm the fixes hold, and give you a maintenance plan so conformance doesn't drift over time.</p></div>
+        </div>
+        <div class="tools-row" role="list" aria-label="Tools and assistive technology we test with">
+          <span class="tool-chip" role="listitem">axe-core</span>
+          <span class="tool-chip" role="listitem">WAVE</span>
+          <span class="tool-chip" role="listitem">Lighthouse</span>
+          <span class="tool-chip" role="listitem">NVDA</span>
+          <span class="tool-chip" role="listitem">VoiceOver</span>
+          <span class="tool-chip" role="listitem">JAWS</span>
+          <span class="tool-chip" role="listitem">Keyboard-only</span>
+        </div>
+        <p class="tools-cap">We test with the same automated engines <em>and</em> the real assistive technology your visitors use.</p>
+      </div>
+    </section>
+
+    <!-- CASE STUDY -->
+    <section id="case" aria-labelledby="case-h">
+      <div class="wrap case-wrap">
+        <div class="sec-head">
+          <span class="label">Case study</span>
+          <h2 id="case-h">We put our own site through the process.</h2>
+          <p>Before we ask for your trust, here's the proof on our own homepage — measured with axe-core, the industry-standard automated testing engine.</p>
+        </div>
+
+        <div class="ba">
+          <div class="ba-card ba-before">
+            <div class="tag">Before</div>
+            <div class="num">19</div>
+            <div class="num-label">automated WCAG violations<br>(color-contrast failures)</div>
+          </div>
+          <div class="arrow" aria-hidden="true">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+          <div class="ba-card ba-after">
+            <div class="tag">After</div>
+            <div class="num">0</div>
+            <div class="num-label">automated WCAG violations</div>
+          </div>
+        </div>
+
+        <div class="case-list">
+          <h3>What we changed</h3>
+          <ul>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Raised text and link contrast to meet the WCAG 2.1 AA minimum ratio, in both light and dark themes.</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Added a "skip to main content" link and a focusable main landmark for keyboard users.</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Fixed focus management — the mobile menu leaves the tab order when closed, and focus returns predictably.</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Converted action controls from placeholder links to real buttons — so they work with both Enter and Space.</li>
+          </ul>
+          <p class="case-note"><strong>Honest footnote:</strong> automated tools like axe catch only part of WCAG — roughly a third to a half of all success criteria. Reaching zero automated violations is a milestone, not a finish line. The rest (meaningful alt text, logical reading order, screen-reader labeling) takes manual expertise — which is exactly what a real audit adds, and what we bring to your project.</p>
+          <a class="verify" href="/" >Verify it yourself — run axe on our homepage <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SAMPLE REPORT -->
+    <section id="report" aria-labelledby="report-h">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="label">The deliverable</span>
+          <h2 id="report-h">What your audit report looks like.</h2>
+          <p>Clear, prioritized, and mapped to WCAG success criteria — so your team knows exactly what to fix, how serious it is, and how to fix it.</p>
+        </div>
+        <div class="report-doc" role="img" aria-label="Sample accessibility audit report: severity summary of 2 critical, 7 serious, 11 moderate and 5 minor issues, followed by example findings mapped to WCAG success criteria with recommended fixes.">
+          <div class="report-top">
+            <span class="rt-title">Accessibility Audit — WCAG 2.1 Level AA</span>
+            <span class="rt-badge">Sample</span>
+          </div>
+          <div class="report-body">
+            <div class="sev-summary">
+              <div class="sev sev-crit"><div class="c">2</div><div class="s">Critical</div></div>
+              <div class="sev sev-serious"><div class="c">7</div><div class="s">Serious</div></div>
+              <div class="sev sev-mod"><div class="c">11</div><div class="s">Moderate</div></div>
+              <div class="sev sev-minor"><div class="c">5</div><div class="s">Minor</div></div>
+            </div>
+            <div class="finding">
+              <div class="finding-head"><span class="wcag">1.4.3 Contrast (Minimum)</span><span class="badge-lvl">AA</span><span class="badge-sev bs-serious">Serious</span></div>
+              <p>Body text has a contrast ratio of 3.8:1 against its background — below the 4.5:1 minimum.</p>
+              <p class="fix"><b>Fix:</b> darken the text token to reach ≥ 4.5:1, or lighten the background surface.</p>
+            </div>
+            <div class="finding">
+              <div class="finding-head"><span class="wcag">2.1.1 Keyboard</span><span class="badge-lvl">A</span><span class="badge-sev bs-serious">Serious</span></div>
+              <p>The menu toggle can't be operated by keyboard, and focus is trapped behind the open overlay.</p>
+              <p class="fix"><b>Fix:</b> use a native button and manage focus on open/close.</p>
+            </div>
+            <div class="finding">
+              <div class="finding-head"><span class="wcag">1.1.1 Non-text Content</span><span class="badge-lvl">A</span><span class="badge-sev bs-mod">Moderate</span></div>
+              <p>Four informative images are missing alternative text.</p>
+              <p class="fix"><b>Fix:</b> add concise, descriptive alt text; mark purely decorative images as such.</p>
+            </div>
+          </div>
+        </div>
+        <p class="report-caption">Sample findings shown for illustration — your report reflects your actual site.</p>
+      </div>
+    </section>
+
+    <!-- DELIVERABLES -->
+    <section aria-labelledby="deliv-h">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="label">What you get</span>
+          <h2 id="deliv-h">Deliverables, not just a score.</h2>
+        </div>
+        <ul class="deliv">
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg> <span><b>Findings report</b> mapped to WCAG 2.1 AA, prioritized by impact.</span></li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 22h2a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v3"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><circle cx="6" cy="14" r="3"/><path d="M6 10v1m0 6v1m4-4H9m-6 0H2"/></svg> <span><b>VPAT / ACR</b> conformance report when your buyers or agency require one.</span></li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg> <span><b>Remediation</b> — we fix the code, or coach your developers through it.</span></li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-6.22-8.56"/><path d="m9 11 3 3L22 4"/></svg> <span><b>Re-test &amp; sign-off</b> confirming the fixes hold up.</span></li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></svg> <span><b>Maintenance plan</b> so conformance doesn't slip as content changes.</span></li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> <span><b>A real person</b> to talk to — U.S.-based, no offshore ticket queue.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- TRUST -->
+    <section aria-labelledby="trust-h">
+      <div class="wrap">
+        <div class="sec-head"><span class="label">Credentials</span><h2 id="trust-h">Built to standard, backed by real credentials.</h2></div>
+        <div class="trust-band">
+          <span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg> Builds to WCAG 2.1 AA</span>
+          <span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> Section 508 Standards</span>
+          <span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 18v-7"/><path d="M11.12 2.2a2 2 0 0 1 1.76 0l7.84 3.85A.5.5 0 0 1 20.5 7h-17a.5.5 0 0 1-.22-.95Z"/><path d="M14 18v-7"/><path d="M18 18v-7"/><path d="M3 22h18"/><path d="M6 18v-7"/></svg> Registered in SAM.gov</span>
+          <span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg> 100% U.S.-Based</span>
+        </div>
+        <p class="trust-ids">UEI: SEGBR96ACVG7 &nbsp;·&nbsp; CAGE: 21FD4</p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="cta" aria-labelledby="cta-h">
+      <div class="wrap">
+        <div class="box">
+          <h2 id="cta-h">Find out where your site stands.</h2>
+          <p>Start with a conversation. We'll scope your site, explain what an audit covers, and give you a clear, fixed quote — priced to your project, never a template.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="/#contact">Request an Audit</a>
+            <!-- BOOKING: replace href with your Cal.com paid-consultation link when ready -->
+            <a class="btn btn-ghost" href="/#contact" id="book-consult">Book a Strategy Call</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DISCLAIMER -->
+    <section aria-labelledby="disc-h" style="padding-top:0">
+      <div class="wrap">
+        <div class="disclaimer">
+          <h3 id="disc-h">Scope &amp; conformance note</h3>
+          <p>Viro Digital builds and remediates to WCAG 2.1 Level AA and Section 508 standards according to professional best practice at the time of delivery. Accessibility conformance is not a permanent, one-time state — it depends on future content, third-party tools, and evolving standards. We do not guarantee that a site will pass every automated scanner, satisfy every auditor, or be immune from legal claims. All work is governed by the scope agreed in your statement of work.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>© <span id="yr">2026</span> Viro Digital LLC · Connecticut, USA · <a href="/">virodigital.net</a> · <a href="mailto:support@virodigital.net">support@virodigital.net</a></p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
