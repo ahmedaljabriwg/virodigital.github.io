@@ -499,7 +499,7 @@
       width: 800px; height: 800px;
       top: 50%; left: 50%;
       transform: translate(-50%, -50%);
-      background: radial-gradient(circle, rgba(0,102,255,0.12) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(0,102,255,0.07) 0%, transparent 70%);
       pointer-events: none;
     }
     /* Parallax floating shapes */
@@ -1853,13 +1853,13 @@
       <div class="hero-content">
         <div class="hero-badge fade-in visible">
           <div class="hero-badge-dot" aria-hidden="true"></div>
-          U.S.-Based &amp; Section 508 Compliant
+          U.S.-Based · Section 508 &amp; WCAG Specialists
         </div>
 
         <h1 class="hero-title fade-in stagger-1 visible">
-          Secure IT<br>
-          <span class="text-gradient">Solutions</span><br>
-          Built to Last
+          Websites<br>
+          <span class="text-gradient">everyone</span><br>
+          can use.
         </h1>
 
         <p class="hero-sub fade-in stagger-2 visible">
@@ -1874,6 +1874,26 @@
       </div>
 
       <!-- Scroll indicator removed per design update -->
+    </section>
+
+    <!-- ============================================================
+         CREDENTIALS STRIP — honest authority signals only
+         ============================================================ -->
+    <style>
+      .trust-strip { border-top:1px solid var(--border-subtle); border-bottom:1px solid var(--border-subtle); background:var(--bg-surface); }
+      .trust-strip .container { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:16px 38px; padding:22px 24px; }
+      .trust-item { display:inline-flex; align-items:center; gap:9px; font-size:0.9rem; font-weight:600; color:var(--text-secondary); letter-spacing:0.01em; white-space:nowrap; }
+      .trust-item svg { width:17px; height:17px; color:var(--brand-secondary); flex-shrink:0; }
+      @media (max-width:600px){ .trust-strip .container { gap:12px 22px; } .trust-item { font-size:0.82rem; } }
+    </style>
+    <section class="trust-strip" aria-label="Credentials and standards">
+      <div class="container">
+        <span class="trust-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg> Builds to WCAG 2.1 AA</span>
+        <span class="trust-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg> Section 508 Standards</span>
+        <span class="trust-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 18v-7"></path><path d="M11.119 2.205a2 2 0 0 1 1.762 0l7.84 3.846A.5.5 0 0 1 20.5 7h-17a.5.5 0 0 1-.22-.949z"></path><path d="M14 18v-7"></path><path d="M18 18v-7"></path><path d="M3 22h18"></path><path d="M6 18v-7"></path></svg> Registered in SAM.gov</span>
+        <span class="trust-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg> 8+ Years Experience</span>
+        <span class="trust-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg> 100% U.S.-Based</span>
+      </div>
     </section>
 
     <!-- ============================================================
@@ -2869,7 +2889,7 @@
         this.vx = (Math.random() - 0.5) * 0.35;
         this.vy = (Math.random() - 0.5) * 0.35;
         this.radius = Math.random() * 1.5 + 0.5;
-        this.opacity = Math.random() * 0.5 + 0.1;
+        this.opacity = Math.random() * 0.22 + 0.04;
         this.color = Math.random() > 0.6
           ? '0, 102, 255'
           : Math.random() > 0.5
@@ -2890,7 +2910,7 @@
       };
 
       function initParticles() {
-        const count = Math.min(Math.floor((W * H) / 12000), 120);
+        const count = Math.min(Math.floor((W * H) / 30000), 40);
         particles = Array.from({ length: count }, () => new Particle());
       }
 
