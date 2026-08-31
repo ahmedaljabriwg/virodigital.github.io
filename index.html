@@ -364,6 +364,44 @@
       color: var(--text-primary);
       border-color: var(--brand-primary);
     }
+    /* Services dropdown */
+    .has-dropdown { position: relative; }
+    .nav-dropdown-toggle {
+      display: inline-flex; align-items: center; gap: 5px;
+      background: none; border: none; padding: 6px 2px;
+      font-family: inherit; font-size: 0.9rem; font-weight: 500;
+      color: var(--text-secondary); cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: color var(--transition-fast);
+    }
+    .nav-dropdown-toggle:hover, .nav-dropdown-toggle[aria-expanded="true"] { color: var(--text-primary); }
+    .nav-dropdown-toggle .caret { transition: transform var(--transition-fast); }
+    .has-dropdown:hover .caret, .nav-dropdown-toggle[aria-expanded="true"] .caret { transform: rotate(180deg); }
+    .nav-dropdown {
+      position: absolute; top: calc(100% + 16px); left: 50%;
+      transform: translateX(-50%) translateY(8px);
+      min-width: 240px; list-style: none; margin: 0; padding: 8px;
+      background: var(--bg-elevated); border: 1px solid var(--border-default);
+      border-radius: 14px; box-shadow: 0 22px 50px -20px rgba(0,0,0,0.55);
+      opacity: 0; visibility: hidden;
+      transition: opacity var(--transition-fast), transform var(--transition-fast), visibility 0s linear 0.18s;
+      z-index: 120;
+    }
+    .has-dropdown:hover .nav-dropdown,
+    .nav-dropdown-toggle[aria-expanded="true"] + .nav-dropdown {
+      opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0);
+      transition: opacity var(--transition-fast), transform var(--transition-fast);
+    }
+    .nav-dropdown li { margin: 0; }
+    .nav-dropdown a {
+      display: block; padding: 10px 14px; border-radius: 9px;
+      font-size: 0.9rem; font-weight: 500; color: var(--text-secondary);
+      white-space: nowrap; border-bottom: none;
+      transition: background var(--transition-fast), color var(--transition-fast);
+    }
+    .nav-dropdown a:hover, .nav-dropdown a:focus-visible {
+      background: var(--bg-card-hover); color: var(--text-primary); border-color: transparent;
+    }
     /* Nav actions */
     .nav-actions {
       display: flex;
@@ -1807,13 +1845,18 @@
 
         <!-- Desktop links -->
         <ul class="nav-links" role="list">
-          <li><a href="#services">Services</a></li>
-          <li><a href="#product">ViroBuilder</a></li>
+          <li class="has-dropdown">
+            <button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="services-menu">Services
+              <svg class="caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+            </button>
+            <ul class="nav-dropdown" id="services-menu">
+              <li><a href="/accessibility/">Accessibility · 508 &amp; WCAG</a></li>
+              <li><a href="#services">WordPress Development</a></li>
+              <li><a href="#services">Security &amp; Compliance Audits</a></li>
+            </ul>
+          </li>
+          <li><a href="/virobuilder/">ViroBuilder</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="#process">Process</a></li>
-          <li><a href="#portfolio">Industries</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-          <li><a href="#faq">FAQ</a></li>
           <li><a href="#contact" style="position: relative;">Contact</a></li>
         </ul>
 
@@ -1829,7 +1872,8 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="sun" aria-hidden="true" id="theme-icon-sun" style="display: block;" class="lucide lucide-sun"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="moon" aria-hidden="true" id="theme-icon-moon" class="lucide lucide-moon" style="display: none;"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"></path></svg>
           </button>
-          <a href="#contact" target="_blank" rel="noopener noreferrer" class="btn-primary" style="display: inline-flex; position: relative;" id="nav-cta">Get a Quote </a>
+          <!-- BOOKING: replace href with your Cal.com booking link when ready -->
+          <a href="#contact" class="btn-primary" style="display: inline-flex; position: relative;" id="nav-cta">Book a Consultation</a>
           <!-- Hamburger -->
           <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
             <span></span><span></span><span></span>
@@ -1840,15 +1884,14 @@
 
     <!-- Mobile drawer -->
     <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
-      <a href="#services" class="mobile-nav-link">Services</a>
-      <a href="#product" class="mobile-nav-link">ViroBuilder</a>
+      <a href="/accessibility/" class="mobile-nav-link">Accessibility · 508 &amp; WCAG</a>
+      <a href="#services" class="mobile-nav-link">WordPress Development</a>
+      <a href="#services" class="mobile-nav-link">Security &amp; Compliance Audits</a>
+      <a href="/virobuilder/" class="mobile-nav-link">ViroBuilder</a>
       <a href="#about" class="mobile-nav-link">About</a>
-      <a href="#process" class="mobile-nav-link">Process</a>
-      <a href="#portfolio" class="mobile-nav-link">Industries</a>
-      <a href="#pricing" class="mobile-nav-link">Pricing</a>
-      <a href="#faq" class="mobile-nav-link">FAQ</a>
       <a href="#contact" class="mobile-nav-link">Contact</a>
-      <a href="https://linktr.ee/virodigital" target="_blank" rel="noopener noreferrer" class="btn-primary">Get a Free Quote</a>
+      <!-- BOOKING: replace href with your Cal.com booking link when ready -->
+      <a href="#contact" class="btn-primary">Book a Consultation</a>
     </nav>
   </header>
 
@@ -1882,7 +1925,8 @@
         </p>
 
         <div class="hero-actions fade-in stagger-3 visible">
-          <a href="#contact" target="_blank" rel="noopener noreferrer" class="btn-primary btn-lg" style="position: relative;">Get a Free Consultation </a>
+          <!-- BOOKING: replace href with your Cal.com booking link when ready -->
+          <a href="#contact" class="btn-primary btn-lg" style="position: relative;">Book a Consultation</a>
           <a href="#services" class="btn-secondary btn-lg" style="position: relative;">Explore Services</a>
         </div>
 
@@ -2563,9 +2607,10 @@
       <div class="container">
         <div class="cta-content fade-in visible">
           <h2>Ready to Build Something Exceptional?</h2>
-          <p>Let's start with a free consultation. No pressure, no obligations — just an honest conversation about what you need and how we can help.</p>
+          <p>Let's start with a conversation. No pressure, no obligations — just an honest talk about what you need and how we can help.</p>
           <div class="cta-btns">
-            <a href="#contact" target="_blank" rel="noopener noreferrer" class="btn-white" style="position: relative;">Schedule a Free Consultation </a>
+            <!-- BOOKING: replace href with your Cal.com booking link when ready -->
+            <a href="#contact" class="btn-white" style="position: relative;">Book a Consultation</a>
             <a href="#contact" class="btn-outline-white" style="position: relative;">Get a Quote </a>
           </div>
         </div>
@@ -2982,6 +3027,23 @@
         navbar.classList.toggle('scrolled', scrolled);
         if (navCta) navCta.style.display = scrolled ? 'inline-flex' : 'none';
       }, { passive: true });
+    })();
+
+    /* ============================================================
+       SERVICES DROPDOWN (accessible: click, keyboard, outside-click)
+       ============================================================ */
+    (function() {
+      const toggle = document.querySelector('.nav-dropdown-toggle');
+      if (!toggle) return;
+      const item = toggle.closest('.has-dropdown');
+      const menu = document.getElementById('services-menu');
+      const setOpen = (open) => toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+      document.addEventListener('click', (e) => { if (!item.contains(e.target)) setOpen(false); });
+      item.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') { setOpen(false); toggle.focus(); }
+      });
+      if (menu) menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setOpen(false)));
     })();
 
     /* ============================================================
